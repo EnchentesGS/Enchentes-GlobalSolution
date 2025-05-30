@@ -1,6 +1,14 @@
-function trocar(cor){
-    document.body.style.background = cor;
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburguer = document.querySelector(".hamburguer");
+  const navMenu = document.getElementById("nav-menu");
+
+  if (hamburguer && navMenu) {
+    hamburguer.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+  }
+});
+
 
 //SlideShow
 
@@ -23,3 +31,9 @@ function trocar(cor){
   }
 
   window.addEventListener('load', slideShow);
+
+//Trocar de Cor
+
+function trocar(cor){
+    document.body.style.background = cor;
+}

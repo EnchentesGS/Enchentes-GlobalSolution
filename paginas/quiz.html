@@ -1,63 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="../src/css/estilo.css">
-    <title>Quiz</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../src/css/estilo.css" />
+  <title>Quiz</title>
 </head>
 <body>
-    
-    <header>
-        <a href="../index.html">
-            <img src="../src/assets/logo.png" alt="Logo" class="logo">
-        </a>
-        <div id="container">
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../paginas/login.html" class="btn-login">Area do Usuario</a></li>
-                </ul>
-            </nav>
-        </div>
+  
+  <header>
+    <a href="../index.html">
+      <img src="../src/assets/logo.png" alt="Logo" class="logo" />
+    </a>
 
-        <div class="trocar-tema">
-             <button onclick="trocar('#014D6F')" class="tema-azul-escuro"></button>
-              <button onclick="trocar('#2A8BCF')" class="tema-azul-medio"></button>
-              <button onclick="trocar('#BBDEFB')" class="tema-azul-claro"></button>
-        </div>
-    </header>
-
-    
-    <footer>
-  <div class="footer-content">
-    <div class="apoios">
-      <h3>Parcerias & Apoios</h3>
-      <ul>
-        <li>Defesa Civil Municipal</li>
-        <li>Prefeitura Local</li>
-        <li>Instituto Nacional de Meteorologia</li>
-        <li>ONG Água Segura</li>
-      </ul>
+        <div class="titulo">
+      <h1>Alerta Chuva</h1>
+      <p>Sua segurança em primeiro lugar</p>
     </div>
 
-    <div class="contato">
-      <h3>Contato</h3>
+
+
+    <nav id="nav-menu">
       <ul>
-        <li>Email: suporte@alertaenchente.com</li>
-        <li>Telefone: (11) 99999-9999</li>
-        <li>Endereço: Rua da Prevenção, 123 – Centro, São Paulo – SP</li>
-        <li>Horário de atendimento: 24h</li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../paginas/login.html" class="btn-login">Área do Usuário</a></li>
       </ul>
+    </nav>
+
+    <!-- Botão de menu hamburguer -->
+    <div class="hamburguer">
+      <div class="barra"></div>
+      <div class="barra"></div>
+      <div class="barra"></div>
     </div>
-  </div>
 
-  <div class="footer-legal">
-    <p>© 2025 AlertaEnchente. Todos os direitos reservados.</p>
-    <p><em>Em situações de emergência, siga sempre as orientações das autoridades oficiais.</em></p>
-  </div>
-</footer>
+    <!-- Botões de tema -->
+    <div class="trocar-tema trocar-tema-fixo">
+      <button onclick="trocar('#014D6F')" class="tema-azul-escuro"></button>
+      <button onclick="trocar('#2A8BCF')" class="tema-azul-medio"></button>
+      <button onclick="trocar('#BBDEFB')" class="tema-azul-claro"></button>
+    </div>
+  </header>
 
+  <section class="s6" id="ajuda">
+    <div class="container">
+      <img src="../src/assets/enchente2.jpg" alt="Imagem ilustrativa" />
+      <div class="texto">
+        <h2>Como Ajudamos no Dia a Dia</h2>
+        <p>
+          Você será avisado imediatamente sempre que houver risco de enchente na
+          sua região. Isso permite que tome decisões rápidas, como sair de casa
+          com antecedência ou proteger seus bens.
+        </p>
+      </div>
+    </div>
+  </section>
 
+  <footer>
+    <div class="footer-content">
+      <div class="apoios">
+        <h3>Parcerias & Apoios</h3>
+        <ul>
+          <li>Defesa Civil Municipal</li>
+          <li>Prefeitura Local</li>
+          <li>Instituto Nacional de Meteorologia</li>
+          <li>ONG Água Segura</li>
+        </ul>
+      </div>
+
+      <div class="contato">
+        <h3>Contato</h3>
+        <ul>
+          <li>Email: suporte@alertaenchente.com</li>
+          <li>Telefone: (11) 99999-9999</li>
+          <li>Endereço: Rua da Prevenção, 123 – Centro, São Paulo – SP</li>
+          <li>Horário de atendimento: 24h</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      <p>© 2025 AlertaEnchente. Todos os direitos reservados.</p>
+      <p><em>Em situações de emergência, siga sempre as orientações das autoridades oficiais.</em></p>
+    </div>
+  </footer>
+
+  <script src="../src/js/script.js"></script>
 </body>
 </html>

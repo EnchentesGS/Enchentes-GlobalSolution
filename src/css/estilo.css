@@ -42,8 +42,14 @@ header {
   flex-wrap: wrap;
 }
 
-header nav ul {
+/* Correção para remover bolinhas pretas */
+nav ul {
   list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+header nav ul {
   padding: 28px 20px;
   margin: 10px 0;
   display: flex;
@@ -72,6 +78,25 @@ header nav ul li a:hover {
 
 .btn-login:hover {
   background-color: #145a9c;
+}
+
+/* --- Menu hamburguer --- */
+.hamburguer {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburguer .barra {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 /* ================= BOTÕES DE TROCA DE TEMA ================= */
@@ -262,5 +287,34 @@ footer {
   .footer-content > div {
     margin: 15px 0;
     max-width: 90%;
+  }
+}
+
+/*Menu Hamburguer*/
+@media (max-width: 768px) {
+  #nav-menu {
+    display: none;
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    background-color: var(--cor-1);
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    width: 200px;
+    z-index: 999;
+  }
+
+  #nav-menu.active {
+    display: block;
+  }
+
+  #nav-menu ul li a {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .hamburguer {
+    display: flex;
   }
 }
