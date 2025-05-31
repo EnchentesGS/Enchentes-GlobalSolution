@@ -1,142 +1,145 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="../src/css/estilo.css" />
-  <title>Quiz</title>
+  <title>Quiz - Alerta de Enchentes</title>
 </head>
+
 <body>
-  
   <header>
     <a href="../index.html">
       <img src="../src/assets/logo.png" alt="Logo" class="logo" />
     </a>
-
-        <div class="titulo">
+    <div class="titulo">
       <h1>Alerta Chuva</h1>
       <p>Sua segurança em primeiro lugar</p>
     </div>
-
-
-
-    <nav id="nav-menu">
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../paginas/login.html">Área do Usuário</a></li>
-      </ul>
-    </nav>
-
-    <!-- Botão de menu hamburguer -->
-    <div class="hamburguer">
-      <div class="barra"></div>
-      <div class="barra"></div>
-      <div class="barra"></div>
-    </div>
-
-    <!-- Botões de tema -->
-    <div class="trocar-tema trocar-tema-fixo">
-      <button onclick="trocar('#014D6F')" class="tema-azul-escuro"></button>
-      <button onclick="trocar('#2A8BCF')" class="tema-azul-medio"></button>
-      <button onclick="trocar('#BBDEFB')" class="tema-azul-claro"></button>
+    <div id="container">
+      <nav id="nav-menu" class="menu">
+        <ul>
+          <li><a href="">Contato</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="login.html">Área do Usuário</a></li>
+        </ul>
+      </nav>
+      <div class="hamburguer" id="hamburguer">
+        <span class="barra"></span>
+        <span class="barra"></span>
+        <span class="barra"></span>
+      </div>
     </div>
   </header>
 
-  <section id="quiz" style="max-width:600px; margin: 0 auto; padding: 20px;">
-  <h2>Quiz: Segurança em Caso de Enchentes</h2>
-
-  <form id="quiz-form">
-
-    <div class="pergunta">
-      <p>1. Qual é a atitude mais importante a se tomar ao receber um alerta de enchente para sua região?</p>
-      <label><input type="radio" name="q1" value="a" required> a) Ignorar o alerta e continuar a rotina normalmente</label><br />
-      <label><input type="radio" name="q1" value="b"> b) Preparar um kit de emergência e monitorar as notícias</label><br />
-      <label><input type="radio" name="q1" value="c"> c) Sair imediatamente de casa, sem planejar nada</label><br />
-      <label><input type="radio" name="q1" value="d"> d) Esperar a enchente acontecer para tomar alguma decisão</label>
+  <div class="quiz-container">
+    <div class="start-card">
+      <h2>Quiz sobre Enchentes</h2>
+      <p>Teste seus conhecimentos sobre segurança em casos de enchente.</p>
+      <button class="quiz-button" id="start-btn">Iniciar Quiz</button>
     </div>
 
-    <div class="pergunta">
-      <p>2. Por que é recomendado desligar a energia elétrica em caso de enchente?</p>
-      <label><input type="radio" name="q2" value="a" required> a) Para evitar curto-circuitos e risco de choque elétrico</label><br />
-      <label><input type="radio" name="q2" value="b"> b) Porque a energia para automaticamente durante enchentes</label><br />
-      <label><input type="radio" name="q2" value="c"> c) Para economizar energia durante a crise</label><br />
-      <label><input type="radio" name="q2" value="d"> d) Para proteger a internet e os aparelhos eletrônicos</label>
+    <div class="quiz-card" style="display: none;">
+      <div class="quiz-question">1. O que você deve fazer ao ouvir um alerta de enchente?</div>
+      <div class="quiz-options">
+        <label><input type="radio" name="q1"> Ignorar</label>
+        <label><input type="radio" name="q1"> Procurar abrigo seguro</label>
+        <label><input type="radio" name="q1"> Esperar dentro de casa</label>
+      </div>
+      <button class="quiz-button next-btn">Próxima</button>
     </div>
 
-    <div class="pergunta">
-      <p>3. O que você deve evitar durante uma enchente?</p>
-      <label><input type="radio" name="q3" value="a" required> a) Andar por áreas alagadas, mesmo que a água pareça rasa</label><br />
-      <label><input type="radio" name="q3" value="b"> b) Manter contato com familiares para informar sua localização</label><br />
-      <label><input type="radio" name="q3" value="c"> c) Procurar locais altos e seguros para se proteger</label><br />
-      <label><input type="radio" name="q3" value="d"> d) Ouvir as orientações das autoridades oficiais</label>
+    <div class="quiz-card" style="display: none;">
+      <div class="quiz-question">2. É seguro atravessar áreas alagadas?</div>
+      <div class="quiz-options">
+        <label><input type="radio" name="q2"> Sim, se a água for rasa</label>
+        <label><input type="radio" name="q2"> Não</label>
+        <label><input type="radio" name="q2"> Apenas com um carro</label>
+      </div>
+      <button class="quiz-button next-btn">Próxima</button>
     </div>
 
-    <div class="pergunta">
-      <p>4. Quais itens não podem faltar em um kit de emergência para enchentes?</p>
-      <label><input type="radio" name="q4" value="a" required> a) Água potável, alimentos não perecíveis, lanternas e documentos importantes</label><br />
-      <label><input type="radio" name="q4" value="b"> b) Apenas um celular carregado</label><br />
-      <label><input type="radio" name="q4" value="c"> c) Roupas de frio e guarda-chuva</label><br />
-      <label><input type="radio" name="q4" value="d"> d) Apenas alimentos perecíveis para o momento</label>
+    <div class="quiz-card" style="display: none;">
+      <div class="quiz-question">3. O que fazer caso sua casa seja atingida por enchente?</div>
+      <div class="quiz-options">
+        <label><input type="radio" name="q3"> Tentar salvar objetos pessoais</label>
+        <label><input type="radio" name="q3"> Procurar um local seguro imediatamente</label>
+        <label><input type="radio" name="q3"> Ficar na parte baixa da casa</label>
+      </div>
+      <button class="quiz-button next-btn">Próxima</button>
     </div>
 
-    <div class="pergunta">
-      <p>5. Como o acúmulo de lixo nas ruas contribui para o aumento dos riscos de enchentes?</p>
-      <label><input type="radio" name="q5" value="a" required> a) Ele entope bueiros e canais de drenagem, impedindo o escoamento da água</label><br />
-      <label><input type="radio" name="q5" value="b"> b) Não tem impacto na ocorrência de enchentes</label><br />
-      <label><input type="radio" name="q5" value="c"> c) Ajuda a filtrar a água da chuva e evita enchentes</label><br />
-      <label><input type="radio" name="q5" value="d"> d) Apenas causa mau cheiro, mas não afeta a água da chuva</label>
+    <div class="quiz-card" style="display: none;">
+      <div class="quiz-question">4. Qual é o risco de usar eletrônicos durante uma enchente?</div>
+      <div class="quiz-options">
+        <label><input type="radio" name="q4"> Pode causar curto-circuito e choque elétrico</label>
+        <label><input type="radio" name="q4"> Nenhum risco</label>
+        <label><input type="radio" name="q4"> Apenas pode danificar o aparelho</label>
+      </div>
+      <button class="quiz-button next-btn">Próxima</button>
     </div>
 
-    <div class="pergunta">
-      <p>6. Qual é a melhor forma de agir se você estiver em uma área alagada e perceber que a água está subindo rapidamente?</p>
-      <label><input type="radio" name="q6" value="a" required> a) Permanecer no local e esperar a água baixar sozinha</label><br />
-      <label><input type="radio" name="q6" value="b"> b) Procurar um ponto alto e seguro para se abrigar imediatamente</label><br />
-      <label><input type="radio" name="q6" value="c"> c) Tentar atravessar a água a qualquer custo</label><br />
-      <label><input type="radio" name="q6" value="d"> d) Voltar para casa e esperar por ajuda</label>
+    <div class="quiz-card" style="display: none;">
+      <div class="quiz-question">5. Por que é importante ter um kit de emergência?</div>
+      <div class="quiz-options">
+        <label><input type="radio" name="q5"> Para se divertir durante a enchente</label>
+        <label><input type="radio" name="q5"> Para estar preparado com água, comida e medicamentos</label>
+        <label><input type="radio" name="q5"> Para doar depois</label>
+      </div>
+      <button class="quiz-button next-btn">Próxima</button>
     </div>
 
-    <div class="pergunta">
-      <p>7. Por que é importante seguir as orientações das autoridades durante uma enchente?</p>
-      <label><input type="radio" name="q7" value="a" required> a) Porque elas possuem informações atualizadas e protocolos para sua segurança</label><br />
-      <label><input type="radio" name="q7" value="b"> b) Porque é uma obrigação legal</label><br />
-      <label><input type="radio" name="q7" value="c"> c) Porque as autoridades gostam de controlar as pessoas</label><br />
-      <label><input type="radio" name="q7" value="d"> d) Não é importante seguir as orientações, apenas confiar no próprio julgamento</label>
+    <div class="quiz-card" style="display: none;">
+      <div class="quiz-question">6. Como saber se uma área está em risco de enchente?</div>
+      <div class="quiz-options">
+        <label><input type="radio" name="q6"> Consultando mapas e alertas oficiais</label>
+        <label><input type="radio" name="q6"> Perguntando a vizinhos</label>
+        <label><input type="radio" name="q6"> Olhando as nuvens</label>
+      </div>
+      <button class="quiz-button next-btn">Próxima</button>
     </div>
 
-    <button type="submit" style="margin-top:20px; padding:10px 15px; cursor:pointer;">Enviar Respostas</button>
-  </form>
+    <div class="quiz-card" style="display: none;">
+      <div class="quiz-question">7. Qual atitude evitar durante uma enchente?</div>
+      <div class="quiz-options">
+        <label><input type="radio" name="q7"> Dirigir por áreas alagadas</label>
+        <label><input type="radio" name="q7"> Ouvir alertas de emergência</label>
+        <label><input type="radio" name="q7"> Buscar abrigo seguro</label>
+      </div>
+      <button class="quiz-button next-btn">Próxima</button>
+    </div>
 
-  <div id="resultado" style="margin-top:20px; font-weight: bold;"></div>
+    <div class="quiz-card" style="display: none;">
+      <div class="quiz-question">8. O que fazer se estiver dirigindo e encontrar uma estrada alagada?</div>
+      <div class="quiz-options">
+        <label><input type="radio" name="q8"> Tentar atravessar rapidamente</label>
+        <label><input type="radio" name="q8"> Parar e buscar rota alternativa</label>
+        <label><input type="radio" name="q8"> Acelerar para não ficar preso</label>
+      </div>
+      <button class="quiz-button next-btn">Próxima</button>
+    </div>
 
-</section>
+    <div class="quiz-card" style="display: none;">
+      <div class="quiz-question">9. Como proteger documentos importantes durante uma enchente?</div>
+      <div class="quiz-options">
+        <label><input type="radio" name="q9"> Guardando-os em sacos plásticos impermeáveis</label>
+        <label><input type="radio" name="q9"> Deixando-os na gaveta</label>
+        <label><input type="radio" name="q9"> Fotografando e jogando fora os originais</label>
+      </div>
+      <button class="quiz-button next-btn">Próxima</button>
+    </div>
 
-<script>
-  const respostasCorretas = {
-    q1: 'b',
-    q2: 'a',
-    q3: 'a',
-    q4: 'a',
-    q5: 'a',
-    q6: 'b',
-    q7: 'a'
-  };
-
-  document.getElementById('quiz-form').addEventListener('submit', function(event){
-    event.preventDefault();
-
-    let pontos = 0;
-    const total = Object.keys(respostasCorretas).length;
-
-    for (const [questao, correta] of Object.entries(respostasCorretas)) {
-      const resposta = this.elements[questao].value;
-      if(resposta === correta) pontos++;
-    }
-
-    const resultado = document.getElementById('resultado');
-    resultado.textContent = `Você acertou ${pontos} de ${total} perguntas.`;
-  });
-</script>
-
+    <div class="quiz-card" style="display: none;">
+      <div class="quiz-question">10. Por que é importante acompanhar a previsão do tempo em épocas de chuva?</div>
+      <div class="quiz-options">
+        <label><input type="radio" name="q10"> Para saber que roupa usar</label>
+        <label><input type="radio" name="q10"> Para se preparar e evitar riscos</label>
+        <label><input type="radio" name="q10"> Para evitar sair de casa</label>
+      </div>
+      <button class="quiz-button" id="finish-btn">Finalizar</button>
+    </div>
+  </div>
 
   <footer>
     <div class="footer-content">
@@ -149,7 +152,6 @@
           <li>ONG Água Segura</li>
         </ul>
       </div>
-
       <div class="contato">
         <h3>Contato</h3>
         <ul>
@@ -160,7 +162,6 @@
         </ul>
       </div>
     </div>
-
     <div class="footer-legal">
       <p>© 2025 AlertaEnchente. Todos os direitos reservados.</p>
       <p><em>Em situações de emergência, siga sempre as orientações das autoridades oficiais.</em></p>
@@ -169,4 +170,5 @@
 
   <script src="../src/js/script.js"></script>
 </body>
+
 </html>

@@ -42,7 +42,6 @@ header {
   flex-wrap: wrap;
 }
 
-/* Correção para remover bolinhas pretas */
 nav ul {
   list-style: none;
   padding-left: 0;
@@ -164,9 +163,6 @@ section {
 }
 
 /* ================= SEÇÃO 1 (SLIDESHOW) ================= */
-
-/* Seção S1 com slideshow */
-
 .s1 {
   height: 100vh;
   position: relative;
@@ -194,12 +190,12 @@ section {
 }
 
 .s1 .texto {
-  background-color: rgba(0, 59, 92, 0.7); /* fundo azul escuro com transparência */
+  background-color: rgba(0, 59, 92, 0.7);
   padding: 20px;
   border-radius: 12px;
   text-align: center;
   max-width: 600px;
-  color: var(--cor-2); /* amarelo da paleta */
+  color: var(--cor-2);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   z-index: 2;
 }
@@ -211,119 +207,192 @@ section {
 
 .s1 .texto p {
   font-size: 1.1rem;
-  color: var(--cor-4); /* cinza claro */
+  color: var(--cor-4);
 }
 
-/*Quiz*/
-/* ====== Estilos para o Quiz ====== */
-
+/* ================= QUIZ ================= */
+/* Container geral do quiz */
 .quiz-container {
   max-width: 600px;
-  margin: 40px auto;
-  background-color: var(--cor-4); /* cinza claro */
+  margin: 40px auto 80px auto;
+  background: #f8fafa; /* fundo claro */
+  border-radius: 15px;
+  box-shadow: 0 12px 25px rgba(0, 59, 92, 0.15);
   padding: 30px 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  font-family: var(--fonte-principal);
-  color: var(--cor-1);
-}
-
-.quiz-container h1 {
-  text-align: center;
-  margin-bottom: 25px;
-  color: var(--cor-1);
-}
-
-.question {
-  margin-bottom: 25px;
-}
-
-.question p {
-  font-weight: bold;
-  margin-bottom: 12px;
-  font-size: 1.1rem;
-}
-
-.options {
-  list-style: none;
-  padding-left: 0;
-}
-
-.options li {
-  margin-bottom: 12px;
-}
-
-.options label {
-  display: block;
-  padding: 10px 15px;
-  border: 2px solid var(--cor-1);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #003B5C;
   user-select: none;
 }
 
-.options label:hover {
-  background-color: var(--cor-3); /* azul claro */
-  color: white;
+/* Cartão inicial */
+.start-card h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #003B5C;
 }
 
-.options input[type="radio"] {
-  display: none;
+.start-card p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #5a8ca6;
 }
 
-.options input[type="radio"]:checked + label {
-  background-color: var(--cor-1);
-  color: white;
-  border-color: var(--cor-1);
-}
-
-button#submit-btn {
-  background-color: var(--cor-2); /* amarelo */
+.quiz-button#start-btn {
+  background-color: #FBC02D;
   border: none;
-  padding: 12px 25px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  color: var(--cor-1);
+  padding: 16px 0;
   width: 100%;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #003B5C;
+  border-radius: 14px;
+  cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 15px;
+  box-shadow: 0 6px 18px rgba(251, 192, 45, 0.5);
+  user-select: none;
 }
 
-button#submit-btn:hover {
+.quiz-button#start-btn:hover {
   background-color: #d6ac00;
   color: white;
+  box-shadow: 0 8px 22px rgba(214, 172, 0, 0.8);
 }
 
-.result {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: var(--cor-1);
+/* Cartões das perguntas */
+.quiz-card {
+  /* já usa inline display:none no html */
+  /* só deixar a margem entre as perguntas */
+  margin-bottom: 20px;
+}
+
+/* Texto da pergunta */
+.quiz-question {
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  color: #5a8ca6;
   text-align: center;
 }
 
-/* Responsividade */
+/* Opções */
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+/* Cada label da opção */
+.quiz-options label {
+  background-color: #f9f9f9;
+  border: 2px solid #5a8ca6;
+  border-radius: 12px;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #003B5C;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(0, 59, 92, 0.1);
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+/* Espaço entre input radio e texto */
+.quiz-options input[type="radio"] {
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+/* Hover nas opções */
+.quiz-options label:hover {
+  background-color: #5a8ca6;
+  color: white;
+  border-color: #5a8ca6;
+  box-shadow: 0 6px 12px rgba(0, 59, 92, 0.2);
+}
+
+/* Quando uma opção está selecionada */
+.quiz-options input[type="radio"]:checked + label,
+.quiz-options label input[type="radio"]:checked + & {
+  background-color: #FBC02D;
+  color: #003B5C;
+  border-color: #FBC02D;
+  font-weight: 700;
+  box-shadow: 0 6px 15px rgba(251, 192, 45, 0.7);
+}
+
+/* Botão Próxima e Finalizar */
+.quiz-button.next-btn,
+.quiz-button#finish-btn {
+  background-color: #FBC02D;
+  border: none;
+  padding: 16px 0;
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #003B5C;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  box-shadow: 0 6px 18px rgba(251, 192, 45, 0.5);
+}
+
+.quiz-button.next-btn:hover,
+.quiz-button#finish-btn:hover {
+  background-color: #d6ac00;
+  color: white;
+  box-shadow: 0 8px 22px rgba(214, 172, 0, 0.8);
+}
+
+/* Desativar botão se quiser (adapte no JS) */
+.quiz-button.next-btn:disabled,
+.quiz-button#finish-btn:disabled {
+  background-color: #f0e273;
+  cursor: not-allowed;
+  color: #999;
+  box-shadow: none;
+}
+
+/* Responsivo */
 @media (max-width: 480px) {
   .quiz-container {
-    padding: 20px;
+    padding: 25px 20px;
   }
 
-  .question p {
+  .start-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .start-card p {
     font-size: 1rem;
   }
 
-  button#submit-btn {
+  .quiz-question {
+    font-size: 1.2rem;
+  }
+
+  .quiz-options label {
     font-size: 1rem;
+    padding: 14px 18px;
+  }
+
+  .quiz-button.next-btn,
+  .quiz-button#finish-btn,
+  .quiz-button#start-btn {
+    font-size: 1.1rem;
+    padding: 14px 0;
   }
 }
 
-
 /* ================= FOOTER ================= */
 footer {
-  background: #003B5C;
+  background: var(--cor-1);
   color: #fff;
   padding: 40px 20px 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -363,90 +432,48 @@ footer {
 .footer-content a {
   color: var(--cor-2);
   text-decoration: none;
+  font-weight: bold;
 }
 
 .footer-content a:hover {
   text-decoration: underline;
 }
 
-.footer-legal {
-  text-align: center;
-  font-size: 0.9rem;
-  border-top: 1px solid #555;
-  padding-top: 15px;
-  color: #ccc;
-}
-
-.footer-legal em {
+footer small {
   display: block;
-  margin-top: 8px;
-  font-style: italic;
-  color: #bbb;
+  text-align: center;
+  color: var(--cor-4);
+  margin-top: 20px;
+  font-size: 0.8rem;
 }
 
 /* ================= RESPONSIVIDADE ================= */
-@media (max-width: 720px) {
-  .footer-content {
+@media (max-width: 768px) {
+  header nav ul {
     flex-direction: column;
-    align-items: center;
   }
 
-  .footer-content > div {
-    margin: 15px 0;
-    max-width: 90%;
+  .footer-content {
+    flex-direction: column;
   }
 }
 
-/*Menu Hamburguer*/
-
-@media (max-width: 768px) {
-  #nav-menu {
-    display: none;
-    position: fixed; /* fica fixo na tela */
-    top: 0;
-    right: 0;
-    width: 100vw;  /* ocupa toda a largura da tela */
-    height: 100vh; /* ocupa toda a altura da tela */
-    background-color: rgba(0, 59, 92, 0.85); /* cor com transparência */
-    padding: 60px 20px 20px; /* espaço em cima para o botão hamburguer */
-    flex-direction: column;
-    align-items: center;
-    z-index: 9999; /* mais alto para ficar sobre tudo */
+@media (max-width: 480px) {
+  .quiz-container {
+    padding: 20px;
   }
 
-  #nav-menu.active {
-    display: flex;
+  .question-text {
+    font-size: 1.1rem;
   }
 
-  #nav-menu ul {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 300px; /* para não ficar muito largo */
-    margin: 0 auto;
+  .options label {
+    font-size: 1rem;
+    padding: 10px 14px;
   }
 
-  #nav-menu ul li {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-  #nav-menu ul li a {
-    display: block;
-    width: 100%;
-    padding: 15px 0;
-    font-size: 1.4rem;
-    color: #fff;
-    text-decoration: none;
-    border-bottom: 1px solid #ffffff55;
-    text-align: center;
-  }
-
-  .hamburguer {
-    position: fixed;
-    top: 70px;
-    right: 20px;
-    display: flex;
-    z-index: 10000; /* acima do menu */
+  #submit-btn {
+    font-size: 1rem;
+    padding: 12px 0;
   }
 }
