@@ -23,7 +23,7 @@
     <nav id="nav-menu">
       <ul>
         <li><a href="../index.html">Home</a></li>
-        <li><a href="../paginas/login.html" class="btn-login">Área do Usuário</a></li>
+        <li><a href="../paginas/login.html">Área do Usuário</a></li>
       </ul>
     </nav>
 
@@ -42,19 +42,101 @@
     </div>
   </header>
 
-  <section class="s6" id="ajuda">
-    <div class="container">
-      <img src="../src/assets/enchente2.jpg" alt="Imagem ilustrativa" />
-      <div class="texto">
-        <h2>Como Ajudamos no Dia a Dia</h2>
-        <p>
-          Você será avisado imediatamente sempre que houver risco de enchente na
-          sua região. Isso permite que tome decisões rápidas, como sair de casa
-          com antecedência ou proteger seus bens.
-        </p>
-      </div>
+  <section id="quiz" style="max-width:600px; margin: 0 auto; padding: 20px;">
+  <h2>Quiz: Segurança em Caso de Enchentes</h2>
+
+  <form id="quiz-form">
+
+    <div class="pergunta">
+      <p>1. Qual é a atitude mais importante a se tomar ao receber um alerta de enchente para sua região?</p>
+      <label><input type="radio" name="q1" value="a" required> a) Ignorar o alerta e continuar a rotina normalmente</label><br />
+      <label><input type="radio" name="q1" value="b"> b) Preparar um kit de emergência e monitorar as notícias</label><br />
+      <label><input type="radio" name="q1" value="c"> c) Sair imediatamente de casa, sem planejar nada</label><br />
+      <label><input type="radio" name="q1" value="d"> d) Esperar a enchente acontecer para tomar alguma decisão</label>
     </div>
-  </section>
+
+    <div class="pergunta">
+      <p>2. Por que é recomendado desligar a energia elétrica em caso de enchente?</p>
+      <label><input type="radio" name="q2" value="a" required> a) Para evitar curto-circuitos e risco de choque elétrico</label><br />
+      <label><input type="radio" name="q2" value="b"> b) Porque a energia para automaticamente durante enchentes</label><br />
+      <label><input type="radio" name="q2" value="c"> c) Para economizar energia durante a crise</label><br />
+      <label><input type="radio" name="q2" value="d"> d) Para proteger a internet e os aparelhos eletrônicos</label>
+    </div>
+
+    <div class="pergunta">
+      <p>3. O que você deve evitar durante uma enchente?</p>
+      <label><input type="radio" name="q3" value="a" required> a) Andar por áreas alagadas, mesmo que a água pareça rasa</label><br />
+      <label><input type="radio" name="q3" value="b"> b) Manter contato com familiares para informar sua localização</label><br />
+      <label><input type="radio" name="q3" value="c"> c) Procurar locais altos e seguros para se proteger</label><br />
+      <label><input type="radio" name="q3" value="d"> d) Ouvir as orientações das autoridades oficiais</label>
+    </div>
+
+    <div class="pergunta">
+      <p>4. Quais itens não podem faltar em um kit de emergência para enchentes?</p>
+      <label><input type="radio" name="q4" value="a" required> a) Água potável, alimentos não perecíveis, lanternas e documentos importantes</label><br />
+      <label><input type="radio" name="q4" value="b"> b) Apenas um celular carregado</label><br />
+      <label><input type="radio" name="q4" value="c"> c) Roupas de frio e guarda-chuva</label><br />
+      <label><input type="radio" name="q4" value="d"> d) Apenas alimentos perecíveis para o momento</label>
+    </div>
+
+    <div class="pergunta">
+      <p>5. Como o acúmulo de lixo nas ruas contribui para o aumento dos riscos de enchentes?</p>
+      <label><input type="radio" name="q5" value="a" required> a) Ele entope bueiros e canais de drenagem, impedindo o escoamento da água</label><br />
+      <label><input type="radio" name="q5" value="b"> b) Não tem impacto na ocorrência de enchentes</label><br />
+      <label><input type="radio" name="q5" value="c"> c) Ajuda a filtrar a água da chuva e evita enchentes</label><br />
+      <label><input type="radio" name="q5" value="d"> d) Apenas causa mau cheiro, mas não afeta a água da chuva</label>
+    </div>
+
+    <div class="pergunta">
+      <p>6. Qual é a melhor forma de agir se você estiver em uma área alagada e perceber que a água está subindo rapidamente?</p>
+      <label><input type="radio" name="q6" value="a" required> a) Permanecer no local e esperar a água baixar sozinha</label><br />
+      <label><input type="radio" name="q6" value="b"> b) Procurar um ponto alto e seguro para se abrigar imediatamente</label><br />
+      <label><input type="radio" name="q6" value="c"> c) Tentar atravessar a água a qualquer custo</label><br />
+      <label><input type="radio" name="q6" value="d"> d) Voltar para casa e esperar por ajuda</label>
+    </div>
+
+    <div class="pergunta">
+      <p>7. Por que é importante seguir as orientações das autoridades durante uma enchente?</p>
+      <label><input type="radio" name="q7" value="a" required> a) Porque elas possuem informações atualizadas e protocolos para sua segurança</label><br />
+      <label><input type="radio" name="q7" value="b"> b) Porque é uma obrigação legal</label><br />
+      <label><input type="radio" name="q7" value="c"> c) Porque as autoridades gostam de controlar as pessoas</label><br />
+      <label><input type="radio" name="q7" value="d"> d) Não é importante seguir as orientações, apenas confiar no próprio julgamento</label>
+    </div>
+
+    <button type="submit" style="margin-top:20px; padding:10px 15px; cursor:pointer;">Enviar Respostas</button>
+  </form>
+
+  <div id="resultado" style="margin-top:20px; font-weight: bold;"></div>
+
+</section>
+
+<script>
+  const respostasCorretas = {
+    q1: 'b',
+    q2: 'a',
+    q3: 'a',
+    q4: 'a',
+    q5: 'a',
+    q6: 'b',
+    q7: 'a'
+  };
+
+  document.getElementById('quiz-form').addEventListener('submit', function(event){
+    event.preventDefault();
+
+    let pontos = 0;
+    const total = Object.keys(respostasCorretas).length;
+
+    for (const [questao, correta] of Object.entries(respostasCorretas)) {
+      const resposta = this.elements[questao].value;
+      if(resposta === correta) pontos++;
+    }
+
+    const resultado = document.getElementById('resultado');
+    resultado.textContent = `Você acertou ${pontos} de ${total} perguntas.`;
+  });
+</script>
+
 
   <footer>
     <div class="footer-content">
