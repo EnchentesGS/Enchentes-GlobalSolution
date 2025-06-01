@@ -33,53 +33,72 @@
 
   <main>
     <!-- Tela de escolha -->
-    <section id="escolha-container" class="centered">
-      <h2>Você é novo aqui?</h2>
-      <p>Quer se cadastrar ou já é cadastrado?</p>
-      <button id="btn-cadastrar">Cadastrar</button>
-      <button id="btn-login">Já sou cadastrado</button>
-    </section>
+  <section id="escolha-container" class="centered">
+  <h2>Você é novo aqui?</h2>
+  <p class="descricao">Quer se cadastrar ou já é cadastrado?</p>
+
+  <div class="escolha-botoes">
+    <button id="btn-cadastrar">Cadastrar</button>
+    <button id="btn-login">Já sou cadastrado</button>
+  </div>
+</section>
+
 
     <!-- Cadastro -->
-    <section id="cadastro-container" class="centered hidden">
-      <h2>Cadastro</h2>
-      <form id="form-cadastro">
-        <label for="nome-cad">Nome:</label>
-        <input type="text" id="nome-cad" name="nome-cad" required />
 
-        <label for="email-cad">Email:</label>
-        <input type="email" id="email-cad" name="email-cad" required />
+    <!-- Cadastro -->
+<section id="cadastro-container" class="centered hidden">
+  <h2>Cadastro</h2>
+  
+  <form id="form-cadastro" class="form-cadastro-horizontal">
+    <!-- Linha 1 -->
+    <input id="nome-cad" type="text" placeholder="Nome completo" required>
+    <input id="email-cad" type="email" placeholder="Email" required>
+    
+    <!-- Linha 2 -->
+    <input id="senha-cad" type="password" placeholder="Senha" required>
+    <input id="telefone-cad" type="tel" placeholder="Telefone" required>
+    
+    <!-- Linha 3 - Endereço -->
+    <input id="rua-cad" type="text" placeholder="Rua" required>
+    <input id="numero-cad" type="text" placeholder="Número" required>
+    <input id="bairro-cad" type="text" placeholder="Bairro" required>
+    
+    <!-- Linha 4 - Cidade, Estado, CEP -->
+    <input id="cidade-cad" type="text" placeholder="Cidade" required>
+    <input id="estado-cad" type="text" placeholder="Estado" required>
+    <input id="cep-cad" type="text" placeholder="CEP" required>
 
-        <label for="senha-cad">Senha:</label>
-        <input type="password" id="senha-cad" name="senha-cad" required />
+    <!-- Botões -->
+    <div class="botoes-container">
+      <button type="button" id="voltar-escolha-cad">Voltar</button>
+      <button type="submit">Cadastrar</button>
+    </div>
+  </form>
 
-        <label for="telefone-cad">Telefone:</label>
-        <input type="tel" id="telefone-cad" name="telefone-cad" placeholder="(XX) XXXXX-XXXX" required />
+  <div id="mensagem-cadastro" class="mensagem"></div>
+</section>
 
-        <label for="endereco-cad">Endereço:</label>
-        <input type="text" id="endereco-cad" name="endereco-cad" required />
-
-        <button type="submit">Cadastrar</button>
-      </form>
-      <div id="mensagem-cadastro" class="mensagem"></div>
-      <button id="voltar-escolha-cad" style="margin-top: 20px;">Voltar</button>
-    </section>
 
     <!-- Login -->
+
     <section id="login-container" class="centered hidden">
-      <h2>Login</h2>
-      <form id="form-login">
-        <label for="email-login">Email:</label>
-        <input type="email" id="email-login" name="email-login" required />
+  <h2>Bem-vindo de volta!</h2>
+  <p class="descricao">Faça login para continuar</p>
 
-        <label for="senha-login">Senha:</label>
-        <input type="password" id="senha-login" name="senha-login" required />
+  <form id="form-login" class="form-login-vertical">
+    <input id="email-login" type="email" placeholder="Email" required>
+    <input id="senha-login" type="password" placeholder="Senha" required>
 
-        <button type="submit">Entrar</button>
-      </form>
-      <div id="mensagem" class="mensagem"></div>
-      <button id="voltar-escolha" style="margin-top: 20px;">Voltar</button>
-    </section>
+    <div class="botoes-login">
+      <button type="button" id="voltar-escolha">Voltar</button>
+      <button type="submit">Entrar</button>
+    </div>
+  </form>
+
+  <div id="mensagem-login" class="mensagem"></div>
+</section>
+
   </main>
 
   <footer>

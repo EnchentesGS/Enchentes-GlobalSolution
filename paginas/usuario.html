@@ -37,9 +37,41 @@
     <div class="user-area-container">
       <h2>Bem-vindo, <span id="nomeUsuario">[Nome do Usuário]</span></h2>
       <p>Você está logado com sucesso.</p>
+      <div class="localizacao-cadastrada">
+      <p><strong id="textoLocal">Local monitorado:</strong> <span id="localizacaoUsuario"></span></p>
+      </div>
       <button class="logout-button" id="logout-btn">Sair</button>
     </div>
   </section>
+
+  <section id="dashboard" class="dashboard">
+  <h2>Dashboard</h2>
+
+  <div class="alertas-recentes">
+  <h3>Alertas Recentes</h3>
+  <ul>
+    <li class="alerta medio">Chuvas moderadas na sua região</li>
+    <li class="alerta baixo">Nível do rio subindo</li>
+    <li class="alerta alto">Risco alto de enchente - fique atento!</li>
+  </ul>
+</div>
+
+
+  <div class="status-localizacao-container">
+  <h3>Status da Localização</h3>
+  <div class="status baixo">Sem Risco</div>
+</div>
+
+
+  <div class="mapa-interativo">
+    <h3>Mapa de Alertas Próximos</h3>
+    <div id="mapa" style="width: 100%; height: 300px; border-radius: 8px; overflow: hidden;">
+    <img src="../src/assets/mapa.jpg" alt="Mapa de alertas próximos" style="width: 100%; height: 100%; object-fit: cover;"/>
+  </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
   <footer>

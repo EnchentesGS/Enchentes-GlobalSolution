@@ -139,15 +139,22 @@ document.addEventListener("DOMContentLoaded", function () {
       const email = document.getElementById('email-cad').value.trim();
       const senha = document.getElementById('senha-cad').value.trim();
       const telefone = document.getElementById('telefone-cad').value.trim();
-      const endereco = document.getElementById('endereco-cad').value.trim();
 
-      if (!nome || !email || !senha || !telefone || !endereco) {
+      const rua = document.getElementById('rua-cad').value.trim();
+      const numero = document.getElementById('numero-cad').value.trim();
+      const bairro = document.getElementById('bairro-cad').value.trim();
+      const cidade = document.getElementById('cidade-cad').value.trim();
+      const estado = document.getElementById('estado-cad').value.trim();
+      const cep = document.getElementById('cep-cad').value.trim();
+
+      if (!nome || !email || !senha || !telefone || !rua || !numero || !bairro || !cidade || !estado || !cep) {
         mensagemCadastro.textContent = 'Por favor, preencha todos os campos.';
         mensagemCadastro.className = 'mensagem error';
         return;
       }
 
-      // ⚠️ Demonstrativo acadêmico: nunca use localStorage para armazenar dados pessoais sensíveis em produção!
+      const endereco = { rua, numero, bairro, cidade, estado, cep };
+
       const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
       const existe = usuarios.some(u => u.email === email);
 
@@ -174,44 +181,45 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Login
+
   const formLogin = document.getElementById('form-login');
-  const mensagemLogin = document.getElementById('mensagem');
+const mensagemLogin = document.getElementById('mensagem-login'); // ajuste para o id correto
 
-  if (formLogin) {
-    formLogin.addEventListener('submit', function (e) {
-      e.preventDefault();
+if (formLogin) {
+  formLogin.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const email = document.getElementById('email-login').value.trim();
+    const senha = document.getElementById('senha-login').value.trim();
 
-      const email = document.getElementById('email-login').value.trim();
-      const senha = document.getElementById('senha-login').value.trim();
+    if (!email || !senha) {
+      mensagemLogin.textContent = 'Por favor, preencha todos os campos.';
+      mensagemLogin.className = 'mensagem error';
+      return;
+    }
 
-      if (!email || !senha) {
-        mensagemLogin.textContent = 'Por favor, preencha todos os campos.';
-        mensagemLogin.className = 'mensagem error';
-        return;
-      }
+    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+    const usuarioEncontrado = usuarios.find(u => u.email === email && u.senha === senha);
 
-      const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-      const usuarioEncontrado = usuarios.find(u => u.email === email && u.senha === senha);
+    if (!usuarioEncontrado) {
+      mensagemLogin.textContent = 'Email ou senha incorretos.';
+      mensagemLogin.className = 'mensagem error';
+      return;
+    }
 
-      if (!usuarioEncontrado) {
-        mensagemLogin.textContent = 'Email ou senha incorretos.';
-        mensagemLogin.className = 'mensagem error';
-        return;
-      }
+    // Salvar nome do usuário para área privada
+    localStorage.setItem('nomeUsuario', usuarioEncontrado.nome);
 
-      // Salvar nome do usuário para área privada
-      localStorage.setItem('nomeUsuario', usuarioEncontrado.nome);
+    mensagemLogin.textContent = 'Login realizado com sucesso!';
+    mensagemLogin.className = 'mensagem sucesso';
 
-      mensagemLogin.textContent = 'Login realizado com sucesso!';
-      mensagemLogin.className = 'mensagem sucesso';
+    formLogin.reset();
 
-      formLogin.reset();
+    setTimeout(() => {
+      window.location.href = 'usuario.html';
+    }, 1000);
+  });
+}
 
-      setTimeout(() => {
-        window.location.href = 'usuario.html';
-      }, 1000);
-    });
-  }
 
   // --- ÁREA DO USUÁRIO E LOGOUT ---
   const nomeSalvo = localStorage.getItem('nomeUsuario');
@@ -239,6 +247,17 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.removeItem('nomeUsuario');
         window.location.href = 'login.html';
       });
+    }
+
+    // Exibir endereço do usuário cadastrado
+    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+    const usuarioAtual = usuarios.find(u => u.nome === nomeSalvo);
+
+    const localizacaoElement = document.getElementById('localizacaoUsuario');
+
+    if (usuarioAtual && localizacaoElement) {
+      const end = usuarioAtual.endereco;
+      localizacaoElement.textContent = `${end.rua}, ${end.numero} - ${end.bairro}, ${end.cidade} - ${end.estado}, CEP: ${end.cep}`;
     }
   }
 
