@@ -19,6 +19,11 @@ body {
   transition: background-color 0.5s ease;
 }
 
+.hidden {
+  display: none !important;
+}
+
+
 /* ================= CONTAINER PRINCIPAL ================= */
 #container {
   display: flex;
@@ -542,6 +547,191 @@ section {
   background-color: #005b89;
 }
 
+/* Estilo geral do container de cadastro */
+#cadastro-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Título */
+#cadastro-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Campos do formulário */
+#cadastro-container input[type="text"],
+#cadastro-container input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Botões */
+#cadastro-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3498db;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#cadastro-container button:hover {
+  background-color: #2980b9;
+}
+
+/* Mensagens de feedback */
+.mensagem {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.mensagem.sucesso {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.mensagem.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Botão Voltar */
+#voltar-escolha-cad {
+  margin-top: 10px;
+  background-color: #bbb;
+}
+
+#voltar-escolha-cad:hover {
+  background-color: #999;
+}
+
+/* Tela de escolha entre login e cadastro */
+#escolha-cadastro {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px 25px;
+  background-color: #ffffff;
+  border: 2px solid #5a8ca6;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 59, 92, 0.15);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#escolha-cadastro h2 {
+  margin-bottom: 20px;
+  color: #003B5C;
+}
+
+#escolha-cadastro button {
+  display: block;
+  width: 100%;
+  margin: 12px 0;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #FBC02D;
+  color: #003B5C;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#escolha-cadastro button:hover {
+  background-color: #d6ac00;
+  color: white;
+}
+
+/* Centraliza verticalmente e horizontalmente o container principal */
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  background-color: #f5f7fa;
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-width: 400px;
+  margin: 40px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Título da seção */
+#escolha-container h2 {
+  font-size: 28px;
+  color: #222;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Parágrafo de descrição */
+#escolha-container p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Botões com visual moderno e consistente */
+#escolha-container button {
+  width: 100%;
+  padding: 14px 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+}
+
+/* Botão cadastrar: verde */
+#btn-cadastrar {
+  background-color: #27ae60;
+  color: white;
+}
+
+#btn-cadastrar:hover {
+  background-color: #219150;
+  transform: scale(1.05);
+}
+
+/* Botão login: azul */
+#btn-login {
+  background-color: #2980b9;
+  color: white;
+}
+
+#btn-login:hover {
+  background-color: #216a9e;
+  transform: scale(1.05);
+}
+
+
 
 /* ================= FOOTER ================= */
 footer {
@@ -744,4 +934,45 @@ footer small {
 .logout-button:hover {
   background-color: #c9302c;
 }
+
+/* ================= LOGIN E ÁREA DO USUÁRIO ================= */
+
+/* Área do Usuário */
+.usuario-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f0f8ff; /* azul bem clarinho */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.user-area-container h2 {
+  color: #014D6F; /* azul escuro */
+  margin-bottom: 10px;
+}
+
+.user-area-container p {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.logout-button {
+  background-color: #d9534f; /* vermelho bootstrap */
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #c9302c;
+}
+
 

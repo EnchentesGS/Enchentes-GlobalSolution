@@ -4,38 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="../src/css/estilo.css" />
-  <title>Login</title>
+  <title>Login / Cadastro</title>
 </head>
 <body>
   <header>
-        <a href="./index.html">
+    <a href="./index.html">
       <img src="../src/assets/logo.png" alt="Logo" class="logo" />
     </a>
-
     <div class="titulo">
       <h1>Alerta Chuva</h1>
       <p>Sua segurança em primeiro lugar</p>
     </div>
-<div id="container">
-  <nav id="nav-menu" class="menu">
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="">Contato</a></li>
-      <li><a href="quiz.html">Quiz</a></li>
-    </ul>
-  </nav>
-
-  <div class="hamburguer" id="hamburguer">
-    <span class="barra"></span>
-    <span class="barra"></span>
-    <span class="barra"></span>
-  </div>
-</div>
-
+    <div id="container">
+      <nav id="nav-menu" class="menu">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="">Contato</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+        </ul>
+      </nav>
+      <div class="hamburguer" id="hamburguer">
+        <span class="barra"></span>
+        <span class="barra"></span>
+        <span class="barra"></span>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section class="login-container">
+    <!-- Tela inicial de escolha -->
+    <section id="escolha-container" class="centered">
+      <h2>Você é novo aqui?</h2>
+      <p>Quer se cadastrar ou já é cadastrado?</p>
+      <button id="btn-cadastrar">Cadastrar</button>
+      <button id="btn-login">Já sou cadastrado</button>
+    </section>
+
+    <!-- Formulário de Login (inicialmente escondido) -->
+    <section id="login-container" class="login-container centered hidden">
       <h2>Login</h2>
       <form id="form-login">
         <label for="nome">Nome:</label>
@@ -49,11 +55,30 @@
 
         <button type="submit">Entrar</button>
       </form>
-
       <div id="mensagem" class="mensagem"></div>
+      <button id="voltar-escolha" style="margin-top: 20px;">Voltar</button>
+    </section>
+
+    <!-- Formulário de Cadastro (inicialmente escondido) -->
+    <section id="cadastro-container" class="centered hidden">
+      <h2>Cadastro</h2>
+      <form id="form-cadastro">
+        <label for="nome-cad">Nome:</label>
+        <input type="text" id="nome-cad" name="nome-cad" required />
+
+        <label for="email-cad">Email:</label>
+        <input type="email" id="email-cad" name="email-cad" required />
+
+        <label for="endereco-cad">Endereço:</label>
+        <input type="text" id="endereco-cad" name="endereco-cad" required />
+
+        <button type="submit">Cadastrar</button>
+      </form>
+      <div id="mensagem-cadastro" class="mensagem"></div>
+      <button id="voltar-escolha-cad" style="margin-top: 20px;">Voltar</button>
     </section>
   </main>
-    
+
   <footer>
     <div class="footer-content">
       <div class="apoios">
