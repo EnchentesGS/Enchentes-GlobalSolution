@@ -35,52 +35,90 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.style.background = cor;
   };
 
-  // Quiz – só roda se os elementos existirem
+  // Quiz 
+
   const quizCards = document.querySelectorAll('.quiz-card');
-  const startBtn = document.getElementById('start-btn');
-  const finishBtn = document.getElementById('finish-btn');
-  const startCard = document.querySelector('.start-card');
-  const nextBtns = document.querySelectorAll('.next-btn');
+const startBtn = document.getElementById('start-btn');
+const finishBtn = document.getElementById('finish-btn');
+const startCard = document.querySelector('.start-card');
+const nextBtns = document.querySelectorAll('.next-btn');
+const resultadoContainer = document.querySelector('.quiz-result');
 
-  if (
-    quizCards.length > 0 &&
-    startBtn &&
-    finishBtn &&
-    startCard &&
-    nextBtns.length > 0
-  ) {
-    let currentQuestion = 0;
+if (
+  quizCards.length > 0 &&
+  startBtn &&
+  finishBtn &&
+  startCard &&
+  nextBtns.length > 0 &&
+  resultadoContainer
+) {
+  let currentQuestion = 0;
 
-    startBtn.addEventListener('click', startQuiz);
-    finishBtn.addEventListener('click', endQuiz);
-    nextBtns.forEach(btn => {
-      btn.addEventListener('click', nextQuestion);
+  startBtn.addEventListener('click', startQuiz);
+  finishBtn.addEventListener('click', endQuiz);
+  nextBtns.forEach(btn => {
+    btn.addEventListener('click', nextQuestion);
+  });
+
+  function startQuiz() {
+    startCard.style.display = 'none';
+    currentQuestion = 0;
+    showQuestion(currentQuestion);
+    document.querySelector('.quiz-container').style.display = 'block';
+    resultadoContainer.style.display = 'none';
+  }
+
+  function showQuestion(index) {
+    quizCards.forEach((card, i) => {
+      card.style.display = i === index ? 'block' : 'none';
     });
+  }
 
-    function startQuiz() {
-      startCard.style.display = 'none';
-      currentQuestion = 0;
+  function nextQuestion() {
+    if (currentQuestion < quizCards.length - 1) {
+      currentQuestion++;
       showQuestion(currentQuestion);
     }
-
-    function showQuestion(index) {
-      quizCards.forEach((card, i) => {
-        card.style.display = i === index ? 'block' : 'none';
-      });
-    }
-
-    function nextQuestion() {
-      if (currentQuestion < quizCards.length - 1) {
-        currentQuestion++;
-        showQuestion(currentQuestion);
-      }
-    }
-
-    function endQuiz() {
-      alert('Quiz finalizado! Obrigado por participar.');
-      location.reload();
-    }
   }
+
+  function endQuiz() {
+    // Esconde todas as perguntas e o container do quiz
+    quizCards.forEach(card => card.style.display = 'none');
+    document.querySelector('.quiz-container').style.display = 'none';
+
+    // Calcula quantas respostas corretas o usuário marcou
+    let totalCorrect = 0;
+
+    quizCards.forEach(card => {
+      const inputs = card.querySelectorAll('input[type="radio"]');
+      inputs.forEach(input => {
+        if (input.checked && input.dataset.correct === 'true') {
+          totalCorrect++;
+        }
+      });
+    });
+
+    // Atualiza a mensagem de resultado
+    const mensagem = resultadoContainer.querySelector('.mensagem-resultado');
+    mensagem.textContent = `Você acertou ${totalCorrect} de ${quizCards.length} perguntas!`;
+
+    // Mostra o container de resultado
+    resultadoContainer.style.display = 'block';
+  }
+
+  // Destacar opção selecionada
+  document.querySelectorAll('.quiz-options').forEach(grupo => {
+    grupo.querySelectorAll('input[type="radio"]').forEach(input => {
+      input.addEventListener('change', () => {
+        grupo.querySelectorAll('label').forEach(label => {
+          label.classList.remove('selecionado');
+        });
+        input.parentElement.classList.add('selecionado');
+      });
+    });
+  });
+}
+
 
   // --- LOGIN, CADASTRO E ÁREA DO USUÁRIO ---
 

@@ -370,14 +370,12 @@ section {
   border-radius: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  box-shadow: 0 6px 18px rgba(251, 192, 45, 0.5);
   user-select: none;
 }
 
 .quiz-button#start-btn:hover {
   background-color: #d6ac00;
   color: white;
-  box-shadow: 0 8px 22px rgba(214, 172, 0, 0.8);
 }
 
 /* Cartões das perguntas */
@@ -412,7 +410,6 @@ section {
   cursor: pointer;
   color: #003B5C;
   font-weight: 600;
-  box-shadow: 0 3px 8px rgba(0, 59, 92, 0.1);
   user-select: none;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   display: flex;
@@ -427,10 +424,9 @@ section {
 
 /* Hover nas opções */
 .quiz-options label:hover {
-  background-color: #5a8ca6;
+  background-color: var(--cor-1);
   color: white;
-  border-color: #5a8ca6;
-  box-shadow: 0 6px 12px rgba(0, 59, 92, 0.2);
+  border-color: var(--cor-1);
 }
 
 /* Quando uma opção está selecionada */
@@ -440,7 +436,32 @@ section {
   color: #003B5C;
   border-color: #FBC02D;
   font-weight: 700;
-  box-shadow: 0 6px 15px rgba(251, 192, 45, 0.7);
+}
+
+/* Esconde o botão de rádio */
+.quiz-options input[type="radio"] {
+  display: none;
+}
+
+/* Estilo base dos rótulos */
+.quiz-options label {
+  background-color: #f9f9f9;
+  border: 2px solid var(--cor-1);
+  border-radius: 12px;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #003B5C;
+  font-weight: 600;
+  transition: 0.3s;
+  display: block;
+}
+
+/* Quando selecionado */
+.quiz-options label.selecionado {
+  background-color: var(--cor-1);
+  color: white;
+  border-color: var(--cor-1);
 }
 
 /* Botão Próxima e Finalizar */
@@ -456,7 +477,6 @@ section {
   border-radius: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  box-shadow: 0 6px 18px rgba(251, 192, 45, 0.5);
   user-select: none;
 }
 
@@ -464,7 +484,6 @@ section {
 .quiz-button#finish-btn:hover {
   background-color: #d6ac00;
   color: white;
-  box-shadow: 0 8px 22px rgba(214, 172, 0, 0.8);
 }
 
 .quiz-button.next-btn:disabled {
@@ -475,12 +494,54 @@ section {
 }
 
 /* Resultado final */
-.resultado {
-  font-size: 1.5rem;
-  font-weight: 700;
+
+.quiz-result {
+  max-width: 600px;
+  margin: 40px auto 80px auto;
+  background: #f8fafa;
+  border-radius: 15px;
+  box-shadow: 0 12px 25px rgba(0, 59, 92, 0.15);
+  padding: 30px 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--cor-1);
   text-align: center;
+  user-select: none;
+}
+
+/* Título do resultado */
+.quiz-result h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-weight: 700;
   color: var(--cor-1);
 }
+
+/* Texto do resultado */
+.quiz-result p.mensagem-resultado {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #5a8ca6;
+}
+
+/* Botão Refazer */
+.quiz-result .quiz-button {
+  background-color: var(--cor-1);
+  border: none;
+  padding: 16px 0;
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.quiz-result .quiz-button:hover {
+  background-color: #004a7c; /* tom mais escuro do var(--cor-1) */
+}
+
 
 /* Responsividade quiz */
 @media (max-width: 1024px) {
