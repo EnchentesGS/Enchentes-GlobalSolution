@@ -493,6 +493,12 @@ section {
   color: #7a7a7a;
 }
 
+.quiz-button[disabled] {
+  cursor: pointer !important;
+  opacity: 0.6; 
+}
+
+
 /* Resultado final */
 
 .quiz-result {

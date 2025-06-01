@@ -35,36 +35,30 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.style.background = cor;
   };
 
-  // Quiz 
+  // Quiz
 
   const quizCards = document.querySelectorAll('.quiz-card');
 const startBtn = document.getElementById('start-btn');
-const finishBtn = document.getElementById('finish-btn');
 const startCard = document.querySelector('.start-card');
-const nextBtns = document.querySelectorAll('.next-btn');
 const resultadoContainer = document.querySelector('.quiz-result');
+const quizContainer = document.querySelector('.quiz-container');
 
 if (
   quizCards.length > 0 &&
   startBtn &&
-  finishBtn &&
   startCard &&
-  nextBtns.length > 0 &&
-  resultadoContainer
+  resultadoContainer &&
+  quizContainer
 ) {
   let currentQuestion = 0;
 
   startBtn.addEventListener('click', startQuiz);
-  finishBtn.addEventListener('click', endQuiz);
-  nextBtns.forEach(btn => {
-    btn.addEventListener('click', nextQuestion);
-  });
 
   function startQuiz() {
     startCard.style.display = 'none';
     currentQuestion = 0;
     showQuestion(currentQuestion);
-    document.querySelector('.quiz-container').style.display = 'block';
+    quizContainer.style.display = 'block';
     resultadoContainer.style.display = 'none';
   }
 
@@ -74,21 +68,53 @@ if (
     });
   }
 
-  function nextQuestion() {
-    if (currentQuestion < quizCards.length - 1) {
-      currentQuestion++;
-      showQuestion(currentQuestion);
-    }
+  function isAnswerSelected(index) {
+    const inputs = quizCards[index].querySelectorAll('input[type="radio"]');
+    return Array.from(inputs).some(input => input.checked);
   }
 
+  // Ativa botão "Próxima" quando uma alternativa for marcada
+  quizCards.forEach((card, index) => {
+    const inputs = card.querySelectorAll('input[type="radio"]');
+    const nextBtn = card.querySelector('.next-btn');
+    const finishBtn = card.querySelector('#finish-btn');
+
+    inputs.forEach(input => {
+      input.addEventListener('change', () => {
+        if (nextBtn) nextBtn.disabled = false;
+        if (finishBtn) finishBtn.disabled = false;
+      });
+    });
+
+    if (nextBtn) {
+      nextBtn.disabled = true;
+      nextBtn.addEventListener('click', () => {
+        if (!isAnswerSelected(index)) {
+          alert('Por favor, selecione uma resposta antes de continuar.');
+          return;
+        }
+        currentQuestion++;
+        showQuestion(currentQuestion);
+      });
+    }
+
+    if (finishBtn) {
+      finishBtn.disabled = true;
+      finishBtn.addEventListener('click', () => {
+        if (!isAnswerSelected(index)) {
+          alert('Por favor, selecione uma resposta antes de finalizar.');
+          return;
+        }
+        endQuiz();
+      });
+    }
+  });
+
   function endQuiz() {
-    // Esconde todas as perguntas e o container do quiz
-    quizCards.forEach(card => card.style.display = 'none');
-    document.querySelector('.quiz-container').style.display = 'none';
+    quizCards.forEach(card => (card.style.display = 'none'));
+    quizContainer.style.display = 'none';
 
-    // Calcula quantas respostas corretas o usuário marcou
     let totalCorrect = 0;
-
     quizCards.forEach(card => {
       const inputs = card.querySelectorAll('input[type="radio"]');
       inputs.forEach(input => {
@@ -98,15 +124,12 @@ if (
       });
     });
 
-    // Atualiza a mensagem de resultado
     const mensagem = resultadoContainer.querySelector('.mensagem-resultado');
     mensagem.textContent = `Você acertou ${totalCorrect} de ${quizCards.length} perguntas!`;
-
-    // Mostra o container de resultado
     resultadoContainer.style.display = 'block';
   }
 
-  // Destacar opção selecionada
+  // Destacar visualmente a opção selecionada
   document.querySelectorAll('.quiz-options').forEach(grupo => {
     grupo.querySelectorAll('input[type="radio"]').forEach(input => {
       input.addEventListener('change', () => {
