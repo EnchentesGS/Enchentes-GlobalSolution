@@ -187,6 +187,7 @@ section {
   top: 0;
   left: 0;
   z-index: 1;
+  border-radius: 0 !important;
 }
 
 .s1 .texto {
@@ -376,7 +377,7 @@ section {
   font-weight: 700;
   font-size: 1.4rem;
   margin-bottom: 25px;
-  color: #5a8ca6;
+  color: var(--cor-1);
   text-align: center;
 }
 
@@ -391,7 +392,7 @@ section {
 /* Cada label da opção */
 .quiz-options label {
   background-color: #f9f9f9;
-  border: 2px solid #5a8ca6;
+  border: 2px solid var(--cor-1);
   border-radius: 12px;
   padding: 15px 20px;
   font-size: 1.1rem;
@@ -591,6 +592,8 @@ footer {
   text-decoration: underline;
 }
 
+
+
 footer small {
   display: block;
   text-align: center;
@@ -598,6 +601,21 @@ footer small {
   margin-top: 20px;
   font-size: 0.8rem;
 }
+
+.footer-legal {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #555;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-legal p {
+  margin: 5px 0;
+  font-size: 0.85rem;
+  color: #ddd;
+}
+
 
 /* ================= RESPONSIVIDADE ================= */
 @media (max-width: 768px) {
