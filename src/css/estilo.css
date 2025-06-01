@@ -1,4 +1,7 @@
-/* ================= VARIÁVEIS E RESET ================= */
+/* =========================================== RESET E VARIÁVEIS =========================================================== */
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -24,18 +27,23 @@ body {
 }
 
 
-/* ================= CONTAINER PRINCIPAL ================= */
+
+/* =========================================== CONTAINER PRINCIPAL ========================================================= */
+
+
+
 #container {
   display: flex;
   flex-direction: column;
   min-height: 100px;
 }
 
-/* ================= HEADER ================= */
-.logo {
-  max-width: 155px;
-  height: auto;
-}
+
+
+
+/* =========================================== HEADER E NAVEGAÇÃO ========================================================= */
+
+
 
 header {
   background-color: var(--cor-1);
@@ -45,6 +53,11 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.logo {
+  max-width: 155px;
+  height: auto;
 }
 
 nav ul {
@@ -70,40 +83,108 @@ header nav ul li a:hover {
   text-decoration: underline 5px var(--cor-2);
 }
 
-.btn-login {
-  padding: 8px 16px;
-  background-color: #1976D2;
-  color: white;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+/* Responsividade do header */
+@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+  }
 }
 
-.btn-login:hover {
-  background-color: #145a9c;
-}
 
-/* --- Menu hamburguer --- */
+
+/* =========================================== MENU HAMBURGUER E RESPONSIVIDADE =========================================== */
+
+
+
 .hamburguer {
   display: none;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   width: 28px;
   height: 28px;
+  gap: 5px;
   cursor: pointer;
+  margin-top: 32px;
   z-index: 1001;
 }
 
 .hamburguer .barra {
   width: 100%;
   height: 3px;
-  background-color: white;
+  background: white;
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
+  transform-origin: center;
 }
 
-/* ================= BOTÕES DE TROCA DE TEMA ================= */
+/* Mostrar hambúrguer no mobile */
+@media (max-width: 768px) {
+  .hamburguer {
+    display: flex;
+  }
+}
+
+/* Menu responsivo */
+#nav-menu {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  #nav-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 59, 92, 0.8);
+    padding: 40px 20px;
+    z-index: 999;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #nav-menu.ativo {
+    display: flex;
+  }
+
+  #nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #nav-menu ul li {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  #nav-menu ul li:last-child {
+    border-bottom: none;
+  }
+
+  #nav-menu ul li a {
+    display: block;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em;
+  }
+}
+
+
+
+/* =========================================== BOTÕES DE TROCA DE TEMA ======================================================= */
+
+
+
 .trocar-tema-fixo {
   position: fixed;
   bottom: 20px;
@@ -126,7 +207,12 @@ header nav ul li a:hover {
 .tema-azul-medio  { background-color: #2A8BCF; }
 .tema-azul-claro  { background-color: #BBDEFB; }
 
-/* ================= SEÇÕES GERAIS ================= */
+
+
+/* =========================================== SEÇÕES GERAIS ================================================================ */
+
+
+
 section {
   height: 750px;
   position: relative;
@@ -159,15 +245,12 @@ section {
   max-width: 80%;
 }
 
-.slideshow {
-  width: 100%;
-  max-height: 750px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
 
-/* ================= SEÇÃO 1 (SLIDESHOW) ================= */
+
+/* =========================================== SEÇÃO 1 - SLIDESHOW ========================================================== */
+
+
+
 .s1 {
   height: 100vh;
   position: relative;
@@ -216,115 +299,26 @@ section {
   color: var(--cor-4);
 }
 
-/* Menu Hamburguer */
-.hamburguer {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  z-index: 1001;
-  gap: 5px;
-  margin-top: 32px;
-}
-
-.hamburguer .barra {
-  width: 100%;
-  height: 3px;
-  background-color: white;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-  transform-origin: center;
-}
-
-/* Mostrar o menu hambúrguer em telas pequenas */
+/* Responsividade da seção 1 - slideshow */
 @media (max-width: 768px) {
-  .hamburguer {
-    display: flex;
+  .s1 .texto {
+    max-width: 90%;
+    font-size: 1rem;
+    padding: 12px 15px;
   }
 }
 
-/* Estado ativo: transforma as barras em X */
-.hamburguer.ativo .barra:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
 
-.hamburguer.ativo .barra:nth-child(2) {
-  opacity: 0;
-}
 
-.hamburguer.ativo .barra:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
+/* =========================================== QUIZ ======================================================================= */
 
-/* Menu */
-#nav-menu {
-  display: flex;
-}
 
-/* Menu responsivo */
-@media (max-width: 768px) {
-  #nav-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 59, 92, 0.8); /* azul com transparência */
-    padding: 40px 20px;
-    border-radius: 0;
-    box-shadow: none;
-    z-index: 999;
-    flex-direction: column;
 
-    /* Centralizar itens */
-    justify-content: center;
-    align-items: center;
-  }
-
-  #nav-menu.ativo {
-    display: flex;
-  }
-
-  #nav-menu ul {
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    width: 100%;
-    max-width: 300px;
-  }
-
-  #nav-menu ul li {
-    width: 100%;
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* linha separadora */
-    text-align: center;
-  }
-
-  #nav-menu ul li:last-child {
-    border-bottom: none;
-  }
-
-  #nav-menu ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.3em;
-    width: 100%;
-    display: block;
-  }
-}
-
-/* ================= QUIZ ================= */
 /* Container geral do quiz */
 .quiz-container {
   max-width: 600px;
   margin: 40px auto 80px auto;
-  background: #f8fafa; /* fundo claro */
+  background: #f8fafa;
   border-radius: 15px;
   box-shadow: 0 12px 25px rgba(0, 59, 92, 0.15);
   padding: 30px 40px;
@@ -372,8 +366,6 @@ section {
 
 /* Cartões das perguntas */
 .quiz-card {
-  /* já usa inline display:none no html */
-  /* só deixar a margem entre as perguntas */
   margin-bottom: 20px;
 }
 
@@ -448,8 +440,8 @@ section {
   border-radius: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  user-select: none;
   box-shadow: 0 6px 18px rgba(251, 192, 45, 0.5);
+  user-select: none;
 }
 
 .quiz-button.next-btn:hover,
@@ -459,38 +451,48 @@ section {
   box-shadow: 0 8px 22px rgba(214, 172, 0, 0.8);
 }
 
-/* Desativar botão se quiser (adapte no JS) */
-.quiz-button.next-btn:disabled,
-.quiz-button#finish-btn:disabled {
-  background-color: #f0e273;
+.quiz-button.next-btn:disabled {
+  background-color: #d1d1d1;
   cursor: not-allowed;
-  color: #999;
   box-shadow: none;
+  color: #7a7a7a;
 }
 
-/* Responsivo */
-@media (max-width: 480px) {
+/* Resultado final */
+.resultado {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--cor-1);
+}
+
+/* Responsividade quiz */
+@media (max-width: 1024px) {
   .quiz-container {
-    padding: 25px 20px;
+    margin: 30px 20px 60px 20px;
+    padding: 25px 30px;
   }
+}
 
-  .start-card h2 {
-    font-size: 1.6rem;
+@media (max-width: 480px) {
+  header nav ul {
+    flex-direction: column;
   }
-
-  .start-card p {
-    font-size: 1rem;
+  
+  .quiz-container {
+    margin: 20px 10px 40px 10px;
+    padding: 20px;
   }
-
+  
   .quiz-question {
     font-size: 1.2rem;
   }
-
+  
   .quiz-options label {
     font-size: 1rem;
-    padding: 14px 18px;
+    padding: 12px 15px;
   }
-
+  
   .quiz-button.next-btn,
   .quiz-button#finish-btn,
   .quiz-button#start-btn {
@@ -499,241 +501,144 @@ section {
   }
 }
 
-/*Login*/
 
-.form-container {
-  max-width: 500px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #f1f1f1;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
 
-.form-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
+/*============================ Área de cadastro/login centralizada =================== */
 
-.formulario {
+
+
+main {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 160px); 
+  padding: 20px;
+  font-family: var(--fonte-principal);
+  color: var(--cor-1);
+  background-color: var(--background);
 }
 
-.formulario label {
-  margin: 10px 0 5px;
-  font-weight: bold;
-}
-
-.formulario input[type="text"],
-.formulario input[type="email"],
-.formulario input[type="password"] {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.formulario button {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #003B5C;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.formulario button:hover {
-  background-color: #005b89;
-}
-
-/* Estilo geral do container de cadastro */
-#cadastro-container {
-  max-width: 400px;
-  margin: 60px auto;
-  padding: 30px;
-  background-color: #f9f9f9;
-  border-radius: 16px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  font-family: 'Arial', sans-serif;
-}
-
-/* Título */
-#cadastro-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-/* Campos do formulário */
-#cadastro-container input[type="text"],
-#cadastro-container input[type="email"] {
+/* Containers dos formulários e escolha */
+#escolha-container,
+#cadastro-container,
+#login-container {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 12px 25px rgba(0, 59, 92, 0.15);
   width: 100%;
-  padding: 12px;
-  margin: 10px 0 20px;
-  border: 1px solid #ccc;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Títulos */
+#escolha-container h2,
+#cadastro-container h2,
+#login-container h2 {
+  margin-bottom: 20px;
+  color: var(--cor-1);
+}
+
+/* Labels e Inputs */
+form label {
+  display: block;
+  margin: 15px 0 6px 0;
+  font-weight: 600;
+  text-align: left;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="tel"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid var(--cor-3);
   border-radius: 8px;
-  font-size: 16px;
-  box-sizing: border-box;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="tel"]:focus {
+  border-color: var(--cor-2);
+  outline: none;
 }
 
 /* Botões */
-#cadastro-container button {
-  width: 100%;
-  padding: 12px;
-  background-color: #3498db;
-  color: white;
-  font-size: 16px;
+button {
+  margin-top: 25px;
+  background-color: var(--cor-2);
+  color: var(--cor-1);
+  font-weight: 700;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#cadastro-container button:hover {
-  background-color: #2980b9;
-}
-
-/* Mensagens de feedback */
-.mensagem {
-  text-align: center;
-  margin-top: 15px;
-  font-size: 14px;
-  padding: 10px;
-  border-radius: 6px;
-}
-
-.mensagem.sucesso {
-  background-color: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
-}
-
-.mensagem.error {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-}
-
-/* Botão Voltar */
-#voltar-escolha-cad {
-  margin-top: 10px;
-  background-color: #bbb;
-}
-
-#voltar-escolha-cad:hover {
-  background-color: #999;
-}
-
-/* Tela de escolha entre login e cadastro */
-#escolha-cadastro {
-  max-width: 400px;
-  margin: 80px auto;
-  padding: 30px 25px;
-  background-color: #ffffff;
-  border: 2px solid #5a8ca6;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 59, 92, 0.15);
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-#escolha-cadastro h2 {
-  margin-bottom: 20px;
-  color: #003B5C;
-}
-
-#escolha-cadastro button {
-  display: block;
+  padding: 12px 0;
   width: 100%;
-  margin: 12px 0;
-  padding: 12px;
-  font-size: 1rem;
-  font-weight: bold;
-  background-color: #FBC02D;
-  color: #003B5C;
-  border: none;
-  border-radius: 10px;
+  font-size: 1.1rem;
   cursor: pointer;
+  box-shadow: 0 6px 18px rgba(251, 192, 45, 0.5);
   transition: background-color 0.3s ease;
 }
 
-#escolha-cadastro button:hover {
+button:hover {
   background-color: #d6ac00;
   color: white;
 }
 
-/* Centraliza verticalmente e horizontalmente o container principal */
-.centered {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 60vh;
-  background-color: #f5f7fa;
-  border-radius: 12px;
-  padding: 40px 30px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  max-width: 400px;
-  margin: 40px auto;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Título da seção */
-#escolha-container h2 {
-  font-size: 28px;
-  color: #222;
-  margin-bottom: 10px;
-  font-weight: 700;
-  text-align: center;
-}
-
-/* Parágrafo de descrição */
-#escolha-container p {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-/* Botões com visual moderno e consistente */
-#escolha-container button {
-  width: 100%;
-  padding: 14px 0;
-  margin-bottom: 15px;
-  font-size: 18px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
+/* Mensagens */
+.mensagem {
+  margin-top: 15px;
+  color: #d93025; 
   font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.15s ease;
+  min-height: 24px;
 }
 
-/* Botão cadastrar: verde */
-#btn-cadastrar {
-  background-color: #27ae60;
-  color: white;
+/* Botão voltar */
+#voltar-escolha,
+#voltar-escolha-cad {
+  background-color: transparent;
+  color: var(--cor-1);
+  border: 2px solid var(--cor-1);
+  font-weight: 600;
+  margin-top: 15px;
+  width: auto;
+  padding: 8px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#btn-cadastrar:hover {
-  background-color: #219150;
-  transform: scale(1.05);
+#voltar-escolha:hover,
+#voltar-escolha-cad:hover {
+  background-color: var(--cor-1);
+  color: var(--cor-2);
 }
 
-/* Botão login: azul */
-#btn-login {
-  background-color: #2980b9;
-  color: white;
+/* Responsividade */
+@media (max-width: 480px) {
+  main {
+    padding: 15px;
+  }
+
+  #escolha-container,
+  #cadastro-container,
+  #login-container {
+    padding: 25px 20px;
+    max-width: 100%;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
 }
 
-#btn-login:hover {
-  background-color: #216a9e;
-  transform: scale(1.05);
-}
+/* =========================================== FOOTER ==================================================================== */
 
 
-
-/* ================= FOOTER ================= */
 footer {
   background: var(--cor-1);
   color: #fff;
@@ -782,8 +687,6 @@ footer {
   text-decoration: underline;
 }
 
-
-
 footer small {
   display: block;
   text-align: center;
@@ -806,283 +709,9 @@ footer small {
   color: #ddd;
 }
 
-
-/* ================= RESPONSIVIDADE ================= */
+/* RESPONSIVIDADE DO FOOTER */
 @media (max-width: 768px) {
-  header nav ul {
-    flex-direction: column;
-  }
-
   .footer-content {
     flex-direction: column;
-  }
-}
-
-@media (max-width: 480px) {
-  .quiz-container {
-    padding: 20px;
-  }
-
-  .question-text {
-    font-size: 1.1rem;
-  }
-
-  .options label {
-    font-size: 1rem;
-    padding: 10px 14px;
-  }
-
-  #submit-btn {
-    font-size: 1rem;
-    padding: 12px 0;
-  }
-}
-
-
-.login-container {
-  max-width: 320px;
-  margin: 50px auto;
-  padding: 25px 20px;
-  background-color: #eaf1f7;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 59, 92, 0.2);
-  font-family: Arial, sans-serif;
-  color: #003b5c;
-}
-
-.login-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.login-container label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 600;
-}
-
-.login-container input {
-  width: 100%;
-  padding: 10px 8px;
-  margin-bottom: 16px;
-  border: 1.8px solid #5a8ca6;
-  border-radius: 6px;
-  font-size: 1rem;
-  outline: none;
-  box-sizing: border-box;
-}
-
-.login-container input:focus {
-  border-color: #fbc02d;
-  box-shadow: 0 0 6px #fbc02d;
-}
-
-.login-container button {
-  width: 100%;
-  background-color: #fbc02d;
-  border: none;
-  padding: 12px 0;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #003b5c;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.login-container button:hover {
-  background-color: #d6ac00;
-  color: white;
-}
-
-
-/* Área do Usuário */
-.usuario-container {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #f0f8ff; /* azul bem clarinho */
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.user-area-container h2 {
-  color: #014D6F; /* azul escuro */
-  margin-bottom: 10px;
-}
-
-.user-area-container p {
-  color: #333;
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
-
-.logout-button {
-  background-color: #d9534f; /* vermelho bootstrap */
-  border: none;
-  color: white;
-  padding: 10px 25px;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.logout-button:hover {
-  background-color: #c9302c;
-}
-
-/* ================= LOGIN E ÁREA DO USUÁRIO ================= */
-
-/* Área do Usuário */
-.usuario-container {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #f0f8ff; /* azul bem clarinho */
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.user-area-container h2 {
-  color: #014D6F; /* azul escuro */
-  margin-bottom: 10px;
-}
-
-.user-area-container p {
-  color: #333;
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
-
-.logout-button {
-  background-color: #d9534f; /* vermelho bootstrap */
-  border: none;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-.logout-button:hover {
-  background-color: #c9302c;
-}
-
-/* Container do formulário de login */
-
-/* ===== Estilos para Login e Cadastro ===== */
-main section.centered {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 30px 25px;
-  background: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 87, 146, 0.15);
-  border-radius: 10px;
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
-}
-
-main section.centered h2 {
-  color: #005792;
-  margin-bottom: 15px;
-}
-
-main section.centered form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  text-align: left;
-}
-
-main section.centered label {
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #005792;
-}
-
-main section.centered input[type="text"],
-main section.centered input[type="email"],
-main section.centered input[type="password"],
-main section.centered input[type="tel"] {
-  padding: 10px 12px;
-  font-size: 1rem;
-  border: 2px solid #cbd5e1;
-  border-radius: 6px;
-  transition: border-color 0.3s ease;
-}
-
-main section.centered input[type="text"]:focus,
-main section.centered input[type="email"]:focus,
-main section.centered input[type="password"]:focus,
-main section.centered input[type="tel"]:focus {
-  border-color: #005792;
-  outline: none;
-  box-shadow: 0 0 6px rgba(0, 87, 146, 0.4);
-}
-
-main section.centered button {
-  padding: 12px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #fff;
-  background-color: #0077c2;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.25s ease;
-  margin-top: 10px;
-}
-
-main section.centered button:hover {
-  background-color: #005792;
-}
-
-main section.centered button:focus {
-  outline: 3px solid #005792;
-  outline-offset: 2px;
-}
-
-main section.centered .mensagem {
-  margin-top: 12px;
-  font-size: 0.9rem;
-  color: #d93025; /* vermelho para mensagens de erro */
-  min-height: 1.2em;
-}
-
-main section.centered #voltar-escolha,
-main section.centered #voltar-escolha-cad {
-  background-color: #e0e0e0;
-  color: #333;
-  font-weight: 600;
-  margin-top: 25px;
-}
-
-main section.centered #voltar-escolha:hover,
-main section.centered #voltar-escolha-cad:hover {
-  background-color: #c2c2c2;
-}
-
-.hidden {
-  display: none !important;
-}
-
-/* Responsividade */
-@media (max-width: 480px) {
-  main section.centered {
-    margin: 20px 15px;
-    padding: 20px;
-    max-width: 90vw;
-  }
-
-  main section.centered button {
-    font-size: 1rem;
   }
 }
