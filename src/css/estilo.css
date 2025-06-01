@@ -210,6 +210,110 @@ section {
   color: var(--cor-4);
 }
 
+/*Menu*/
+/* Menu Hamburguer */
+.hamburguer {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  z-index: 1001;
+  gap: 5px;
+  margin-top: 32px;
+}
+
+.hamburguer .barra {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Mostrar o menu hambúrguer em telas pequenas */
+@media (max-width: 768px) {
+  .hamburguer {
+    display: flex;
+  }
+}
+
+/* Estado ativo: transforma as barras em X */
+.hamburguer.ativo .barra:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburguer.ativo .barra:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburguer.ativo .barra:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Menu */
+#nav-menu {
+  display: flex;
+}
+
+/* Menu responsivo */
+@media (max-width: 768px) {
+  #nav-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 59, 92, 0.8); /* azul com transparência */
+    padding: 40px 20px;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 999;
+    flex-direction: column;
+
+    /* Centralizar itens */
+    justify-content: center;
+    align-items: center;
+  }
+
+  #nav-menu.ativo {
+    display: flex;
+  }
+
+  #nav-menu ul {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  #nav-menu ul li {
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* linha separadora */
+    text-align: center;
+  }
+
+  #nav-menu ul li:last-child {
+    border-bottom: none;
+  }
+
+  #nav-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em;
+    width: 100%;
+    display: block;
+  }
+}
+
 /* ================= QUIZ ================= */
 /* Container geral do quiz */
 .quiz-container {
