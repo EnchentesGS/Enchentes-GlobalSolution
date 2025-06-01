@@ -975,4 +975,114 @@ footer small {
   background-color: #c9302c;
 }
 
+/* Container do formulário de login */
 
+/* ===== Estilos para Login e Cadastro ===== */
+main section.centered {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 87, 146, 0.15);
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+main section.centered h2 {
+  color: #005792;
+  margin-bottom: 15px;
+}
+
+main section.centered form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+main section.centered label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #005792;
+}
+
+main section.centered input[type="text"],
+main section.centered input[type="email"],
+main section.centered input[type="password"],
+main section.centered input[type="tel"] {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+main section.centered input[type="text"]:focus,
+main section.centered input[type="email"]:focus,
+main section.centered input[type="password"]:focus,
+main section.centered input[type="tel"]:focus {
+  border-color: #005792;
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 87, 146, 0.4);
+}
+
+main section.centered button {
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: #0077c2;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  margin-top: 10px;
+}
+
+main section.centered button:hover {
+  background-color: #005792;
+}
+
+main section.centered button:focus {
+  outline: 3px solid #005792;
+  outline-offset: 2px;
+}
+
+main section.centered .mensagem {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #d93025; /* vermelho para mensagens de erro */
+  min-height: 1.2em;
+}
+
+main section.centered #voltar-escolha,
+main section.centered #voltar-escolha-cad {
+  background-color: #e0e0e0;
+  color: #333;
+  font-weight: 600;
+  margin-top: 25px;
+}
+
+main section.centered #voltar-escolha:hover,
+main section.centered #voltar-escolha-cad:hover {
+  background-color: #c2c2c2;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  main section.centered {
+    margin: 20px 15px;
+    padding: 20px;
+    max-width: 90vw;
+  }
+
+  main section.centered button {
+    font-size: 1rem;
+  }
+}

@@ -137,15 +137,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const nome = document.getElementById('nome-cad').value.trim();
       const email = document.getElementById('email-cad').value.trim();
+      const senha = document.getElementById('senha-cad').value.trim();
+      const telefone = document.getElementById('telefone-cad').value.trim();
       const endereco = document.getElementById('endereco-cad').value.trim();
 
-      if (!nome || !email || !endereco) {
+      if (!nome || !email || !senha || !telefone || !endereco) {
         mensagemCadastro.textContent = 'Por favor, preencha todos os campos.';
         mensagemCadastro.className = 'mensagem error';
         return;
       }
 
-      // Verificar se o email já está cadastrado
+      // ⚠️ Demonstrativo acadêmico: nunca use localStorage para armazenar dados pessoais sensíveis em produção!
       const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
       const existe = usuarios.some(u => u.email === email);
 
@@ -155,8 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      // Adicionar novo usuário
-      usuarios.push({ nome, email, endereco });
+      usuarios.push({ nome, email, senha, telefone, endereco });
       localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
       mensagemCadastro.textContent = 'Cadastro realizado com sucesso! Agora faça login.';
@@ -164,7 +165,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       formCadastro.reset();
 
-      // Após 2 segundos, ir para tela de login
       setTimeout(() => {
         cadastroContainer.classList.add('hidden');
         loginContainer.classList.remove('hidden');
@@ -181,43 +181,32 @@ document.addEventListener("DOMContentLoaded", function () {
     formLogin.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      const nome = document.getElementById('nome').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const endereco = document.getElementById('endereco').value.trim();
+      const email = document.getElementById('email-login').value.trim();
+      const senha = document.getElementById('senha-login').value.trim();
 
-      if (!nome || !email || !endereco) {
+      if (!email || !senha) {
         mensagemLogin.textContent = 'Por favor, preencha todos os campos.';
         mensagemLogin.className = 'mensagem error';
         return;
       }
 
       const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-      const usuarioEncontrado = usuarios.find(u => u.email === email);
+      const usuarioEncontrado = usuarios.find(u => u.email === email && u.senha === senha);
 
       if (!usuarioEncontrado) {
-        mensagemLogin.textContent = 'Usuário não encontrado. Cadastre-se primeiro.';
+        mensagemLogin.textContent = 'Email ou senha incorretos.';
         mensagemLogin.className = 'mensagem error';
         return;
       }
 
-      if (
-        usuarioEncontrado.nome !== nome ||
-        usuarioEncontrado.endereco !== endereco
-      ) {
-        mensagemLogin.textContent = 'Dados incorretos. Tente novamente.';
-        mensagemLogin.className = 'mensagem error';
-        return;
-      }
-
-      // Login bem-sucedido: salvar o nome do usuário para uso na área do usuário
-      localStorage.setItem('nomeUsuario', nome);
+      // Salvar nome do usuário para área privada
+      localStorage.setItem('nomeUsuario', usuarioEncontrado.nome);
 
       mensagemLogin.textContent = 'Login realizado com sucesso!';
       mensagemLogin.className = 'mensagem sucesso';
 
       formLogin.reset();
 
-      // Redirecionar para área do usuário
       setTimeout(() => {
         window.location.href = 'usuario.html';
       }, 1000);
@@ -225,8 +214,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // --- ÁREA DO USUÁRIO E LOGOUT ---
-  // Apenas mudamos aqui para garantir que funciona corretamente:
-
   const nomeSalvo = localStorage.getItem('nomeUsuario');
   const botaoSair = document.getElementById('logout-btn');
   const nomeUsuarioSpan = document.getElementById('nomeUsuario');
@@ -255,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Se estiver na página de login, redireciona se já estiver logado
+  // Redireciona para a área do usuário se já estiver logado e tentar acessar login.html
   if (window.location.href.includes('login.html') && nomeSalvo) {
     window.location.href = 'usuario.html';
     return;
