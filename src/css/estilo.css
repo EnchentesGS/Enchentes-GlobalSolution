@@ -210,7 +210,6 @@ section {
   color: var(--cor-4);
 }
 
-/*Menu*/
 /* Menu Hamburguer */
 .hamburguer {
   display: none;
@@ -494,6 +493,55 @@ section {
   }
 }
 
+/*Login*/
+
+.form-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario input[type="password"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.formulario button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #003B5C;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.formulario button:hover {
+  background-color: #005b89;
+}
+
+
 /* ================= FOOTER ================= */
 footer {
   background: var(--cor-1);
@@ -581,3 +629,101 @@ footer small {
     padding: 12px 0;
   }
 }
+
+
+.login-container {
+  max-width: 320px;
+  margin: 50px auto;
+  padding: 25px 20px;
+  background-color: #eaf1f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 59, 92, 0.2);
+  font-family: Arial, sans-serif;
+  color: #003b5c;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px 8px;
+  margin-bottom: 16px;
+  border: 1.8px solid #5a8ca6;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.login-container input:focus {
+  border-color: #fbc02d;
+  box-shadow: 0 0 6px #fbc02d;
+}
+
+.login-container button {
+  width: 100%;
+  background-color: #fbc02d;
+  border: none;
+  padding: 12px 0;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #003b5c;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+  background-color: #d6ac00;
+  color: white;
+}
+
+
+/* Área do Usuário */
+.usuario-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f0f8ff; /* azul bem clarinho */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.user-area-container h2 {
+  color: #014D6F; /* azul escuro */
+  margin-bottom: 10px;
+}
+
+.user-area-container p {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.logout-button {
+  background-color: #d9534f; /* vermelho bootstrap */
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #c9302c;
+}
+

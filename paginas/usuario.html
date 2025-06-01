@@ -2,58 +2,40 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../src/css/estilo.css" />
-  <title>Login</title>
+  <title>Área do Usuário</title>
 </head>
 <body>
   <header>
-        <a href="./index.html">
+    <a href="./index.html">
       <img src="../src/assets/logo.png" alt="Logo" class="logo" />
     </a>
-
-    <div class="titulo">
-      <h1>Alerta Chuva</h1>
-      <p>Sua segurança em primeiro lugar</p>
+    <div id="container">
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./quiz.html">Quiz</a></li>
+        </ul>
+      </nav>
     </div>
-<div id="container">
-  <nav id="nav-menu" class="menu">
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="">Contato</a></li>
-      <li><a href="paginas/quiz.html">Quiz</a></li>
-    </ul>
-  </nav>
-
-  <div class="hamburguer" id="hamburguer">
-    <span class="barra"></span>
-    <span class="barra"></span>
-    <span class="barra"></span>
-  </div>
-</div>
-
+    <div class="trocar-tema">
+      <button onclick="trocar('#014D6F')" class="tema-azul-escuro"></button>
+      <button onclick="trocar('#2A8BCF')" class="tema-azul-medio"></button>
+      <button onclick="trocar('#BBDEFB')" class="tema-azul-claro"></button>
+    </div>
   </header>
 
-  <main>
-    <section class="login-container">
-      <h2>Login</h2>
-      <form id="form-login">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required />
+    <main>
+  <section class="usuario-container">
+    <div class="user-area-container">
+      <h2>Bem-vindo, <span id="nomeUsuario">[Nome do Usuário]</span></h2>
+      <p>Você está logado com sucesso.</p>
+      <button class="logout-button" id="logout-btn">Sair</button>
+    </div>
+  </section>
+</main>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="endereco">Endereço:</label>
-        <input type="text" id="endereco" name="endereco" required />
-
-        <button type="submit">Entrar</button>
-      </form>
-
-      <div id="mensagem" class="mensagem"></div>
-    </section>
-  </main>
-    
   <footer>
     <div class="footer-content">
       <div class="apoios">
