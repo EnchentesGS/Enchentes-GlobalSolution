@@ -545,7 +545,7 @@ section {
 }
 
 .quiz-result .quiz-button:hover {
-  background-color: #004a7c; /* tom mais escuro do var(--cor-1) */
+  background-color: #004a7c; 
 }
 
 
@@ -599,8 +599,7 @@ main {
   font-family: var(--fonte-principal);
   color: var(--cor-1);
   background-color: var(--background);
-  /* adicione para evitar que o conteúdo estique */
-  flex-direction: column; /* ou mantenha como row, depende do layout */
+  flex-direction: column; 
 }
 
 /*======================Escolha==================*/
@@ -613,7 +612,7 @@ main {
   box-shadow: 0 12px 25px rgba(0, 59, 92, 0.15);
   max-width: 400px;
   width: 100%;
-  max-height: fit-content; /* para não esticar além do conteúdo */
+  max-height: fit-content; 
   box-sizing: border-box;
   text-align: center;
   margin: 0 auto;
@@ -682,13 +681,12 @@ main {
   background: white;
   padding: 40px 30px;
   border-radius: 15px;
-  box-shadow: 0 12px 25px rgba(0, 59, 92, 0.15);
   max-width: 400px;
   width: 100%;
-  max-height: fit-content; /* para não esticar além do conteúdo */
+  max-height: fit-content; 
   box-sizing: border-box;
   text-align: center;
-  margin: 0 auto; /* centralizar horizontalmente */
+  margin: 0 auto; 
 }
 
 /* Título */
@@ -779,7 +777,6 @@ main {
   background: white;
   padding: 40px;
   border-radius: 15px;
-  box-shadow: 0 12px 25px rgba(0, 59, 92, 0.15);
   max-width: 400px;
   width: 100%;
   text-align: center;
@@ -840,7 +837,6 @@ main {
 .botoes-container button[type="submit"] {
   background-color: var(--cor-2);
   color: var(--cor-1);
-  box-shadow: 0 6px 18px rgba(251, 192, 45, 0.5);
 }
 
 .botoes-container button[type="submit"]:hover {
@@ -864,7 +860,7 @@ main {
 /* Mensagem */
 .mensagem {
   margin-top: 20px;
-  color: #d93025;
+  color: var(--cor-1);
   font-weight: 600;
   min-height: 24px;
 }
