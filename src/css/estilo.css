@@ -691,7 +691,6 @@ main {
   margin: 0 auto; /* centralizar horizontalmente */
 }
 
-
 /* Título */
 #login-container h2 {
   font-size: 1.8rem;
@@ -764,7 +763,6 @@ main {
   background-color: var(--cor-2);
   color: var(--cor-1);
   border: none;
-  box-shadow: 0 6px 18px rgba(251, 192, 45, 0.5);
 }
 
 #form-login button[type="submit"]:hover {
@@ -892,39 +890,118 @@ main {
 
 /*====================================== Area do Usuario =====================================================*/
 
+.usuario-container {
+  flex: 0 0 280px;
+  display: flex;
+  flex-direction: column;
+  /* já tem */
+  background-color: #e6f6fb;
+  padding: 20px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  min-width: 280px; /* força largura mínima */
+}
+
+
+.usuario-info {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  color: #014D6F;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.usuario-info h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.usuario-info p {
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+.localizacao-cadastrada p {
+  font-weight: 600;
+  margin-top: 20px;
+  color: #014D6F;
+}
+
+.logout-button {
+  margin-top: 25px;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background-color: #f44336;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #c62828;
+}
+
+.layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.usuario-container {
+  width: 300px;
+  flex-shrink: 0;
+}
+
 .dashboard {
+  flex: 1;
+}
+
+
+
+.dashboard {
+  flex: 1;                    /* ocupa o espaço restante */
   display: flex;
   flex-direction: column;
   gap: 25px;
-  padding: 25px 30px;
-  max-width: 720px;
-  margin: 30px auto;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-sizing: border-box;
 }
 
 .dashboard h2 {
   text-align: center;
   color: #014D6F;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
 }
 
+/* ================= ALERTAS RECENTES ================= */
+
 .alertas-recentes {
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 15px;
-  background-color: #fafafa;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 100%;
+  padding: 20px;
+  background-color: #f0f8ff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .alertas-recentes h3 {
   color: #014D6F;
-  font-weight: bold;
-  margin-bottom: 12px;
-  text-align: center;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-align: left;
+  font-size: 1.2rem;
 }
 
 .alertas-recentes ul {
@@ -934,70 +1011,74 @@ main {
 }
 
 .alertas-recentes li {
-  padding: 10px 14px;
-  border-radius: 8px;
+  padding: 12px 16px;
+  border-radius: 10px;
   color: white;
   font-weight: 600;
   margin-bottom: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  font-size: 0.95rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
 }
 
-/* cores dos alertas */
 .alerta.baixo {
-  background-color: #4caf50; /* verde */
+  background-color: #4caf50;
 }
 
 .alerta.medio {
-  background-color: #ff9800; /* laranja */
+  background-color: #ff9800;
 }
 
 .alerta.alto {
-  background-color: #f44336; /* vermelho */
+  background-color: #f44336;
 }
 
+/* ================= STATUS DE LOCALIZAÇÃO ================= */
 
 .status-localizacao-container {
-  max-width: 300px;
-  margin: 20px auto;
-  padding: 15px;
-  background-color: #def3fa; /* azul claro suave */
-  border-radius: 10px;
+  width: 100%;
+  padding: 20px;
+  background-color: #e6f6fb;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(1, 77, 111, 0.15);
+  box-shadow: 0 2px 8px rgba(1, 77, 111, 0.08);
 }
 
 .status-localizacao-container h3 {
   color: #014D6F;
-  margin-bottom: 10px;
-  font-weight: bold;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .status {
-  padding: 10px 0;
-  border-radius: 8px;
+  padding: 12px 0;
+  border-radius: 10px;
   color: white;
   font-weight: bold;
+  font-size: 1rem;
 }
 
-/* cores básicas do status */
 .status.baixo {
-  background-color: #4caf50; /* verde */
+  background-color: #4caf50;
 }
 
 .status.atencao {
-  background-color: #ff9800; /* laranja */
+  background-color: #ff9800;
 }
 
 .status.alto {
-  background-color: #f44336; /* vermelho */
+  background-color: #f44336;
 }
 
+/* ================= MAPA ================= */
+
 .mapa-interativo {
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
-  height: 320px; /* altura fixa para o mapa */
+  height: 320px;
+  background-color: #f0f0f0;
 }
 
 .mapa-interativo img {
@@ -1005,7 +1086,19 @@ main {
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 12px;
+}
+
+/* ================= ANIMAÇÃO SUAVE ================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
