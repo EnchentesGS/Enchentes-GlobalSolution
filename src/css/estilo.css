@@ -589,6 +589,7 @@ section {
 /*============================ Área de cadastro/login centralizada =================== */
 
 /* Container principal */
+
 main {
   display: flex;
   justify-content: center;
@@ -598,9 +599,11 @@ main {
   font-family: var(--fonte-principal);
   color: var(--cor-1);
   background-color: var(--background);
+  /* adicione para evitar que o conteúdo estique */
+  flex-direction: column; /* ou mantenha como row, depende do layout */
 }
 
-/*============================ Escolha =========================================*/
+/*======================Escolha==================*/
 
 /* Container centralizado da escolha */
 #escolha-container {
@@ -610,8 +613,12 @@ main {
   box-shadow: 0 12px 25px rgba(0, 59, 92, 0.15);
   max-width: 400px;
   width: 100%;
+  max-height: fit-content; /* para não esticar além do conteúdo */
+  box-sizing: border-box;
   text-align: center;
+  margin: 0 auto;
 }
+
 
 /* Título */
 #escolha-container h2 {
@@ -649,7 +656,6 @@ main {
 #btn-cadastrar {
   background-color: var(--cor-2);
   color: var(--cor-1);
-  box-shadow: 0 6px 18px rgba(251, 192, 45, 0.5);
 }
 
 #btn-cadastrar:hover {
@@ -679,8 +685,12 @@ main {
   box-shadow: 0 12px 25px rgba(0, 59, 92, 0.15);
   max-width: 400px;
   width: 100%;
+  max-height: fit-content; /* para não esticar além do conteúdo */
+  box-sizing: border-box;
   text-align: center;
+  margin: 0 auto; /* centralizar horizontalmente */
 }
+
 
 /* Título */
 #login-container h2 {
