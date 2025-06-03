@@ -1,13 +1,13 @@
 /* =========================================== RESET E VARIÁVEIS =========================================================== */
-
-
-
+ 
+ 
+ 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+ 
 :root {
   --cor-1: #003B5C;
   --cor-2: #FBC02D;
@@ -17,35 +17,35 @@
   --background: #F8FAFC;
   --fonte-principal: 'Arial', sans-serif;
 }
-
+ 
 body {
   background-color: var(--background);
   transition: background-color 0.5s ease;
 }
-
+ 
 .hidden {
   display: none !important;
 }
-
-
-
+ 
+ 
+ 
 /* =========================================== CONTAINER PRINCIPAL ========================================================= */
-
-
-
+ 
+ 
+ 
 #container {
   display: flex;
   flex-direction: column;
   min-height: 100px;
 }
-
-
-
-
+ 
+ 
+ 
+ 
 /* =========================================== HEADER E NAVEGAÇÃO ========================================================= */
-
-
-
+ 
+ 
+ 
 header {
   background-color: var(--cor-1);
   color: #fff;
@@ -55,48 +55,48 @@ header {
   align-items: center;
   flex-wrap: wrap;
 }
-
+ 
 .logo {
   max-width: 155px;
   height: auto;
 }
-
+ 
 nav ul {
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
-
+ 
 header nav ul {
   padding: 28px 20px;
   margin: 10px 0;
   display: flex;
 }
-
+ 
 header nav ul li a {
   color: #fff;
   text-transform: uppercase;
   padding: 5px 10px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
+ 
 header nav ul li a:hover {
   text-decoration: underline 5px var(--cor-2);
 }
-
+ 
 /* Responsividade do header */
 @media (max-width: 768px) {
   header nav ul {
     flex-direction: column;
   }
 }
-
-
-
+ 
+ 
+ 
 /* =========================================== MENU HAMBURGUER E RESPONSIVIDADE =========================================== */
-
-
-
+ 
+ 
+ 
 .hamburguer {
   display: none;
   flex-direction: column;
@@ -109,7 +109,7 @@ header nav ul li a:hover {
   margin-top: 32px;
   z-index: 1001;
 }
-
+ 
 .hamburguer .barra {
   width: 100%;
   height: 3px;
@@ -118,19 +118,19 @@ header nav ul li a:hover {
   transition: 0.3s ease;
   transform-origin: center;
 }
-
+ 
 /* Mostrar hambúrguer no mobile */
 @media (max-width: 768px) {
   .hamburguer {
     display: flex;
   }
 }
-
+ 
 /* Menu responsivo */
 #nav-menu {
   display: flex;
 }
-
+ 
 @media (max-width: 768px) {
   #nav-menu {
     display: none;
@@ -144,11 +144,11 @@ header nav ul li a:hover {
     justify-content: center;
     align-items: center;
   }
-
+ 
   #nav-menu.ativo {
     display: flex;
   }
-
+ 
   #nav-menu ul {
     list-style: none;
     margin: 0;
@@ -159,18 +159,18 @@ header nav ul li a:hover {
     flex-direction: column;
     align-items: center;
   }
-
+ 
   #nav-menu ul li {
     width: 100%;
     padding: 15px 0;
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   }
-
+ 
   #nav-menu ul li:last-child {
     border-bottom: none;
   }
-
+ 
   #nav-menu ul li a {
     display: block;
     width: 100%;
@@ -179,13 +179,13 @@ header nav ul li a:hover {
     font-size: 1.3em;
   }
 }
-
-
-
+ 
+ 
+ 
 /* =========================================== BOTÕES DE TROCA DE TEMA ======================================================= */
-
-
-
+ 
+ 
+ 
 .trocar-tema-fixo {
   position: fixed;
   bottom: 20px;
@@ -194,7 +194,7 @@ header nav ul li a:hover {
   gap: 10px;
   z-index: 1000;
 }
-
+ 
 .trocar-tema-fixo button {
   width: 20px;
   height: 20px;
@@ -203,7 +203,7 @@ header nav ul li a:hover {
   cursor: pointer;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
-
+ 
 /* Cores fixas */
 .tema-azul-escuro {
   background-color: #014D6F;
@@ -214,7 +214,7 @@ header nav ul li a:hover {
 .tema-azul-claro {
   background-color: #BBDEFB;
 }
-
+ 
 /* Impede mudança de cor no hover */
 .tema-azul-escuro:hover {
   background-color: #014D6F;
@@ -225,32 +225,32 @@ header nav ul li a:hover {
 .tema-azul-claro:hover {
   background-color: #BBDEFB;
 }
-
-
-
+ 
+ 
+ 
 /* =========================================== SEÇÕES GERAIS ================================================================ */
-
-
-
+ 
+ 
+ 
 section {
   height: 750px;
   position: relative;
   overflow: hidden;
 }
-
+ 
 .container {
   position: relative;
   width: 100%;
   height: 100%;
 }
-
+ 
 .container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-
+ 
 .container .texto {
   position: absolute;
   top: 50%;
@@ -263,19 +263,19 @@ section {
   text-align: center;
   max-width: 80%;
 }
-
-
-
+ 
+ 
+ 
 /* =========================================== SEÇÃO 1 - SLIDESHOW ========================================================== */
-
-
-
+ 
+ 
+ 
 .s1 {
   height: 100vh;
   position: relative;
   overflow: hidden;
 }
-
+ 
 .s1 .container {
   width: 100%;
   height: 100%;
@@ -285,7 +285,7 @@ section {
   align-items: center;
   z-index: 2;
 }
-
+ 
 .slideshow {
   width: 100%;
   height: 100%;
@@ -296,7 +296,7 @@ section {
   z-index: 1;
   border-radius: 0 !important;
 }
-
+ 
 .s1 .texto {
   background-color: rgba(0, 59, 92, 0.7);
   padding: 20px;
@@ -307,17 +307,17 @@ section {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   z-index: 2;
 }
-
+ 
 .s1 .texto h2 {
   font-size: 2.2rem;
   margin-bottom: 10px;
 }
-
+ 
 .s1 .texto p {
   font-size: 1.1rem;
   color: var(--cor-4);
 }
-
+ 
 /* Responsividade da seção 1 - slideshow */
 @media (max-width: 768px) {
   .s1 .texto {
@@ -326,13 +326,13 @@ section {
     padding: 12px 15px;
   }
 }
-
-
-
+ 
+ 
+ 
 /* =========================================== QUIZ ======================================================================= */
-
-
-
+ 
+ 
+ 
 /* Container geral do quiz */
 .quiz-container {
   max-width: 600px;
@@ -345,7 +345,7 @@ section {
   color: #003B5C;
   user-select: none;
 }
-
+ 
 /* Cartão inicial */
 .start-card h2 {
   font-size: 2rem;
@@ -354,14 +354,14 @@ section {
   font-weight: 700;
   color: #003B5C;
 }
-
+ 
 .start-card p {
   font-size: 1.2rem;
   margin-bottom: 30px;
   text-align: center;
   color: #5a8ca6;
 }
-
+ 
 .quiz-button#start-btn {
   background-color: #FBC02D;
   border: none;
@@ -375,17 +375,17 @@ section {
   transition: background-color 0.3s ease;
   user-select: none;
 }
-
+ 
 .quiz-button#start-btn:hover {
   background-color: #d6ac00;
   color: white;
 }
-
+ 
 /* Cartões das perguntas */
 .quiz-card {
   margin-bottom: 20px;
 }
-
+ 
 /* Texto da pergunta */
 .quiz-question {
   font-weight: 700;
@@ -394,7 +394,7 @@ section {
   color: var(--cor-1);
   text-align: center;
 }
-
+ 
 /* Opções */
 .quiz-options {
   display: flex;
@@ -402,7 +402,7 @@ section {
   gap: 15px;
   margin-bottom: 30px;
 }
-
+ 
 /* Cada label da opção */
 .quiz-options label {
   background-color: #f9f9f9;
@@ -418,20 +418,20 @@ section {
   display: flex;
   align-items: center;
 }
-
+ 
 /* Espaço entre input radio e texto */
 .quiz-options input[type="radio"] {
   margin-right: 12px;
   cursor: pointer;
 }
-
+ 
 /* Hover nas opções */
 .quiz-options label:hover {
   background-color: var(--cor-1);
   color: white;
   border-color: var(--cor-1);
 }
-
+ 
 /* Quando uma opção está selecionada */
 .quiz-options input[type="radio"]:checked + label,
 .quiz-options label input[type="radio"]:checked + & {
@@ -440,12 +440,12 @@ section {
   border-color: #FBC02D;
   font-weight: 700;
 }
-
+ 
 /* Esconde o botão de rádio */
 .quiz-options input[type="radio"] {
   display: none;
 }
-
+ 
 /* Estilo base dos rótulos */
 .quiz-options label {
   background-color: #f9f9f9;
@@ -459,14 +459,14 @@ section {
   transition: 0.3s;
   display: block;
 }
-
+ 
 /* Quando selecionado */
 .quiz-options label.selecionado {
   background-color: var(--cor-1);
   color: white;
   border-color: var(--cor-1);
 }
-
+ 
 /* Botão Próxima e Finalizar */
 .quiz-button.next-btn,
 .quiz-button#finish-btn {
@@ -482,28 +482,28 @@ section {
   transition: background-color 0.3s ease;
   user-select: none;
 }
-
+ 
 .quiz-button.next-btn:hover,
 .quiz-button#finish-btn:hover {
   background-color: #d6ac00;
   color: white;
 }
-
+ 
 .quiz-button.next-btn:disabled {
   background-color: #d1d1d1;
   cursor: not-allowed;
   box-shadow: none;
   color: #7a7a7a;
 }
-
+ 
 .quiz-button[disabled] {
   cursor: pointer !important;
-  opacity: 0.6; 
+  opacity: 0.6;
 }
-
-
+ 
+ 
 /* Resultado final */
-
+ 
 .quiz-result {
   max-width: 600px;
   margin: 40px auto 80px auto;
@@ -516,7 +516,7 @@ section {
   text-align: center;
   user-select: none;
 }
-
+ 
 /* Título do resultado */
 .quiz-result h2 {
   font-size: 2rem;
@@ -524,14 +524,14 @@ section {
   font-weight: 700;
   color: var(--cor-1);
 }
-
+ 
 /* Texto do resultado */
 .quiz-result p.mensagem-resultado {
   font-size: 1.2rem;
   margin-bottom: 30px;
   color: #5a8ca6;
 }
-
+ 
 /* Botão Refazer */
 .quiz-result .quiz-button {
   background-color: var(--cor-1);
@@ -546,12 +546,12 @@ section {
   transition: background-color 0.3s ease;
   user-select: none;
 }
-
+ 
 .quiz-result .quiz-button:hover {
-  background-color: #004a7c; 
+  background-color: #004a7c;
 }
-
-
+ 
+ 
 /* Responsividade quiz */
 @media (max-width: 1024px) {
   .quiz-container {
@@ -559,26 +559,26 @@ section {
     padding: 25px 30px;
   }
 }
-
+ 
 @media (max-width: 480px) {
   header nav ul {
     flex-direction: column;
   }
-  
+ 
   .quiz-container {
     margin: 20px 10px 40px 10px;
     padding: 20px;
   }
-  
+ 
   .quiz-question {
     font-size: 1.2rem;
   }
-  
+ 
   .quiz-options label {
     font-size: 1rem;
     padding: 12px 15px;
   }
-  
+ 
   .quiz-button.next-btn,
   .quiz-button#finish-btn,
   .quiz-button#start-btn {
@@ -586,15 +586,15 @@ section {
     padding: 14px 0;
   }
 }
-
-
-
+ 
+ 
+ 
 /*============================ Área de cadastro/login centralizada =================== */
-
-
-
+ 
+ 
+ 
 /* Container principal */
-
+ 
 main {
   display: flex;
   justify-content: center;
@@ -604,13 +604,13 @@ main {
   font-family: var(--fonte-principal);
   color: var(--cor-1);
   background-color: var(--background);
-  flex-direction: column; 
+  flex-direction: column;
 }
-
-
+ 
+ 
 /*======================Escolha==================*/
-
-
+ 
+ 
 /* Container centralizado da escolha */
 #escolha-container {
   background: white;
@@ -619,34 +619,34 @@ main {
   box-shadow: 0 12px 25px rgba(0, 59, 92, 0.15);
   max-width: 400px;
   width: 100%;
-  max-height: fit-content; 
+  max-height: fit-content;
   box-sizing: border-box;
   text-align: center;
   margin: 0 auto;
 }
-
-
+ 
+ 
 /* Título */
 #escolha-container h2 {
   font-size: 1.8rem;
   color: var(--cor-1);
   margin-bottom: 15px;
 }
-
+ 
 /* Texto de apoio */
 #escolha-container .descricao {
   font-size: 1rem;
   color: var(--cor-3);
   margin-bottom: 30px;
 }
-
+ 
 /* Botões de ação */
 .escolha-botoes {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-
+ 
 /* Estilo dos botões */
 .escolha-botoes button {
   padding: 12px;
@@ -657,34 +657,34 @@ main {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
+ 
 /* Botão cadastrar */
 #btn-cadastrar {
   background-color: var(--cor-2);
   color: var(--cor-1);
 }
-
+ 
 #btn-cadastrar:hover {
   background-color: #d6ac00;
   color: white;
 }
-
+ 
 /* Botão login */
 #btn-login {
   background-color: transparent;
   color: var(--cor-1);
   border: 2px solid var(--cor-1);
 }
-
+ 
 #btn-login:hover {
   background-color: var(--cor-1);
   color: var(--cor-2);
 }
-
-
+ 
+ 
 /*=====================================Login===================================================*/
-
-
+ 
+ 
 /* Container geral do login */
 #login-container {
   background: white;
@@ -693,26 +693,26 @@ main {
   border-radius: 15px;
   max-width: 400px;
   width: 100%;
-  max-height: fit-content; 
+  max-height: fit-content;
   box-sizing: border-box;
   text-align: center;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
-
+ 
 /* Título */
 #login-container h2 {
   font-size: 1.8rem;
   color: var(--cor-1);
   margin-bottom: 10px;
 }
-
+ 
 /* Texto de apoio */
 #login-container .descricao {
   font-size: 1rem;
   color: var(--cor-3);
   margin-bottom: 25px;
 }
-
+ 
 /* Estilo do formulário */
 .form-login-vertical {
   display: flex;
@@ -720,7 +720,7 @@ main {
   gap: 18px;
   align-items: stretch;
 }
-
+ 
 /* Inputs */
 .form-login-vertical input {
   padding: 10px 14px;
@@ -729,12 +729,12 @@ main {
   border-radius: 8px;
   transition: border-color 0.3s ease;
 }
-
+ 
 .form-login-vertical input:focus {
   border-color: var(--cor-2);
   outline: none;
 }
-
+ 
 /* Container dos botões */
 .botoes-login {
   display: flex;
@@ -742,7 +742,7 @@ main {
   gap: 12px;
   margin-top: 10px;
 }
-
+ 
 /* Botões */
 .botoes-login button {
   flex: 1;
@@ -753,35 +753,35 @@ main {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
+ 
 /* Botão Voltar */
 #voltar-escolha {
   background-color: transparent;
   color: var(--cor-1);
   border: 2px solid var(--cor-1);
 }
-
+ 
 #voltar-escolha:hover {
   background-color: var(--cor-1);
   color: var(--cor-2);
 }
-
+ 
 /* Botão Entrar */
 #form-login button[type="submit"] {
   background-color: var(--cor-2);
   color: var(--cor-1);
   border: none;
 }
-
+ 
 #form-login button[type="submit"]:hover {
   background-color: #d6ac00;
   color: white;
 }
-
-
+ 
+ 
 /* =============================================== Cadastro ================================*/
-
-
+ 
+ 
 /* Seção de cadastro */
 #cadastro-container {
   background: white;
@@ -792,14 +792,14 @@ main {
   width: 100%;
   text-align: center;
 }
-
+ 
 /* Título */
 #cadastro-container h2 {
   font-size: 1.8rem;
   color: var(--cor-1);
   margin-bottom: 25px;
 }
-
+ 
 /* Formulário com layout vertical */
 .form-cadastro-horizontal {
   display: flex;
@@ -807,7 +807,7 @@ main {
   gap: 16px;
   align-items: stretch;
 }
-
+ 
 /* Inputs */
 .form-cadastro-horizontal input {
   padding: 10px 14px;
@@ -818,12 +818,12 @@ main {
   width: 100%;
   box-sizing: border-box;
 }
-
+ 
 .form-cadastro-horizontal input:focus {
   border-color: var(--cor-2);
   outline: none;
 }
-
+ 
 /* Botões */
 .botoes-container {
   display: flex;
@@ -831,7 +831,7 @@ main {
   gap: 10px;
   margin-top: 20px;
 }
-
+ 
 /* Estilo dos botões */
 .botoes-container button {
   padding: 12px 20px;
@@ -843,18 +843,18 @@ main {
   transition: background-color 0.3s ease;
   border: none;
 }
-
+ 
 /* Botão cadastrar */
 .botoes-container button[type="submit"] {
   background-color: var(--cor-2);
   color: var(--cor-1);
 }
-
+ 
 .botoes-container button[type="submit"]:hover {
   background-color: #d6ac00;
   color: white;
 }
-
+ 
 /* Botão voltar */
 #voltar-escolha-cad {
   background-color: transparent;
@@ -862,12 +862,12 @@ main {
   border: 2px solid var(--cor-1);
   box-shadow: none;
 }
-
+ 
 #voltar-escolha-cad:hover {
   background-color: var(--cor-1);
   color: var(--cor-2);
 }
-
+ 
 /* Mensagem */
 .mensagem {
   margin-top: 20px;
@@ -875,43 +875,42 @@ main {
   font-weight: 600;
   min-height: 24px;
 }
-
+ 
 /* Responsividade */
 @media (max-width: 480px) {
   main {
     padding: 15px;
   }
-
+ 
   #escolha-container,
   #cadastro-container,
   #login-container {
     padding: 25px 20px;
     max-width: 100%;
   }
-
+ 
   button {
     font-size: 1rem;
     padding: 10px 0;
   }
 }
-
-
+ 
+ 
 /*====================================== Area do Usuario =====================================================*/
-
-
+ 
 .usuario-container {
-  flex: 0 0 280px;
+  flex: 0 0 300px; /* largura fixa */
   display: flex;
   flex-direction: column;
   background-color: var(--cor-1);
   padding: 20px;
   border-radius: 12px;
   box-sizing: border-box;
-  min-width: 280px; 
+  min-width: 300px;
   width: 300px;
   flex-shrink: 0;
 }
-
+ 
 #icone {
   width: 100px;
   height: 100px;
@@ -920,7 +919,7 @@ main {
   margin: 1rem 0;
   border: 2px solid var(--cor-1);
 }
-
+ 
 .usuario-info {
   width: 100%;
   background-color: var(--cor-1);
@@ -933,24 +932,24 @@ main {
   text-align: left;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
-
+ 
 .usuario-info h2 {
   margin-top: 0;
   margin-bottom: 15px;
   font-weight: 700;
 }
-
+ 
 .usuario-info p {
   margin: 8px 0;
   font-weight: 500;
 }
-
+ 
 .localizacao-cadastrada p {
   font-weight: 600;
   margin-top: 20px;
   color: white;
 }
-
+ 
 .logout-button {
   margin-top: 25px;
   padding: 12px;
@@ -964,58 +963,59 @@ main {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
+ 
 .logout-button:hover {
   background-color: #c62828;
 }
-
+ 
 .layout {
   display: flex;
   gap: 20px;
   padding: 20px;
   align-items: flex-start;
-  flex-wrap: wrap;
   box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh; /* opcional para ocupar tela inteira */
 }
-
+ 
 /*========DASHBOARD=====================*/
-
+ 
 .dashboard {
-  flex: 1;
+  flex: 1; /* ocupa todo espaço sobrando */
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 20px;
+  padding: 0;
   box-sizing: border-box;
   overflow: hidden;
   min-width: 0;
 }
-
+ 
 .alerta-enchente {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr; /* Coluna esquerda menor, direita maior */
   grid-template-areas:
-    "previsao nivel"
-    "mapa mapa";
+    "previsao mapa"
+    "nivel mapa";
   gap: 2rem;
   width: 100%;
   box-sizing: border-box;
 }
-
+ 
 .previsao-tempo {
   grid-area: previsao;
   background-color: var(--cor-5);
   padding: 1.5rem;
   border-radius: 12px;
 }
-
+ 
 .previsao-tempo h3 {
   font-size: 1.4rem;
   color: #003B5C;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
-
+ 
 .previsao-tempo p {
   background: #fff;
   border-radius: 12px;
@@ -1026,21 +1026,21 @@ main {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: default;
 }
-
+ 
 .nivel-rio {
   grid-area: nivel;
   background-color: var(--cor-5);
   padding: 1.5rem;
   border-radius: 12px;
 }
-
+ 
 .nivel-rio h3 {
   font-size: 1.4rem;
   color: #003B5C;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
-
+ 
 .nivel-rio p {
   background: #fff;
   border-radius: 12px;
@@ -1049,60 +1049,164 @@ main {
   font-weight: 600;
   color: var(--cor-1);
 }
-
+ 
 .nivel-rio span {
   font-weight: bold;
   color: #d84315;
 }
-
+ 
 .barra-nivel-container {
-  background: #e0f2f1;
+  background: #54c9ff;
   height: 20px;
   border-radius: 10px;
   overflow: hidden;
   margin: 12px 0;
 }
-
+ 
 .barra-nivel {
   height: 100%;
   width: 90%;
-  background-color: #26a69a;
+  background-color: var(--cor-1);
   transition: width 0.3s ease;
 }
-
+ 
 .nivel-rio small {
   font-size: 0.85rem;
   color: var(--cor-1);
 }
-
-
-
+ 
 @keyframes crescer {
   from { width: 0; }
   to { width: 90%; }
 }
-
+ 
 .mapa-regiao {
   grid-area: mapa;
   background-color: var(--cor-5);
   padding: 1.5rem;
   border-radius: 12px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
-
+ 
 .mapa-regiao h3 {
   font-size: 1.4rem;
   color: #003B5C;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
-
+ 
 .mapa-imagem {
   width: 100%;
   height: auto;
+  max-height: 600px;
+  object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: block;
+  margin: 0 auto;
 }
 
+.ranking-alerta {
+  background-color: var(--cor-5);
+  border-radius: 12px;
+  padding: 1rem 1.2rem; /* menos padding para caber melhor */
+  width: 100%;
+  box-sizing: border-box;
+  color: #003B5C;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ranking-alerta h3 {
+  font-size: 1.3rem; /* fonte um pouco menor */
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.ranking-alerta ol {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.ranking-alerta li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.7rem; /* menos espaço entre itens */
+  font-size: 1rem; /* fonte menor */
+  font-weight: 600;
+}
+
+.ranking-alerta .regiao {
+  flex: 1;
+  overflow: hidden; /* evita que o texto extrapole */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ranking-alerta .status {
+  padding: 0.25rem 0.6rem; /* padding menor */
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem; /* fonte menor para status */
+  white-space: nowrap;
+  flex-shrink: 0; /* evita que encolha */
+}
+
+.status.critico {
+  background-color: #d84315;
+}
+
+.status.alto {
+  background-color: #ff8f00;
+}
+
+.status.medio {
+  background-color: #1976d2;
+}
+
+ 
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+ 
+  .usuario-container {
+    width: 100%;
+    flex: none;
+    margin-bottom: 20px;
+  }
+ 
+  .dashboard {
+    width: 100%;
+    flex: none;
+  }
+ 
+  .alerta-enchente {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "previsao"
+      "nivel"
+      "mapa";
+  }
+}
+ 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+ 
+main {
+  flex: 1;
+}
+ 
+ 
 /* ================= RESPONSIVO ================= */
 @media (max-width: 768px) {
   .alerta-enchente {
@@ -1113,24 +1217,24 @@ main {
       "mapa";
   }
 }
-
+ 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
 }
-
+ 
 main {
   flex: 1;
 }
-
-
-
+ 
+ 
+ 
 /* =========================================== FOOTER ==================================================================== */
-
-
-
+ 
+ 
+ 
 footer {
   background: var(--cor-1);
   color: #fff;
@@ -1138,7 +1242,7 @@ footer {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin-top: auto;
 }
-
+ 
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -1146,39 +1250,39 @@ footer {
   max-width: 1200px;
   margin: 0 auto 30px;
 }
-
+ 
 .footer-content > div {
   flex: 1 1 220px;
   margin: 10px 20px;
 }
-
+ 
 .footer-content h3 {
   font-size: 1.2rem;
   margin-bottom: 15px;
   border-bottom: 2px solid #FFA500;
   padding-bottom: 5px;
 }
-
+ 
 .footer-content ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
+ 
 .footer-content ul li {
   margin-bottom: 8px;
 }
-
+ 
 .footer-content a {
   color: var(--cor-2);
   text-decoration: none;
   font-weight: bold;
 }
-
+ 
 .footer-content a:hover {
   text-decoration: underline;
 }
-
+ 
 footer small {
   display: block;
   text-align: center;
@@ -1186,7 +1290,7 @@ footer small {
   margin-top: 20px;
   font-size: 0.8rem;
 }
-
+ 
 .footer-legal {
   text-align: center;
   padding-top: 20px;
@@ -1194,16 +1298,17 @@ footer small {
   max-width: 800px;
   margin: 0 auto;
 }
-
+ 
 .footer-legal p {
   margin: 5px 0;
   font-size: 0.85rem;
   color: #ddd;
 }
-
+ 
 /* RESPONSIVIDADE DO FOOTER */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
   }
 }
+ 
