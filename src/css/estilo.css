@@ -184,6 +184,8 @@ header nav ul li a:hover {
 
 /* =========================================== BOTÕES DE TROCA DE TEMA ======================================================= */
 
+
+
 .trocar-tema-fixo {
   position: fixed;
   bottom: 20px;
@@ -589,6 +591,8 @@ section {
 
 /*============================ Área de cadastro/login centralizada =================== */
 
+
+
 /* Container principal */
 
 main {
@@ -603,7 +607,9 @@ main {
   flex-direction: column; 
 }
 
+
 /*======================Escolha==================*/
+
 
 /* Container centralizado da escolha */
 #escolha-container {
@@ -675,7 +681,9 @@ main {
   color: var(--cor-2);
 }
 
+
 /*=====================================Login===================================================*/
+
 
 /* Container geral do login */
 #login-container {
@@ -887,15 +895,9 @@ main {
   }
 }
 
+
 /*====================================== Area do Usuario =====================================================*/
 
-:root {
-  --cor-1: #003B5C;
-  --cor-2: #ffffff;
-  --cor-3: #FBC02D;
-  --cor-4: #5a8ca6;
-  --cor-5: #E8E8E8;
-}
 
 .usuario-container {
   flex: 0 0 280px;
@@ -1005,7 +1007,6 @@ main {
   background-color: var(--cor-5);
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .previsao-tempo h3 {
@@ -1016,9 +1017,14 @@ main {
 }
 
 .previsao-tempo p {
-  font-size: 1rem;
-  color: #333;
-  margin: 0.3rem 0;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px 20px;
+  margin: 10px 0;
+  font-weight: 600;
+  color: var(--cor-1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
 }
 
 .nivel-rio {
@@ -1026,7 +1032,6 @@ main {
   background-color: var(--cor-5);
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nivel-rio h3 {
@@ -1036,40 +1041,41 @@ main {
   margin-bottom: 0.5rem;
 }
 
-.nivel-rio p,
-.nivel-rio span,
-.nivel-rio small {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.5;
+.nivel-rio p {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px 20px;
+  margin: 10px 0;
+  font-weight: 600;
+  color: var(--cor-1);
 }
 
-.nivel-rio span#nivelRio {
+.nivel-rio span {
   font-weight: bold;
-  color: #FBC02D;
-  font-size: 1.2rem;
-}
-
-.nivel-rio span#statusRio {
-  font-weight: bold;
-  color: red;
-  font-size: 1.1rem;
+  color: #d84315;
 }
 
 .barra-nivel-container {
-  background-color: #d1d1d1;
-  border-radius: 8px;
-  overflow: hidden;
+  background: #e0f2f1;
   height: 20px;
-  margin: 1rem 0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 12px 0;
 }
 
 .barra-nivel {
   height: 100%;
-  background-color: var(--cor-1);
-  border-radius: 8px 0 0 8px;
-  animation: crescer 1s ease-out;
+  width: 90%;
+  background-color: #26a69a;
+  transition: width 0.3s ease;
 }
+
+.nivel-rio small {
+  font-size: 0.85rem;
+  color: var(--cor-1);
+}
+
+
 
 @keyframes crescer {
   from { width: 0; }
@@ -1081,7 +1087,6 @@ main {
   background-color: var(--cor-5);
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .mapa-regiao h3 {
@@ -1123,6 +1128,7 @@ main {
 
 
 /* =========================================== FOOTER ==================================================================== */
+
 
 
 footer {
