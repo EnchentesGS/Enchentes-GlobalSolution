@@ -41,7 +41,6 @@ body {
  
  
  
- 
 /* =========================================== HEADER E NAVEGAÇÃO ========================================================= */
  
  
@@ -84,16 +83,17 @@ header nav ul li a:hover {
   text-decoration: underline 5px var(--cor-2);
 }
  
-/* Responsividade do header */
+/* ========== RESPONSIVIDADE DO HEADER ========== */
+
 @media (max-width: 768px) {
   header nav ul {
     flex-direction: column;
   }
 }
- 
- 
- 
-/* =========================================== MENU HAMBURGUER E RESPONSIVIDADE =========================================== */
+
+
+
+/* =========================================== MENU HAMBURGUER =============================================================== */
  
  
  
@@ -119,14 +119,16 @@ header nav ul li a:hover {
   transform-origin: center;
 }
  
-/* Mostrar hambúrguer no mobile */
+/* ========== MOBILE ========== */
+
 @media (max-width: 768px) {
   .hamburguer {
     display: flex;
   }
 }
  
-/* Menu responsivo */
+/* ========== RESPONSIVIDADE ========== */
+
 #nav-menu {
   display: flex;
 }
@@ -204,7 +206,6 @@ header nav ul li a:hover {
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
  
-/* Cores fixas */
 .tema-azul-escuro {
   background-color: #014D6F;
 }
@@ -215,7 +216,6 @@ header nav ul li a:hover {
   background-color: #BBDEFB;
 }
  
-/* Impede mudança de cor no hover */
 .tema-azul-escuro:hover {
   background-color: #014D6F;
 }
@@ -318,7 +318,7 @@ section {
   color: var(--cor-4);
 }
  
-/* Responsividade da seção 1 - slideshow */
+/* ========== RESPONSIVIDADE DO SLIDESHOW ========== */
 @media (max-width: 768px) {
   .s1 .texto {
     max-width: 90%;
@@ -331,9 +331,8 @@ section {
  
 /* =========================================== QUIZ ======================================================================= */
  
+
  
- 
-/* Container geral do quiz */
 .quiz-container {
   max-width: 600px;
   margin: 40px auto 80px auto;
@@ -346,7 +345,6 @@ section {
   user-select: none;
 }
  
-/* Cartão inicial */
 .start-card h2 {
   font-size: 2rem;
   text-align: center;
@@ -381,12 +379,10 @@ section {
   color: white;
 }
  
-/* Cartões das perguntas */
 .quiz-card {
   margin-bottom: 20px;
 }
  
-/* Texto da pergunta */
 .quiz-question {
   font-weight: 700;
   font-size: 1.4rem;
@@ -395,7 +391,6 @@ section {
   text-align: center;
 }
  
-/* Opções */
 .quiz-options {
   display: flex;
   flex-direction: column;
@@ -403,7 +398,6 @@ section {
   margin-bottom: 30px;
 }
  
-/* Cada label da opção */
 .quiz-options label {
   background-color: #f9f9f9;
   border: 2px solid var(--cor-1);
@@ -419,20 +413,17 @@ section {
   align-items: center;
 }
  
-/* Espaço entre input radio e texto */
 .quiz-options input[type="radio"] {
   margin-right: 12px;
   cursor: pointer;
 }
  
-/* Hover nas opções */
 .quiz-options label:hover {
   background-color: var(--cor-1);
   color: white;
   border-color: var(--cor-1);
 }
  
-/* Quando uma opção está selecionada */
 .quiz-options input[type="radio"]:checked + label,
 .quiz-options label input[type="radio"]:checked + & {
   background-color: #FBC02D;
@@ -441,12 +432,10 @@ section {
   font-weight: 700;
 }
  
-/* Esconde o botão de rádio */
 .quiz-options input[type="radio"] {
   display: none;
 }
  
-/* Estilo base dos rótulos */
 .quiz-options label {
   background-color: #f9f9f9;
   border: 2px solid var(--cor-1);
@@ -460,14 +449,12 @@ section {
   display: block;
 }
  
-/* Quando selecionado */
 .quiz-options label.selecionado {
   background-color: var(--cor-1);
   color: white;
   border-color: var(--cor-1);
 }
  
-/* Botão Próxima e Finalizar */
 .quiz-button.next-btn,
 .quiz-button#finish-btn {
   background-color: #FBC02D;
@@ -500,10 +487,7 @@ section {
   cursor: pointer !important;
   opacity: 0.6;
 }
- 
- 
-/* Resultado final */
- 
+  
 .quiz-result {
   max-width: 600px;
   margin: 40px auto 80px auto;
@@ -517,7 +501,6 @@ section {
   user-select: none;
 }
  
-/* Título do resultado */
 .quiz-result h2 {
   font-size: 2rem;
   margin-bottom: 15px;
@@ -525,14 +508,12 @@ section {
   color: var(--cor-1);
 }
  
-/* Texto do resultado */
 .quiz-result p.mensagem-resultado {
   font-size: 1.2rem;
   margin-bottom: 30px;
   color: #5a8ca6;
 }
  
-/* Botão Refazer */
 .quiz-result .quiz-button {
   background-color: var(--cor-1);
   border: none;
@@ -551,8 +532,8 @@ section {
   background-color: #004a7c;
 }
  
- 
-/* Responsividade quiz */
+/* ========== RESPONSIVIDADE ========== */
+
 @media (max-width: 1024px) {
   .quiz-container {
     margin: 30px 20px 60px 20px;
@@ -588,12 +569,9 @@ section {
 }
  
  
+/*======================================= Área de cadastro/login centralizada =============================================== */
  
-/*============================ Área de cadastro/login centralizada =========================================== */
- 
- 
- 
-/* Container principal */
+
  
 main {
   display: flex;
@@ -610,9 +588,7 @@ main {
  
 /*======================Escolha==================*/
  
- 
-/* Container centralizado da escolha */
-#escolha-container {
+ #escolha-container {
   background: white;
   padding: 40px 30px;
   border-radius: 15px;
@@ -626,28 +602,24 @@ main {
 }
  
  
-/* Título */
 #escolha-container h2 {
   font-size: 1.8rem;
   color: var(--cor-1);
   margin-bottom: 15px;
 }
  
-/* Texto de apoio */
 #escolha-container .descricao {
   font-size: 1rem;
   color: var(--cor-3);
   margin-bottom: 30px;
 }
  
-/* Botões de ação */
 .escolha-botoes {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
  
-/* Estilo dos botões */
 .escolha-botoes button {
   padding: 12px;
   font-size: 1.1rem;
@@ -658,7 +630,6 @@ main {
   transition: background-color 0.3s ease;
 }
  
-/* Botão cadastrar */
 #btn-cadastrar {
   background-color: var(--cor-2);
   color: var(--cor-1);
@@ -669,7 +640,6 @@ main {
   color: white;
 }
  
-/* Botão login */
 #btn-login {
   background-color: transparent;
   color: var(--cor-1);
@@ -682,10 +652,10 @@ main {
 }
  
  
-/*=====================================Login===================================================*/
+/*=====================================================Login=======================================================*/
  
  
-/* Container geral do login */
+
 #login-container {
   background: white;
   box-shadow: 0 12px 25px rgba(0, 59, 92, 0.15);
@@ -699,21 +669,18 @@ main {
   margin: 0 auto;
 }
  
-/* Título */
 #login-container h2 {
   font-size: 1.8rem;
   color: var(--cor-1);
   margin-bottom: 10px;
 }
  
-/* Texto de apoio */
 #login-container .descricao {
   font-size: 1rem;
   color: var(--cor-3);
   margin-bottom: 25px;
 }
  
-/* Estilo do formulário */
 .form-login-vertical {
   display: flex;
   flex-direction: column;
@@ -721,7 +688,6 @@ main {
   align-items: stretch;
 }
  
-/* Inputs */
 .form-login-vertical input {
   padding: 10px 14px;
   font-size: 1rem;
@@ -735,7 +701,6 @@ main {
   outline: none;
 }
  
-/* Container dos botões */
 .botoes-login {
   display: flex;
   justify-content: space-between;
@@ -743,7 +708,6 @@ main {
   margin-top: 10px;
 }
  
-/* Botões */
 .botoes-login button {
   flex: 1;
   padding: 12px;
@@ -754,7 +718,6 @@ main {
   transition: background-color 0.3s ease;
 }
  
-/* Botão Voltar */
 #voltar-escolha {
   background-color: transparent;
   color: var(--cor-1);
@@ -766,7 +729,6 @@ main {
   color: var(--cor-2);
 }
  
-/* Botão Entrar */
 #form-login button[type="submit"] {
   background-color: var(--cor-2);
   color: var(--cor-1);
@@ -779,10 +741,8 @@ main {
 }
  
  
-/* =============================================== Cadastro ================================*/
+/* ================================================= Cadastro ========================================================*/
  
- 
-/* Seção de cadastro */
 #cadastro-container {
   background: white;
   box-shadow: 0 12px 25px rgba(0, 59, 92, 0.15);
@@ -793,14 +753,12 @@ main {
   text-align: center;
 }
  
-/* Título */
 #cadastro-container h2 {
   font-size: 1.8rem;
   color: var(--cor-1);
   margin-bottom: 25px;
 }
  
-/* Formulário com layout vertical */
 .form-cadastro-horizontal {
   display: flex;
   flex-direction: column;
@@ -808,7 +766,6 @@ main {
   align-items: stretch;
 }
  
-/* Inputs */
 .form-cadastro-horizontal input {
   padding: 10px 14px;
   font-size: 1rem;
@@ -824,7 +781,6 @@ main {
   outline: none;
 }
  
-/* Botões */
 .botoes-container {
   display: flex;
   justify-content: space-between;
@@ -832,7 +788,6 @@ main {
   margin-top: 20px;
 }
  
-/* Estilo dos botões */
 .botoes-container button {
   padding: 12px 20px;
   font-size: 1rem;
@@ -844,7 +799,6 @@ main {
   border: none;
 }
  
-/* Botão cadastrar */
 .botoes-container button[type="submit"] {
   background-color: var(--cor-2);
   color: var(--cor-1);
@@ -855,7 +809,6 @@ main {
   color: white;
 }
  
-/* Botão voltar */
 #voltar-escolha-cad {
   background-color: transparent;
   color: var(--cor-1);
@@ -868,7 +821,6 @@ main {
   color: var(--cor-2);
 }
  
-/* Mensagem */
 .mensagem {
   margin-top: 20px;
   color: var(--cor-1);
@@ -876,7 +828,8 @@ main {
   min-height: 24px;
 }
  
-/* Responsividade */
+/* ========== RESPONSIVIDADE ========== */
+
 @media (max-width: 480px) {
   main {
     padding: 15px;
@@ -896,10 +849,23 @@ main {
 }
  
  
-/*====================================== Area do Usuario =====================================================*/
+/*================================================== Area do Usuario =====================================================*/
+ 
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+ 
+main {
+  flex: 1;
+}
  
 .usuario-container {
-  flex: 0 0 300px; /* largura fixa */
+  flex: 0 0 300px; 
   display: flex;
   flex-direction: column;
   background-color: var(--cor-1);
@@ -968,9 +934,8 @@ main {
   background-color: #c62828;
 }
 
-/* Alerta */
 .localizacao-cadastrada .alerta {
-  background-color: #FFD700; /* amarelo */
+  background-color: #FFD700; 
   color: #fff;
   padding: 12px;
   width: 100%;
@@ -984,7 +949,7 @@ main {
 }
 
 
-
+/* ========== RESPONSIVIDADE ==========*/
 
 @media (max-width: 768px) {
   .usuario-container {
@@ -1026,19 +991,19 @@ main {
     font-size: 0.9rem;
   }
 
-  /* Esconde localização, última atualização e recomendações */
   .localizacao-cadastrada p:nth-child(2), /* status */
   .localizacao-cadastrada p:nth-child(3), /* última atualização */
-  .localizacao-cadastrada p:nth-child(4)  /* recomendações */ {
+  .localizacao-cadastrada p:nth-child(4)  /* recomendações */
+  {
     display: none !important;
   }
 }
 
 
-/*========DASHBOARD=====================*/
+/*===========================DASHBOARD====================================*/
  
 .dashboard {
-  flex: 1; /* ocupa todo espaço sobrando */
+  flex: 1; 
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -1056,13 +1021,13 @@ main {
   align-items: flex-start;
   box-sizing: border-box;
   width: 100%;
-  min-height: 100vh; /* opcional para ocupar tela inteira */
+  min-height: 100vh; 
 }
 
  
 .alerta-enchente {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* Coluna esquerda menor, direita maior */
+  grid-template-columns: 1fr 2fr; 
   grid-template-areas:
     "previsao mapa"
     "nivel mapa";
@@ -1071,7 +1036,7 @@ main {
   box-sizing: border-box;
 }
 
-/*===========previsão do tempo*/
+/*================ PREVISÃO DO TEMPO ==============*/
  
 .previsao-tempo {
   grid-area: previsao;
@@ -1100,7 +1065,7 @@ main {
   cursor: default;
 }
 
-/*===========Nivel do rio====================*/
+/*============= Nivel do rio ====================*/
 
 .nivel-rio {
   grid-area: nivel;
@@ -1176,7 +1141,7 @@ main {
   to { width: 90%; }
 }
 
-/*=======Mapa============*/
+/*================ Mapa ===================*/
 
 .mapa-regiao {
   grid-area: mapa;
@@ -1210,12 +1175,12 @@ main {
   margin: 0 auto;
 }
 
-
+/* ============= RANKING ==============*/
 
 .ranking-alerta {
   background-color: var(--cor-5);
   border-radius: 12px;
-  padding: 1rem 1.2rem; /* menos padding para caber melhor */
+  padding: 1rem 1.2rem; 
   width: 100%;
   box-sizing: border-box;
   color: #003B5C;
@@ -1223,7 +1188,7 @@ main {
 }
 
 .ranking-alerta h3 {
-  font-size: 1.3rem; /* fonte um pouco menor */
+  font-size: 1.3rem; 
   font-weight: 700;
   margin-bottom: 1rem;
   border-bottom: 2px solid var(--cor-1);
@@ -1239,14 +1204,14 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.7rem; /* menos espaço entre itens */
-  font-size: 1rem; /* fonte menor */
+  margin-bottom: 0.7rem; 
+  font-size: 1rem; 
   font-weight: 600;
 }
 
 .ranking-alerta .regiao {
   flex: 1;
-  overflow: hidden; /* evita que o texto extrapole */
+  overflow: hidden; 
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -1259,8 +1224,8 @@ main {
   font-size: 0.9rem;
   white-space: nowrap;
   flex-shrink: 0;
-  width: 150px;         /* largura fixa para igualar o tamanho */
-  text-align: center;  /* centraliza o texto */
+  width: 150px;         
+  text-align: center;  
   display: inline-block;
 }
 
@@ -1278,7 +1243,7 @@ main {
 }
 
  
-/* ================= RESPONSIVO ================= */
+/* ================= RESPONSIVIDADE ================= */
 
 
 @media (max-width: 768px) {
@@ -1294,7 +1259,7 @@ main {
   }
 
   .dashboard {
-  padding-bottom: 1rem; /* controla o espaço geral */
+  padding-bottom: 1rem; 
   }
 
   .mapa-regiao img.mapa-imagem {
@@ -1319,47 +1284,10 @@ main {
 
 
   footer {
-    margin-top: 1rem; /* espaço mínimo antes do rodapé */
+    margin-top: 1rem; 
   }
 }
 
-
-
- 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-}
- 
-main {
-  flex: 1;
-}
- 
- 
-/* ================= RESPONSIVO ================= */
-@media (max-width: 768px) {
-  .alerta-enchente {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "previsao"
-      "nivel"
-      "mapa";
-  }
-}
- 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-}
- 
-main {
-  flex: 1;
-}
- 
  
  
 /* =========================================== FOOTER ==================================================================== */
@@ -1436,7 +1364,7 @@ footer small {
   color: #ddd;
 }
  
-/* RESPONSIVIDADE DO FOOTER */
+/* ============== RESPONSIVIDADE ========== */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;

@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+
   // Menu Hamburguer
   const hamburguer = document.getElementById("hamburguer");
   const navMenu = document.getElementById("nav-menu");
@@ -37,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Quiz
 
-  const quizCards = document.querySelectorAll('.quiz-card');
+const quizCards = document.querySelectorAll('.quiz-card');
 const startBtn = document.getElementById('start-btn');
 const startCard = document.querySelector('.start-card');
 const resultadoContainer = document.querySelector('.quiz-result');
@@ -142,7 +143,6 @@ if (
   });
 }
 
-
   // --- LOGIN, CADASTRO E ÁREA DO USUÁRIO ---
 
   const escolhaContainer = document.getElementById('escolha-container');
@@ -241,9 +241,9 @@ if (
     });
   }
 
-  // Login
+// Login
 
-  const formLogin = document.getElementById('form-login');
+const formLogin = document.getElementById('form-login');
 const mensagemLogin = document.getElementById('mensagem-login'); // ajuste para o id correto
 
 if (formLogin) {
