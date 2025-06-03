@@ -967,6 +967,22 @@ main {
 .logout-button:hover {
   background-color: #c62828;
 }
+
+/* Alerta */
+.localizacao-cadastrada .alerta {
+  background-color: #FFD700; /* amarelo */
+  color: #fff;
+  padding: 12px;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  display: block;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+ 
  
 .layout {
   display: flex;
@@ -1014,6 +1030,8 @@ main {
   color: #003B5C;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  border-bottom: 2px solid var(--cor-1);
+  padding-bottom: 0.25rem;
 }
  
 .previsao-tempo p {
@@ -1026,59 +1044,84 @@ main {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: default;
 }
- 
+
+
+
+
 .nivel-rio {
   grid-area: nivel;
   background-color: var(--cor-5);
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
   border-radius: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
- 
+
 .nivel-rio h3 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: #003B5C;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 2px solid #003B5C;
+  padding-bottom: 0.25rem;
+  letter-spacing: 0.05em;
 }
- 
+
 .nivel-rio p {
   background: #fff;
   border-radius: 12px;
-  padding: 12px 20px;
+  padding: 10px 18px;
   margin: 10px 0;
   font-weight: 600;
   color: var(--cor-1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
- 
-.nivel-rio span {
-  font-weight: bold;
-  color: #d84315;
-}
- 
+
 .barra-nivel-container {
-  background: #54c9ff;
-  height: 20px;
-  border-radius: 10px;
+  position: relative;
+  background: #b3e5fc;
+  height: 16px;
+  border-radius: 12px;
   overflow: hidden;
   margin: 12px 0;
 }
- 
+
 .barra-nivel {
   height: 100%;
-  width: 90%;
+  width: 90%; /* Porcentagem fixa */
   background-color: var(--cor-1);
-  transition: width 0.3s ease;
+  border-radius: 12px 0 0 12px;
+  transition: width 0.5s ease;
+  animation: crescer 1.2s ease forwards;
+  position: relative;
 }
- 
-.nivel-rio small {
+
+.barra-nivel::after {
+  content: '90%'; /* Porcentagem fixa exibida */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: 700;
   font-size: 0.85rem;
-  color: var(--cor-1);
+  pointer-events: none;
 }
- 
+
+.nivel-rio small {
+  font-size: 0.8rem;
+  color: var(--cor-1);
+  display: block;
+  text-align: right;
+  margin-top: 4px;
+}
+
 @keyframes crescer {
   from { width: 0; }
   to { width: 90%; }
 }
+
  
 .mapa-regiao {
   grid-area: mapa;
@@ -1096,6 +1139,8 @@ main {
   color: #003B5C;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  border-bottom: 2px solid var(--cor-1);
+  padding-bottom: 0.25rem;
 }
  
 .mapa-imagem {
@@ -1108,6 +1153,8 @@ main {
   display: block;
   margin: 0 auto;
 }
+
+
 
 .ranking-alerta {
   background-color: var(--cor-5);
@@ -1123,6 +1170,8 @@ main {
   font-size: 1.3rem; /* fonte um pouco menor */
   font-weight: 700;
   margin-bottom: 1rem;
+  border-bottom: 2px solid var(--cor-1);
+  padding-bottom: 0.25rem;
 }
 
 .ranking-alerta ol {
@@ -1147,14 +1196,18 @@ main {
 }
 
 .ranking-alerta .status {
-  padding: 0.25rem 0.6rem; /* padding menor */
+  padding: 0.25rem 0.6rem;
   border-radius: 8px;
   color: white;
   font-weight: 700;
-  font-size: 0.9rem; /* fonte menor para status */
+  font-size: 0.9rem;
   white-space: nowrap;
-  flex-shrink: 0; /* evita que encolha */
+  flex-shrink: 0;
+  width: 150px;         /* largura fixa para igualar o tamanho */
+  text-align: center;  /* centraliza o texto */
+  display: inline-block;
 }
+
 
 .status.critico {
   background-color: #d84315;
