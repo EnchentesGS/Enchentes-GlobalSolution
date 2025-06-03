@@ -71,18 +71,26 @@ header nav ul {
   margin: 10px 0;
   display: flex;
 }
- 
+
+
 header nav ul li a {
   color: #fff;
+  padding: 10px 20px;
   text-transform: uppercase;
-  padding: 5px 10px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.1rem; 
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
 }
- 
+
 header nav ul li a:hover {
-  text-decoration: underline 5px var(--cor-2);
+  background-color: var(--cor-2);
+  color: var(--cor-1); 
 }
- 
+
+
+
 /* ========== RESPONSIVIDADE DO HEADER ========== */
 
 @media (max-width: 768px) {
@@ -332,9 +340,8 @@ section {
 /* =========================================== QUIZ ======================================================================= */
  
 
- 
-.quiz-container {
-  max-width: 600px;
+ .quiz-container {
+  width: 600px; 
   margin: 40px auto 80px auto;
   background: #f8fafa;
   border-radius: 15px;
@@ -343,6 +350,16 @@ section {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #003B5C;
   user-select: none;
+  text-align: center; 
+}
+
+.start-card img.quiz {
+  width: 100%;       
+  max-width: 400px;  
+  height: auto;      
+  border-radius: 8px;
+  margin: 2px 0 20px 0;    
+  object-fit: cover; 
 }
  
 .start-card h2 {
