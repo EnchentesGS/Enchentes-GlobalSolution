@@ -23,76 +23,55 @@
           <li><a href="quiz.html">Quiz</a></li>
         </ul>
       </nav>
-      
       <div class="hamburguer" id="hamburguer">
-         <span class="barra"></span>
-         <span class="barra"></span>
-         <span class="barra"></span>
+        <span class="barra"></span>
+        <span class="barra"></span>
+        <span class="barra"></span>
       </div>
     </div>
   </header>
 
+  <main>
   <div class="layout">
-  <section class="usuario-container">
-    <div class="user-area-container usuario-info">
-      <img src="../src/assets/icons8-usuário-100.png" id="icone">
-      <h2>Bem-vindo(a), <span id="nomeUsuario">[Nome do Usuário]</span></h2>
-      <div class="localizacao-cadastrada">
-        <p><strong id="textoLocal">Local monitorado:</strong> <span id="localizacaoUsuario"></span></p>
+    <section class="usuario-container">
+      <div class="user-area-container usuario-info">
+        <img src="../src/assets/icone.png" id="icone" />
+        <h2>Bem-vindo(a), <span id="nomeUsuario">[Nome do Usuário]</span></h2>
+        <div class="localizacao-cadastrada">
+          <p><strong>Última atualização: </strong>02/06/2025 às 10h12</p>
+          <p><strong id="textoLocal">Local monitorado:</strong> <span id="localizacaoUsuario"></span></p>
+        </div>
+        <button class="logout-button" id="logout-btn">Sair</button>
       </div>
-      <button class="logout-button" id="logout-btn">Sair</button>
+    </section>
+
+    <section class="dashboard">
+  <div class="alerta-enchente">
+    <div class="previsao-tempo">
+      <h3>Previsão do Tempo</h3>
+      <p>Temperatura: 23°C</p>
+      <p>Clima: Chuva moderada</p>
+      <p>Umidade: 88%</p>
+      <small>Atualizado às 10h10</small>
     </div>
-  </section>
 
-<main class="dashboard">
-<section class="alerta-enchente">
-
-  <div class="nivel-rio">
-  <h3>Nível do Rio</h3>
-  <p>Última medição: <span id="nivelRio">2,7 m</span></p>
-  <p>Status: <span id="statusRio">Em alerta</span></p>
-
-  <div class="barra-nivel-container">
-    <div class="barra-nivel" style="width: 90%;"></div>
-  </div>
-  <small>Limite de transbordamento: 3,0 m</small>
-</div>
-
-<div class="dicas-seguranca">
-  <h3>Dicas de Segurança</h3>
-  <div class="dica-bolha">Evite áreas de risco durante chuvas fortes</div>
-  <div class="dica-bolha">Mantenha documentos e itens importantes em local seco</div>
-  <div class="dica-bolha">Tenha um kit de emergência preparado</div>
-  <div class="dica-bolha">Acompanhe os alertas da Defesa Civil</div>
-</div>
-
-
-<div class="pontos-encontro">
-  <h3>Pontos de Encontro</h3>
-  <div class="caixas-encontro">
-    <div class="caixa-encontro">
-      <h4>Escola Municipal Jardim das Águas</h4>
+    <div class="nivel-rio">
+      <h3>Nível do Rio</h3>
+      <p>Última medição: <span id="nivelRio">2,7 m</span></p>
+      <p>Status: <span id="statusRio">Em alerta</span></p>
+      <div class="barra-nivel-container">
+        <div class="barra-nivel" style="width: 90%;"></div>
+      </div>
+      <small>Limite de transbordamento: 3,0 m</small>
     </div>
-    <div class="caixa-encontro">
-      <h4>Igreja São Miguel (Rua Central, 45)</h4>
-    </div>
-    <div class="caixa-encontro">
-      <h4>Centro Comunitário Bairro Alto</h4>
+
+    <div class="mapa-regiao">
+      <h3>Mapa da Região</h3>
+      <img src="../src/assets/mapa.jpg" alt="Mapa da Região Monitorada" class="mapa-imagem" />
     </div>
   </div>
-</div>
-
-
-  <div class="mapa-regiao">
-    <h3>Mapa da Região</h3>
-    <img src="../src/assets/mapa.jpg" alt="Mapa da Região Monitorada" class="mapa-imagem">
-    </div>
-      </section>
-    </div>
-  </main>
-</div>
-
 </main>
+</section>
 
   <footer>
     <div class="footer-content">
