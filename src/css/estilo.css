@@ -15,7 +15,7 @@
   --cor-4: #E8E8E8;
   --cor-5: #e6f6fb;
   --background: #F8FAFC;
-  --fonte-principal: 'Arial', sans-serif;
+  --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
  
 body {
@@ -59,7 +59,12 @@ header {
   max-width: 155px;
   height: auto;
 }
- 
+
+.titulo{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--cor-2);
+}
+
 nav ul {
   list-style: none;
   padding-left: 0;

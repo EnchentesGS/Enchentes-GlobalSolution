@@ -282,49 +282,67 @@ if (formLogin) {
 }
 
 
-  // --- ÁREA DO USUÁRIO E LOGOUT ---
-  const nomeSalvo = localStorage.getItem('nomeUsuario');
-  const botaoSair = document.getElementById('logout-btn');
-  const nomeUsuarioSpan = document.getElementById('nomeUsuario');
-  const mensagem = document.getElementById('mensagem');
+// --- ÁREA DO USUÁRIO E LOGOUT ---
+const nomeSalvo = localStorage.getItem('nomeUsuario');
+const botaoSair = document.getElementById('logout-btn');
+const nomeUsuarioSpan = document.getElementById('nomeUsuario');
+const mensagem = document.getElementById('mensagem');
 
-  if (window.location.href.includes('usuario.html')) {
-    if (!nomeSalvo) {
-      window.location.href = 'login.html';
-      return;
-    }
-
-    if (nomeUsuarioSpan) {
-      nomeUsuarioSpan.textContent = nomeSalvo;
-    }
-
-    if (mensagem) {
-      mensagem.textContent = `Bem-vindo(a), ${nomeSalvo}`;
-      mensagem.className = 'mensagem sucesso';
-    }
-
-    if (botaoSair) {
-      botaoSair.addEventListener('click', () => {
-        localStorage.removeItem('nomeUsuario');
-        window.location.href = 'login.html';
-      });
-    }
-
-    // Exibir endereço do usuário cadastrado
-    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-    const usuarioAtual = usuarios.find(u => u.nome === nomeSalvo);
-
-    const localizacaoElement = document.getElementById('localizacaoUsuario');
-
-    if (usuarioAtual && localizacaoElement) {
-      const end = usuarioAtual.endereco;
-      localizacaoElement.textContent = `${end.rua}, ${end.numero} - ${end.bairro}, ${end.cidade} - ${end.estado}, CEP: ${end.cep}`;
-    }
-  }
-
-  // Redireciona para a área do usuário se já estiver logado e tentar acessar login.html
-  if (window.location.href.includes('login.html') && nomeSalvo) {
-    window.location.href = 'usuario.html';
+if (window.location.href.includes('usuario.html')) {
+  if (!nomeSalvo) {
+    window.location.href = 'login.html';
     return;
   }
+
+  if (nomeUsuarioSpan) {
+    nomeUsuarioSpan.textContent = nomeSalvo;
+  }
+
+  if (mensagem) {
+    mensagem.textContent = `Bem-vindo(a), ${nomeSalvo}`;
+    mensagem.className = 'mensagem sucesso';
+  }
+
+  if (botaoSair) {
+    botaoSair.addEventListener('click', () => {
+      localStorage.removeItem('nomeUsuario');
+      window.location.href = 'login.html';
+    });
+  }
+
+  // Exibir endereço e telefone do usuário cadastrado
+  const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+  const usuarioAtual = usuarios.find(u => u.nome === nomeSalvo);
+
+  const localizacaoElement = document.getElementById('localizacaoUsuario');
+  const telefoneElement = document.getElementById('telefoneUsuario'); 
+
+  if (usuarioAtual && localizacaoElement) {
+    const end = usuarioAtual.endereco;
+    localizacaoElement.textContent = `${end.rua}, ${end.numero} - ${end.bairro}, ${end.cidade} - ${end.estado}, CEP: ${end.cep}`;
+  }
+
+  if (usuarioAtual && telefoneElement) {
+  let telefone = usuarioAtual.telefone || '';
+
+  // Remove tudo que não for número
+  telefone = telefone.replace(/\D/g, '');
+
+  // Aplica a máscara (XX) XXXXX-XXXX se tiver 11 dígitos
+  if (telefone.length === 11) {
+    telefone = telefone.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+  } else if (telefone.length === 10) {
+    // Caso o número seja fixo (sem 9 na frente)
+    telefone = telefone.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+  } else {
+    telefone = 'Número inválido';
+  }
+
+  telefoneElement.textContent = telefone;
+}
+
+
+}
+
+
 });
