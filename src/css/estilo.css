@@ -79,22 +79,60 @@ header nav ul {
 
 
 header nav ul li a {
-  color: #fff;
-  padding: 10px 20px;
-  text-transform: uppercase;
-  text-decoration: none;
+  color: white;
+  padding: 8px 12px;
+  font-size: 1rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.1rem; 
-  border-radius: 6px;
-  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--cor-2); /* amarelo */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
 header nav ul li a:hover {
-  background-color: var(--cor-2);
-  color: var(--cor-1); 
+  color: var(--cor-2);
+}
+
+header nav ul li a:hover::after {
+  transform: scaleX(1);
 }
 
 
+.menu ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.secao-principal, .conteudo, .pagina {
+  padding-top: 80px;
+}
 
 /* ========== RESPONSIVIDADE DO HEADER ========== */
 
@@ -972,7 +1010,6 @@ main {
 
 
 /* ========== RESPONSIVIDADE ==========*/
-
 @media (max-width: 768px) {
   .usuario-container {
     max-width: 100%;
@@ -1004,7 +1041,7 @@ main {
 
   .usuario-info {
     padding: 18px;
-    font-size: rem;
+    font-size: 1rem;
     box-sizing: border-box;
   }
 
@@ -1013,11 +1050,14 @@ main {
     font-size: 0.9rem;
   }
 
-  .localizacao-cadastrada p:nth-child(2), /* status */
-  .localizacao-cadastrada p:nth-child(3), /* última atualização */
-  .localizacao-cadastrada p:nth-child(4)  /* recomendações */
-  {
-    display: none !important;
+  /* Oculta todos os parágrafos dentro da localização cadastrada */
+  .localizacao-cadastrada p {
+    display: none;
+  }
+
+  /* Exceto as recomendações */
+  .localizacao-cadastrada .recomendacoes {
+    display: block;
   }
 }
 
