@@ -434,7 +434,7 @@ header nav ul li a:hover::after {
 
 
 .s2 {
-  background-color: var(--cor-6);
+  background-color: #fff9c4;
   color: #003B5C;
   padding: 4rem 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -767,12 +767,41 @@ header nav ul li a:hover::after {
   background-color: #003B5C;
 }
 
-
+/* Responsividade gradual */
+@media (max-width: 1024px) {
+  .s4-container {
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+  .s4-imagem,
+  .s4-texto {
+    flex: 1 1 300px;
+  }
+  .s4-imagem img {
+    max-width: 300px;
+  }
+  .s4-texto h2 {
+    font-size: 2.2rem;
+  }
+  .s4-texto p {
+    font-size: 1rem;
+  }
+  .s4-item img {
+    width: 40px;
+    height: 40px;
+  }
+  .s4-item p {
+    font-size: 0.95rem;
+  }
+  .btn-s4 {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.95rem;
+  }
+}
 
 @media (max-width: 768px) {
   .s4 {
-    padding: 4rem 1rem 8rem; /* mais espaço inferior para o botão aparecer */
-    min-height: 100vh;       /* altura mínima para garantir que o conteúdo não fique espremido */
+    padding: 3rem 1rem 6rem; /* espaçamento inferior maior para botão */
   }
 
   .s4-container {
@@ -781,70 +810,107 @@ header nav ul li a:hover::after {
     gap: 2rem;
   }
 
+  .s4-imagem {
+    flex: 1 1 100%;
+  }
+
   .s4-imagem img {
     max-width: 100%;
     height: auto;
   }
 
   .s4-texto {
+    flex: 1 1 100%;
     align-items: center;
     text-align: center;
     width: 100%;
   }
 
   .s4-texto h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .s4-texto p {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .s4-grupos {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
     width: 100%;
   }
 
   .s4-item {
-    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    padding: 1rem;
+    padding: 0.9rem;
     width: 100%;
   }
 
   .s4-item img {
-    width: 56px;
-    height: 56px;
+    width: 36px;
+    height: 36px;
   }
 
   .s4-item p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-align: center;
   }
 
   .btn-s4 {
     margin-top: 2rem;
     align-self: center;
-    padding: 0.8rem 1.6rem;
-    font-size: 1rem;
+    padding: 0.7rem 1.4rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .s4 {
+    padding: 2.5rem 1rem 5rem;
+  }
+  .s4-texto h2 {
+    font-size: 1.5rem;
+  }
+  .s4-texto p {
+    font-size: 0.85rem;
+  }
+  .s4-item {
+    padding: 0.7rem;
+  }
+  .s4-item img {
+    width: 28px;
+    height: 28px;
+  }
+  .s4-item p {
+    font-size: 0.85rem;
+  }
+  .btn-s4 {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Por padrão, os itens aparecem */
+.s4-grupos {
+  display: flex;
+}
+
+/* Em telas pequenas, esconder os itens */
+@media (max-width: 768px) {
+  .s4-grupos {
+    display: none;
   }
 }
 
 
-
 /* ================================================ SEÇÃO 5 ================================================================ */
  
-.s5 {
+.s6 {
+  background-color: transparent !important;
   padding: 80px 20px;
-  background-color: #f9fcff; /* fundo bem claro, sólido */
-  border-radius: 0; /* remove qualquer borda arredondada */
-  box-shadow: none; /* remove sombra se estiver aplicada */
-  backdrop-filter: none; /* remove efeito de vidro fosco */
+  text-align: center;
 }
+
 
 .s5 .container {
   border-radius: 0;
@@ -916,6 +982,112 @@ header nav ul li a:hover::after {
 
 
 /* ================================================ SEÇÃO 6 ================================================================ */
+
+.s6 {
+  background-color: #fff9c4 !important;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.s6 .texto {
+  background-color: transparent !important;
+}
+
+.s6 .texto h2 {
+  font-size: 2.5rem;
+  color: #0077b6;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.s6 .texto p {
+  font-size: 1.2rem;
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.s6 .beneficios-rapidos {
+  display: flex;
+  flex-wrap: wrap;           /* permite quebra para próxima linha */
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+  justify-content: center;    /* centraliza os itens na linha */
+}
+
+.s6 .beneficios-rapidos li {
+  flex: 1 1 220px;            /* cresce e encolhe, com base mínima */
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-size: 1.1rem;
+  color: #023e8a;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  min-width: 180px;           /* para evitar ficar muito pequeno */
+}
+
+.s6 .beneficios-rapidos li:hover {
+  transform: translateY(-5px);
+  background-color: #e0f7ff;
+}
+
+/* Ajustes responsivos para telas pequenas */
+@media (max-width: 600px) {
+  .s6 {
+    padding: 50px 15px;
+  }
+  .s6 .texto h2 {
+    font-size: 2rem;
+  }
+  .s6 .texto p {
+    font-size: 1rem;
+    max-width: 90%;
+    margin-bottom: 30px;
+  }
+  .s6 .beneficios-rapidos li {
+    flex: 1 1 150px;          /* menor largura mínima */
+    min-width: 140px;
+    padding: 12px 15px;
+    font-size: 1rem;
+  }
+  .s6 .beneficios-rapidos li img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Em telas muito pequenas, cada item ocupa a linha inteira */
+@media (max-width: 400px) {
+  .s6 .beneficios-rapidos li {
+    flex: 1 1 100%;
+    min-width: auto;
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+  .s6 .texto h2 {
+    font-size: 1.7rem;
+  }
+  .s6 .texto p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+  .s6 {
+    padding: 40px 10px;
+  }
+  .s6 .beneficios-rapidos li img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
 
 /* =========================================== QUIZ ======================================================================= */
  
