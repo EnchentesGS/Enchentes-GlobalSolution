@@ -88,8 +88,7 @@ header {
 }
 
 .titulo{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--cor-2);
+  color: white 
 }
 
 nav ul {
@@ -104,11 +103,10 @@ header nav ul {
   display: flex;
 }
 
-
 header nav ul li a {
   color: white;
   padding: 8px 12px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-decoration: none;
   position: relative;
@@ -283,27 +281,25 @@ header nav ul li a:hover::after {
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
  
-.tema-azul-escuro {
-  background-color: #014D6F;
+.tema-azul {
+  background-color: #6699F2;
 }
-.tema-azul-medio {
-  background-color: #2A8BCF;
+.lavanda {
+  background-color: #bfb0ff;
 }
-.tema-azul-claro {
-  background-color: #BBDEFB;
+.tema {
+  background-color: #dbd6f8;
 }
- 
-.tema-azul-escuro:hover {
-  background-color: #014D6F;
-}
-.tema-azul-medio:hover {
-  background-color: #2A8BCF;
-}
-.tema-azul-claro:hover {
-  background-color: #BBDEFB;
-}
- 
 
+.tema-azul:hover {
+  background-color: #BBDEFB;
+}
+.lavanda:hover {
+  background-color: #E4DEFF;
+}
+.tema:hover {
+  background-color: #DCD6FF;
+}
  
 /* =========================================== SEÇÃO 1 ====================================================================================================== */
 
@@ -1477,12 +1473,12 @@ header nav ul li a:hover::after {
 main {
   display: flex;
   justify-content: center;
+  background-color: var(--cor-5);
   align-items: center;
   min-height: calc(100vh - 160px);
   padding: 20px;
   font-family: var(--fonte-principal);
   color: var(--cor-1);
-  background-color: var(--background);
   flex-direction: column;
 }
  
@@ -1511,7 +1507,7 @@ main {
  
 #escolha-container .descricao {
   font-size: 1rem;
-  color: var(--cor-2);
+  color: var(--cor-1);
   margin-bottom: 30px;
 }
  
@@ -1578,7 +1574,7 @@ main {
  
 #login-container .descricao {
   font-size: 1rem;
-  color: var(--cor-2);
+  color: var(--cor-1);
   margin-bottom: 25px;
 }
  
@@ -1911,6 +1907,7 @@ main {
   flex: 1; 
   display: flex;
   flex-direction: column;
+  color: var(--cor-6);
   gap: 2rem;
   padding: 0;
   box-sizing: border-box;
