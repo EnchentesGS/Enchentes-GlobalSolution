@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const imagens = [
     'src/assets/enchente1.jpg',
     'src/assets/enchente2.jpg',
-    'src/assets/enchente3.jpg'
+    'src/assets/mapa.jpg'
   ];
 
   let index = 0;

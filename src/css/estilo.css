@@ -583,26 +583,96 @@ header nav ul li a:hover::after {
 
 /* ================================================ SEÇÃO 3 ================================================================ */
 
-.slideshow {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  border-radius: 0 !important;
-}
+
+ .s3-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 6rem auto 0 auto;
+    gap: 4rem;
+    padding: 4rem 2rem;
+  }
+
+  .s3-texto {
+    flex: 1 1 50%;
+    color: #003B5C;
+    max-width: 600px;
+  }
+
+  .s3-texto h2 {
+    color: #014D6F;
+    font-size: 3.6rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+
+  .s3-texto p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+  }
+
+  .s3-imagem {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .s3-imagem img {
+    max-width: 600px;
+    max-height: 450px;
+    border-radius: 14px;
+    object-fit: contain;
+    box-shadow: 0 8px 20px rgba(0, 59, 92, 0.15);
+  }
+
+  /* Responsividade para telas menores */
 
 
-/* ========== RESPONSIVIDADE DO SLIDESHOW ========== */
-@media (max-width: 768px) {
-  .s1 .texto {
-    max-width: 90%;
-    font-size: 1rem;
-    padding: 12px 15px;
+  @media (max-width: 900px) {
+  .s3-container {
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .s3-texto {
+    text-align: center;
+    margin-top: 0.5rem;
+    position: relative;
+    z-index: 5;
+  }
+
+  .s3-texto h2 {
+    font-size: 2.2rem;
+  }
+
+  .s3-texto p {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+  }
+
+  .s3-imagem {
+    position: relative;
+    z-index: 10;
+    margin-top: 2rem; /* sobe um pouco sem cobrir nada */
+  }
+
+  .s3-imagem img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 59, 92, 0.15);
   }
 }
+
+
+
+
 
 /* ================================================ SEÇÃO 4 ================================================================ */
 
