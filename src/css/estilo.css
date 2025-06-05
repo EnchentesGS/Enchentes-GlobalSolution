@@ -683,7 +683,7 @@ header nav ul li a:hover::after {
 /* ================================================ SEÇÃO 4 ================================================================ */ 
 
 .s4 {
-  background-color: #fff9db; /* fundo amarelo claro */
+  background-color: #fff9db;
   padding: 4rem 1rem;
 }
 
@@ -697,6 +697,7 @@ header nav ul li a:hover::after {
   background-color: #fff9db;
   border-radius: 12px;
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 .s4-imagem {
@@ -771,10 +772,64 @@ header nav ul li a:hover::after {
   transition: background 0.3s;
   text-align: center;
   width: fit-content;
+  cursor: pointer;
 }
 
 .btn-s4:hover {
   background-color: #003B5C;
+}
+
+/* Popup */
+.popup-imagem {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-imagem.active {
+  display: flex;
+}
+
+.popup-conteudo {
+  position: relative;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: auto;
+}
+
+.popup-img {
+  max-width: 100%;
+  max-height: 80vh;
+  display: block;
+  border-radius: 4px;
+}
+
+.popup-fechar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.popup-fechar:hover {
+  color: #000;
 }
 
 /* Responsividade gradual */
@@ -811,7 +866,7 @@ header nav ul li a:hover::after {
 
 @media (max-width: 768px) {
   .s4 {
-    padding: 3rem 1rem 6rem; /* espaçamento inferior maior para botão */
+    padding: 3rem 1rem 6rem;
   }
 
   .s4-container {
@@ -845,7 +900,8 @@ header nav ul li a:hover::after {
   }
 
   .s4-grupos {
-    width: 100%;
+    /* Se quiser esconder, ok. Caso contrário, comente essa linha */
+    display: none;
   }
 
   .s4-item {
@@ -897,18 +953,6 @@ header nav ul li a:hover::after {
   .btn-s4 {
     padding: 0.6rem 1.2rem;
     font-size: 0.85rem;
-  }
-}
-
-/* Por padrão, os itens aparecem */
-.s4-grupos {
-  display: flex;
-}
-
-/* Em telas pequenas, esconder os itens */
-@media (max-width: 768px) {
-  .s4-grupos {
-    display: none;
   }
 }
 
@@ -1699,7 +1743,7 @@ main {
 }
  
 .logout-button {
-  margin-top: 25px;
+  margin-top: 4px;
   padding: 12px;
   width: 100%;
   border: none;
@@ -1718,7 +1762,7 @@ main {
 
 .localizacao-cadastrada .alerta {
   background-color: #FFD700; 
-  color: #fff;
+  color: var(--cor-1);
   padding: 12px;
   width: 100%;
   text-align: center;

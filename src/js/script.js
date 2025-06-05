@@ -1,6 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  // Menu Hamburguer
+  // --- POP-UP DE IMAGEM ---
+  function mostrarImagem() {
+    const popup = document.getElementById('popupImagem');
+    if (popup) popup.classList.add('active');
+  }
+
+  function fecharImagem() {
+    const popup = document.getElementById('popupImagem');
+    if (popup) popup.classList.remove('active');
+  }
+
+  // Expor as funções para poder chamar de fora (ex: onclick no HTML)
+  window.mostrarImagem = mostrarImagem;
+  window.fecharImagem = fecharImagem;
+
+  // --- MENU HAMBURGUER ---
   const hamburguer = document.getElementById("hamburguer");
   const navMenu = document.getElementById("nav-menu");
 
@@ -10,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // SlideShow
+  // --- SLIDESHOW ---
   const imagens = [
     'src/assets/familia2.jpg',
     'src/assets/familia.jpg',
@@ -31,117 +46,114 @@ document.addEventListener("DOMContentLoaded", function () {
 
   slideShow();
 
-  // Trocar de Cor
+  // --- TROCAR COR DE FUNDO ---
   window.trocar = function(cor) {
     document.body.style.background = cor;
   };
 
-  // Quiz
+  // --- QUIZ ---
+  const quizCards = document.querySelectorAll('.quiz-card');
+  const startBtn = document.getElementById('start-btn');
+  const startCard = document.querySelector('.start-card');
+  const resultadoContainer = document.querySelector('.quiz-result');
+  const quizContainer = document.querySelector('.quiz-container');
 
-const quizCards = document.querySelectorAll('.quiz-card');
-const startBtn = document.getElementById('start-btn');
-const startCard = document.querySelector('.start-card');
-const resultadoContainer = document.querySelector('.quiz-result');
-const quizContainer = document.querySelector('.quiz-container');
+  if (
+    quizCards.length > 0 &&
+    startBtn &&
+    startCard &&
+    resultadoContainer &&
+    quizContainer
+  ) {
+    let currentQuestion = 0;
 
-if (
-  quizCards.length > 0 &&
-  startBtn &&
-  startCard &&
-  resultadoContainer &&
-  quizContainer
-) {
-  let currentQuestion = 0;
+    startBtn.addEventListener('click', startQuiz);
 
-  startBtn.addEventListener('click', startQuiz);
+    function startQuiz() {
+      startCard.style.display = 'none';
+      currentQuestion = 0;
+      showQuestion(currentQuestion);
+      quizContainer.style.display = 'block';
+      resultadoContainer.style.display = 'none';
+    }
 
-  function startQuiz() {
-    startCard.style.display = 'none';
-    currentQuestion = 0;
-    showQuestion(currentQuestion);
-    quizContainer.style.display = 'block';
-    resultadoContainer.style.display = 'none';
-  }
-
-  function showQuestion(index) {
-    quizCards.forEach((card, i) => {
-      card.style.display = i === index ? 'block' : 'none';
-    });
-  }
-
-  function isAnswerSelected(index) {
-    const inputs = quizCards[index].querySelectorAll('input[type="radio"]');
-    return Array.from(inputs).some(input => input.checked);
-  }
-
-  // Ativa botão "Próxima" quando uma alternativa for marcada
-  quizCards.forEach((card, index) => {
-    const inputs = card.querySelectorAll('input[type="radio"]');
-    const nextBtn = card.querySelector('.next-btn');
-    const finishBtn = card.querySelector('#finish-btn');
-
-    inputs.forEach(input => {
-      input.addEventListener('change', () => {
-        if (nextBtn) nextBtn.disabled = false;
-        if (finishBtn) finishBtn.disabled = false;
-      });
-    });
-
-    if (nextBtn) {
-      nextBtn.disabled = true;
-      nextBtn.addEventListener('click', () => {
-        if (!isAnswerSelected(index)) {
-          alert('Por favor, selecione uma resposta antes de continuar.');
-          return;
-        }
-        currentQuestion++;
-        showQuestion(currentQuestion);
+    function showQuestion(index) {
+      quizCards.forEach((card, i) => {
+        card.style.display = i === index ? 'block' : 'none';
       });
     }
 
-    if (finishBtn) {
-      finishBtn.disabled = true;
-      finishBtn.addEventListener('click', () => {
-        if (!isAnswerSelected(index)) {
-          alert('Por favor, selecione uma resposta antes de finalizar.');
-          return;
-        }
-        endQuiz();
-      });
+    function isAnswerSelected(index) {
+      const inputs = quizCards[index].querySelectorAll('input[type="radio"]');
+      return Array.from(inputs).some(input => input.checked);
     }
-  });
 
-  function endQuiz() {
-    quizCards.forEach(card => (card.style.display = 'none'));
-    quizContainer.style.display = 'none';
-
-    let totalCorrect = 0;
-    quizCards.forEach(card => {
+    quizCards.forEach((card, index) => {
       const inputs = card.querySelectorAll('input[type="radio"]');
+      const nextBtn = card.querySelector('.next-btn');
+      const finishBtn = card.querySelector('#finish-btn');
+
       inputs.forEach(input => {
-        if (input.checked && input.dataset.correct === 'true') {
-          totalCorrect++;
-        }
-      });
-    });
-
-    const mensagem = resultadoContainer.querySelector('.mensagem-resultado');
-    mensagem.textContent = `Você acertou ${totalCorrect} de ${quizCards.length} perguntas!`;
-    resultadoContainer.style.display = 'block';
-  }
-
-  // Destacar visualmente a opção selecionada
-  document.querySelectorAll('.quiz-options').forEach(grupo => {
-    grupo.querySelectorAll('input[type="radio"]').forEach(input => {
-      input.addEventListener('change', () => {
-        grupo.querySelectorAll('label').forEach(label => {
-          label.classList.remove('selecionado');
+        input.addEventListener('change', () => {
+          if (nextBtn) nextBtn.disabled = false;
+          if (finishBtn) finishBtn.disabled = false;
         });
-        input.parentElement.classList.add('selecionado');
+      });
+
+      if (nextBtn) {
+        nextBtn.disabled = true;
+        nextBtn.addEventListener('click', () => {
+          if (!isAnswerSelected(index)) {
+            alert('Por favor, selecione uma resposta antes de continuar.');
+            return;
+          }
+          currentQuestion++;
+          showQuestion(currentQuestion);
+        });
+      }
+
+      if (finishBtn) {
+        finishBtn.disabled = true;
+        finishBtn.addEventListener('click', () => {
+          if (!isAnswerSelected(index)) {
+            alert('Por favor, selecione uma resposta antes de finalizar.');
+            return;
+          }
+          endQuiz();
+        });
+      }
+    });
+
+    function endQuiz() {
+      quizCards.forEach(card => (card.style.display = 'none'));
+      quizContainer.style.display = 'none';
+
+      let totalCorrect = 0;
+      quizCards.forEach(card => {
+        const inputs = card.querySelectorAll('input[type="radio"]');
+        inputs.forEach(input => {
+          if (input.checked && input.dataset.correct === 'true') {
+            totalCorrect++;
+          }
+        });
+      });
+
+      const mensagem = resultadoContainer.querySelector('.mensagem-resultado');
+      mensagem.textContent = `Você acertou ${totalCorrect} de ${quizCards.length} perguntas!`;
+      resultadoContainer.style.display = 'block';
+    }
+
+    document.querySelectorAll('.quiz-options').forEach(grupo => {
+      grupo.querySelectorAll('input[type="radio"]').forEach(input => {
+        input.addEventListener('change', () => {
+          grupo.querySelectorAll('label').forEach(label => {
+            label.classList.remove('selecionado');
+          });
+          input.parentElement.classList.add('selecionado');
+        });
       });
     });
-  });
-}
+  }
 
   // --- LOGIN, CADASTRO E ÁREA DO USUÁRIO ---
 
@@ -154,7 +166,6 @@ if (
   const btnVoltarLogin = document.getElementById('voltar-escolha');
   const btnVoltarCadastro = document.getElementById('voltar-escolha-cad');
 
-  // Mostrar login
   if (btnLogin) {
     btnLogin.addEventListener('click', () => {
       escolhaContainer.classList.add('hidden');
@@ -163,7 +174,6 @@ if (
     });
   }
 
-  // Mostrar cadastro
   if (btnCadastrar) {
     btnCadastrar.addEventListener('click', () => {
       escolhaContainer.classList.add('hidden');
@@ -172,7 +182,6 @@ if (
     });
   }
 
-  // Voltar para escolha da tela de login
   if (btnVoltarLogin) {
     btnVoltarLogin.addEventListener('click', () => {
       loginContainer.classList.add('hidden');
@@ -180,7 +189,6 @@ if (
     });
   }
 
-  // Voltar para escolha da tela de cadastro
   if (btnVoltarCadastro) {
     btnVoltarCadastro.addEventListener('click', () => {
       cadastroContainer.classList.add('hidden');
@@ -188,7 +196,6 @@ if (
     });
   }
 
-  // Cadastro
   const formCadastro = document.getElementById('form-cadastro');
   const mensagemCadastro = document.getElementById('mensagem-cadastro');
 
@@ -241,47 +248,46 @@ if (
     });
   }
 
-// Login
+  const formLogin = document.getElementById('form-login');
+  const mensagemLogin = document.getElementById('mensagem-login');
 
-const formLogin = document.getElementById('form-login');
-const mensagemLogin = document.getElementById('mensagem-login'); // ajuste para o id correto
+  if (formLogin) {
+    formLogin.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = document.getElementById('email-login').value.trim();
+      const senha = document.getElementById('senha-login').value.trim();
 
-if (formLogin) {
-  formLogin.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const email = document.getElementById('email-login').value.trim();
-    const senha = document.getElementById('senha-login').value.trim();
+      if (!email || !senha) {
+        mensagemLogin.textContent = 'Por favor, preencha todos os campos.';
+        mensagemLogin.className = 'mensagem error';
+        return;
+      }
 
-    if (!email || !senha) {
-      mensagemLogin.textContent = 'Por favor, preencha todos os campos.';
-      mensagemLogin.className = 'mensagem error';
-      return;
-    }
+      const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+      const usuarioEncontrado = usuarios.find(u => u.email === email && u.senha === senha);
 
-    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-    const usuarioEncontrado = usuarios.find(u => u.email === email && u.senha === senha);
+      if (!usuarioEncontrado) {
+        mensagemLogin.textContent = 'Email ou senha incorretos.';
+        mensagemLogin.className = 'mensagem error';
+        return;
+      }
 
-    if (!usuarioEncontrado) {
-      mensagemLogin.textContent = 'Email ou senha incorretos.';
-      mensagemLogin.className = 'mensagem error';
-      return;
-    }
+      // Persistir login até clicar em sair
+      localStorage.setItem('nomeUsuario', usuarioEncontrado.nome);
 
-    // Salvar nome do usuário para área privada
-    localStorage.setItem('nomeUsuario', usuarioEncontrado.nome);
+      mensagemLogin.textContent = 'Login realizado com sucesso!';
+      mensagemLogin.className = 'mensagem sucesso';
 
-    mensagemLogin.textContent = 'Login realizado com sucesso!';
-    mensagemLogin.className = 'mensagem sucesso';
+      formLogin.reset();
 
-    formLogin.reset();
+      setTimeout(() => {
+        window.location.href = 'usuario.html';
+      }, 1000);
+    });
+  }
 
-    setTimeout(() => {
-      window.location.href = 'usuario.html';
-    }, 1000);
-  });
-}
+  // --- ÁREA DO USUÁRIO E LOGOUT ---
 
-// --- ÁREA DO USUÁRIO E LOGOUT ---
   const nomeSalvo = localStorage.getItem('nomeUsuario');
   const botaoSair = document.getElementById('logout-btn');
   const nomeUsuarioSpan = document.getElementById('nomeUsuario');
@@ -317,13 +323,11 @@ if (formLogin) {
     const telefoneElement = document.getElementById('telefoneUsuario');
 
     if (usuarioAtual) {
-      // Endereço
       if (localizacaoElement) {
         const end = usuarioAtual.endereco;
         localizacaoElement.textContent = `${end.rua}, ${end.numero} - ${end.bairro}, ${end.cidade} - ${end.estado}, CEP: ${end.cep}`;
       }
 
-      // Telefone
       if (telefoneElement) {
         let telefone = usuarioAtual.telefone || '';
         telefone = telefone.replace(/\D/g, '');
@@ -341,7 +345,7 @@ if (formLogin) {
     }
   }
 
-  // Redireciona para a área do usuário se já estiver logado e tentar acessar login.html
+  // Redireciona para área do usuário se já estiver logado e tentar acessar login.html
   if (window.location.href.includes('login.html') && nomeSalvo) {
     window.location.href = 'usuario.html';
     return;
