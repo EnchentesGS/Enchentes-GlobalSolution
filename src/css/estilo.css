@@ -1147,9 +1147,9 @@ header nav ul li a:hover::after {
 
 /* =========================================== QUIZ ======================================================================= */
  
-
- .quiz-container {
-  width: 600px; 
+.quiz-container {
+  width: 600px;
+  max-width: 95%;
   margin: 40px auto 80px auto;
   background: #f8fafa;
   border-radius: 15px;
@@ -1158,8 +1158,10 @@ header nav ul li a:hover::after {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #003B5C;
   user-select: none;
-  text-align: center; 
+  text-align: center;
+  box-sizing: border-box;
 }
+
 
 .start-card img.quiz {
   width: 100%;       
@@ -1359,32 +1361,20 @@ header nav ul li a:hover::after {
  
 /* ========== RESPONSIVIDADE ========== */
 
+/* Responsividade para telas menores */
 @media (max-width: 1024px) {
   .quiz-container {
-    margin: 30px 20px 60px 20px;
+    width: 500px;
+    max-width: 90%;
     padding: 25px 30px;
   }
-}
- 
-@media (max-width: 480px) {
-  header nav ul {
-    flex-direction: column;
-  }
- 
-  .quiz-container {
-    margin: 20px 10px 40px 10px;
-    padding: 20px;
-  }
- 
   .quiz-question {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
- 
   .quiz-options label {
     font-size: 1rem;
-    padding: 12px 15px;
+    padding: 13px 18px;
   }
- 
   .quiz-button.next-btn,
   .quiz-button#finish-btn,
   .quiz-button#start-btn {
@@ -1392,7 +1382,48 @@ header nav ul li a:hover::after {
     padding: 14px 0;
   }
 }
- 
+
+@media (max-width: 768px) {
+  .quiz-container {
+    width: 400px;
+    max-width: 85%;
+    padding: 20px 25px;
+  }
+  .quiz-question {
+    font-size: 1.2rem;
+  }
+  .quiz-options label {
+    font-size: 0.95rem;
+    padding: 12px 15px;
+  }
+  .quiz-button.next-btn,
+  .quiz-button#finish-btn,
+  .quiz-button#start-btn {
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .quiz-container {
+    width: 320px;
+    max-width: 90%;
+    padding: 15px 20px;
+  }
+  .quiz-question {
+    font-size: 1.1rem;
+  }
+  .quiz-options label {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+  .quiz-button.next-btn,
+  .quiz-button#finish-btn,
+  .quiz-button#start-btn {
+    font-size: 0.95rem;
+    padding: 10px 0;
+  }
+}
  
 /*======================================= Área de cadastro/login centralizada =============================================== */
  
@@ -1435,7 +1466,7 @@ main {
  
 #escolha-container .descricao {
   font-size: 1rem;
-  color: var(--cor-3);
+  color: var(--cor-2);
   margin-bottom: 30px;
 }
  
@@ -1502,7 +1533,7 @@ main {
  
 #login-container .descricao {
   font-size: 1rem;
-  color: var(--cor-3);
+  color: var(--cor-2);
   margin-bottom: 25px;
 }
  
@@ -1516,7 +1547,7 @@ main {
 .form-login-vertical input {
   padding: 10px 14px;
   font-size: 1rem;
-  border: 2px solid var(--cor-3);
+  border: 2px solid var(--cor-1);
   border-radius: 8px;
   transition: border-color 0.3s ease;
 }
@@ -1594,7 +1625,7 @@ main {
 .form-cadastro-horizontal input {
   padding: 10px 14px;
   font-size: 1rem;
-  border: 2px solid var(--cor-3);
+  border: 2px solid var(--cor-1);
   border-radius: 8px;
   transition: border-color 0.3s ease;
   width: 100%;
