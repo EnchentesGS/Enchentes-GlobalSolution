@@ -83,7 +83,7 @@ header {
 }
  
 .logo {
-  max-width: 155px;
+  max-width: 100px;
   height: auto;
 }
 
@@ -671,10 +671,170 @@ header nav ul li a:hover::after {
 }
 
 
+/* ================================================ SEÇÃO 4 ================================================================ */ 
+
+.s4 {
+  background-color: #fff9db; /* fundo amarelo claro */
+  padding: 4rem 1rem;
+}
+
+.s4-container {
+  display: flex;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  align-items: center;
+  background-color: #fff9db;
+  border-radius: 12px;
+  flex-wrap: wrap;
+}
+
+.s4-imagem {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.s4-imagem img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.s4-texto {
+  flex: 1 1 400px;
+  color: #003B5C;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.s4-texto h2 {
+  font-size: 2.5rem;
+  color: #014D6F;
+  font-weight: 700;
+}
+
+.s4-texto p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.s4-grupos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.s4-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #f5faff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 59, 92, 0.1);
+}
+
+.s4-item img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.s4-item p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Botão */
+.btn-s4 {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background-color: #014D6F;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+  text-align: center;
+  width: fit-content;
+}
+
+.btn-s4:hover {
+  background-color: #003B5C;
+}
 
 
 
-/* ================================================ SEÇÃO 4 ================================================================ */
+@media (max-width: 768px) {
+  .s4 {
+    padding: 4rem 1rem 8rem; /* mais espaço inferior para o botão aparecer */
+    min-height: 100vh;       /* altura mínima para garantir que o conteúdo não fique espremido */
+  }
+
+  .s4-container {
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+
+  .s4-imagem img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .s4-texto {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .s4-texto h2 {
+    font-size: 2rem;
+  }
+
+  .s4-texto p {
+    font-size: 1rem;
+  }
+
+  .s4-grupos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .s4-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .s4-item img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .s4-item p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .btn-s4 {
+    margin-top: 2rem;
+    align-self: center;
+    padding: 0.8rem 1.6rem;
+    font-size: 1rem;
+  }
+}
+
+
 
 /* ================================================ SEÇÃO 5 ================================================================ */
  
