@@ -684,7 +684,7 @@ header nav ul li a:hover::after {
 
 .s4 {
   background-color: #fff9db;
-  padding: 4rem 1rem;
+  padding: 1.5rem 1rem 4rem 1rem;
 }
 
 .s4-container {
@@ -1845,6 +1845,7 @@ main {
   .logout-button {
     padding: 10px;
     font-size: 0.9rem;
+    margin-top: 35px;
   }
 
   /* Oculta todos os parágrafos dentro da localização cadastrada */
