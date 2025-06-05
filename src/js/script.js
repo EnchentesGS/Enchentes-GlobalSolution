@@ -12,9 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // SlideShow
   const imagens = [
-    'src/assets/enchente1.jpg',
-    'src/assets/enchente2.jpg',
-    'src/assets/mapa.jpg'
+    'src/assets/familia2.jpg',
+    'src/assets/familia.jpg',
+    'src/assets/solidariedade.jpg'
   ];
 
   let index = 0;
