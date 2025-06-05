@@ -838,6 +838,83 @@ header nav ul li a:hover::after {
 
 /* ================================================ SEÇÃO 5 ================================================================ */
  
+.s5 {
+  padding: 80px 20px;
+  background-color: #f9fcff; /* fundo bem claro, sólido */
+  border-radius: 0; /* remove qualquer borda arredondada */
+  box-shadow: none; /* remove sombra se estiver aplicada */
+  backdrop-filter: none; /* remove efeito de vidro fosco */
+}
+
+.s5 .container {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.s5 .texto {
+  background: transparent; /* remove o fundo cinza */
+  border-radius: 0;        /* remove as bordas arredondadas */
+  box-shadow: none;        /* remove sombra, se tiver */
+  padding: 0;              /* reseta qualquer espaçamento interno */
+}
+
+
+.s5 .texto h2 {
+  font-size: 2.8rem;
+  color: #0077b6; /* azul vibrante */
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.s5 .texto p {
+  font-size: 1.3rem;
+  color: #333;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.s5 .texto ul {
+  list-style: none; /* remove os bullets padrão */
+  padding: 0;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.s5 .texto ul li {
+  background-color: #ffffff; /* branco sólido, sem transparência */
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  color: #023e8a;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+
+.s5 .texto ul li:hover {
+  transform: scale(1.03);
+  background-color: #e0f7ff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .s5 .texto h2 {
+    font-size: 2.2rem;
+  }
+
+  .s5 .texto p,
+  .s5 .texto ul li {
+    font-size: 1rem;
+  }
+}
+
+
+
 /* ================================================ SEÇÃO 6 ================================================================ */
 
 /* =========================================== QUIZ ======================================================================= */
