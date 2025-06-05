@@ -369,7 +369,7 @@ header nav ul li a:hover::after {
 }
 
 .s1-item {
-  background-color: #EAF6FF;
+  background-color: #ffffff;
   width: 180px;
   padding: 2rem 1rem;
   border-radius: 1rem;
@@ -701,14 +701,16 @@ header nav ul li a:hover::after {
 }
 
 .s4-imagem {
-  flex: 1 1 400px;
+  flex: 1 1 500px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* <- mudou de center para flex-start */
+  align-items: center; /* se quiser centralizar verticalmente */
 }
+
 
 .s4-imagem img {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   border-radius: 12px;
   object-fit: cover;
 }
@@ -743,7 +745,7 @@ header nav ul li a:hover::after {
   display: flex;
   align-items: center;
   gap: 1rem;
-  background-color: #f5faff;
+  background-color: #ffffff;
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 59, 92, 0.1);
@@ -760,7 +762,12 @@ header nav ul li a:hover::after {
   font-weight: 500;
 }
 
+.s4-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 59, 92, 0.3);
+}
 /* Botão */
+
 .btn-s4 {
   display: inline-block;
   margin-top: 1.5rem;
@@ -769,15 +776,22 @@ header nav ul li a:hover::after {
   padding: 0.8rem 1.6rem;
   border-radius: 8px;
   text-decoration: none;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
   text-align: center;
   width: fit-content;
+  border: none;
   cursor: pointer;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 500;
 }
 
 .btn-s4:hover {
-  background-color: #003B5C;
+  background-color: var(--cor-2);
+  color: var(--cor-1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
+
 
 /* Popup */
 .popup-imagem {
@@ -858,10 +872,6 @@ header nav ul li a:hover::after {
   .s4-item p {
     font-size: 0.95rem;
   }
-  .btn-s4 {
-    padding: 0.7rem 1.4rem;
-    font-size: 0.95rem;
-  }
 }
 
 @media (max-width: 768px) {
@@ -922,12 +932,6 @@ header nav ul li a:hover::after {
     text-align: center;
   }
 
-  .btn-s4 {
-    margin-top: 2rem;
-    align-self: center;
-    padding: 0.7rem 1.4rem;
-    font-size: 0.9rem;
-  }
 }
 
 @media (max-width: 400px) {
@@ -950,20 +954,10 @@ header nav ul li a:hover::after {
   .s4-item p {
     font-size: 0.85rem;
   }
-  .btn-s4 {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.85rem;
-  }
 }
 
 
 /* ================================================ SEÇÃO 5 ================================================================ */
- 
-.s6 {
-  background-color: transparent !important;
-  padding: 80px 20px;
-  text-align: center;
-}
 
 
 .s5 .container {
@@ -983,14 +977,14 @@ header nav ul li a:hover::after {
 
 .s5 .texto h2 {
   font-size: 2.8rem;
-  color: #0077b6; /* azul vibrante */
+  color: var(--cor-1); /* azul vibrante */
   margin-bottom: 25px;
   font-weight: 700;
 }
 
 .s5 .texto p {
   font-size: 1.3rem;
-  color: #333;
+  color: var(--cor-1);
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto 30px;
@@ -1016,31 +1010,45 @@ header nav ul li a:hover::after {
   transition: transform 0.3s ease;
 }
 
+.s5-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 59, 92, 0.3);
+}
 
 .s5 .texto ul li:hover {
-  transform: scale(1.03);
-  background-color: #e0f7ff;
+   transform: translateY(-8px);
+   background-color: white;
 }
 
 /* Responsividade */
+
 @media (max-width: 768px) {
+  .s5 .texto {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Ou center, se preferir centralizado */
+  }
+
   .s5 .texto h2 {
     font-size: 2.2rem;
+    width: 100%;
   }
 
   .s5 .texto p,
   .s5 .texto ul li {
     font-size: 1rem;
+    width: 100%;
   }
 }
-
 
 
 /* ================================================ SEÇÃO 6 ================================================================ */
 
 .s6 {
   background-color: #fff9c4 !important;
-  padding: 80px 20px;
+  padding: 100px 20px;  /* aumentei o padding vertical */
   text-align: center;
 }
 
@@ -1051,8 +1059,8 @@ header nav ul li a:hover::after {
 
 .s6 .texto h2 {
   font-size: 2.5rem;
-  color: #0077b6;
-  margin-bottom: 20px;
+  color: var(--cor-1);
+  margin-bottom: 40px;   /* mais espaço abaixo do título */
   font-weight: bold;
 }
 
@@ -1060,87 +1068,124 @@ header nav ul li a:hover::after {
   font-size: 1.2rem;
   color: #333;
   max-width: 700px;
-  margin: 0 auto 40px;
+  margin: 0 auto 60px;   /* mais espaço abaixo do parágrafo */
 }
 
 .s6 .beneficios-rapidos {
   display: flex;
-  flex-wrap: wrap;           /* permite quebra para próxima linha */
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 30px;             /* aumentei o gap entre os itens */
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 80px;   /* distância maior abaixo da lista */
   list-style: none;
   padding: 0;
-  justify-content: center;    /* centraliza os itens na linha */
+  justify-content: center;
 }
 
 .s6 .beneficios-rapidos li {
-  flex: 1 1 220px;            /* cresce e encolhe, com base mínima */
+  flex: 1 1 220px;
   background-color: #ffffff;
   padding: 15px 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-size: 1.1rem;
-  color: #023e8a;
+  color: var(--cor-1);
   display: flex;
   align-items: center;
   gap: 10px;
   justify-content: center;
   transition: transform 0.3s ease;
-  min-width: 180px;           /* para evitar ficar muito pequeno */
+  min-width: 180px;
 }
 
 .s6 .beneficios-rapidos li:hover {
-  transform: translateY(-5px);
-  background-color: #e0f7ff;
+  transform: translateY(-8px);
 }
 
+.btn-container {
+  margin-top: 10rem;   /* mais distância acima do botão */
+  display: flex;
+  justify-content: center;
+}
+
+.btn-s6 {
+  display: inline-block;
+  background-color: #014D6F;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  width: fit-content;
+  border: none;
+  cursor: pointer;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 500;
+}
+
+.btn-s6:hover {
+  background-color: #2a8bcf;
+  color: #fff9c4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.popup-imagem {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 90vh;      /* menor que 100vh para garantir centralização */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+
 /* Ajustes responsivos para telas pequenas */
+
 @media (max-width: 600px) {
   .s6 {
     padding: 50px 15px;
+    text-align: left; /* Alinha o texto à esquerda */
   }
+
+  .s6 .texto {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
   .s6 .texto h2 {
     font-size: 2rem;
+    width: 100%;
+    margin-bottom: 15px;
   }
-  .s6 .texto p {
-    font-size: 1rem;
-    max-width: 90%;
-    margin-bottom: 30px;
-  }
-  .s6 .beneficios-rapidos li {
-    flex: 1 1 150px;          /* menor largura mínima */
-    min-width: 140px;
-    padding: 12px 15px;
-    font-size: 1rem;
-  }
-  .s6 .beneficios-rapidos li img {
-    width: 20px;
-    height: 20px;
-  }
-}
 
-/* Em telas muito pequenas, cada item ocupa a linha inteira */
-@media (max-width: 400px) {
-  .s6 .beneficios-rapidos li {
-    flex: 1 1 100%;
-    min-width: auto;
-    font-size: 0.95rem;
-    padding: 10px 12px;
-  }
-  .s6 .texto h2 {
-    font-size: 1.7rem;
-  }
   .s6 .texto p {
-    font-size: 0.9rem;
-    margin-bottom: 20px;
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 25px;
   }
-  .s6 {
-    padding: 40px 10px;
+
+  .s6 .beneficios-rapidos {
+    display: none;
   }
-  .s6 .beneficios-rapidos li img {
-    width: 18px;
-    height: 18px;
+
+  .s6 .s6-imagem,
+  .s6 img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 30px;
   }
 }
 
