@@ -1,7 +1,7 @@
 /* =========================================== SEÇÕES GERAIS ================================================================ */
  
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
- 
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +16,7 @@
   --cor-5: #e6f6fb;
   --cor-6: #FFF176;
   --background: #F8FAFC;
-  --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --fonte-principal: 'Roboto', sans-serif;
 }
  
 body {
@@ -53,6 +53,7 @@ section {
   position: absolute;
   top: 50%;
   left: 50%;
+  font-family: var(--fonte-principal);
   transform: translate(-50%, -50%);
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
@@ -117,8 +118,8 @@ header nav ul {
 header nav ul li a {
   color: white;
   padding: 8px 12px;
+  font-family: var(--fonte-principal);
   font-size: 1.2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-decoration: none;
   position: relative;
   transition: color 0.3s ease;
@@ -349,7 +350,7 @@ header nav ul li a:hover::after {
   margin: 0 auto;
   padding: 2rem 1rem;
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--fonte-principal);
   color: #003B5C;
 
   display: flex;
@@ -472,7 +473,7 @@ header nav ul li a:hover::after {
   background-color: #fff9c4;
   color: #003B5C;
   padding: 4rem 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--fonte-principal)
 }
 
 .s2-container {
@@ -641,7 +642,7 @@ header nav ul li a:hover::after {
   .s3-texto {
     flex: 1 1 50%;
     color: #003B5C;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--fonte-principal);
     max-width: 600px;
   }
 
@@ -756,7 +757,7 @@ header nav ul li a:hover::after {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--fonte-principal);
 }
 
 .s4-texto h2 {
@@ -1006,7 +1007,7 @@ header nav ul li a:hover::after {
   border-radius: 0;        
   box-shadow: none;        
   padding: 0;              
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--fonte-principal);
 }
 
 
@@ -1090,7 +1091,7 @@ header nav ul li a:hover::after {
 
 .s6 .texto {
   background-color: transparent !important;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--fonte-principal);
 }
 
 .s6 .texto h2 {
@@ -1236,7 +1237,7 @@ header nav ul li a:hover::after {
   border-radius: 15px;
   box-shadow: 0 12px 25px rgba(0, 59, 92, 0.15);
   padding: 30px 40px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--fonte-principal);
   color: #003B5C;
   user-select: none;
   text-align: center;
@@ -1830,7 +1831,7 @@ main {
   padding: 20px;
   border-radius: 12px;
   color: var(--cor-2);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--fonte-principal);
   font-size: 1rem;
   line-height: 1.5;
   text-align: left;
@@ -2014,7 +2015,7 @@ main {
   background-color: var(--cor-5);
   padding: 1rem 1.5rem;
   border-radius: 12px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--fonte-principal);
 }
 
 .nivel-rio h3 {
@@ -2126,7 +2127,7 @@ main {
   width: 100%;
   box-sizing: border-box;
   color: #003B5C;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--fonte-principal);
 }
 
 .ranking-alerta h3 {
@@ -2240,7 +2241,7 @@ footer {
   background: var(--cor-1);
   color: #fff;
   padding: 40px 20px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--fonte-principal);
   margin-top: auto;
 }
  
