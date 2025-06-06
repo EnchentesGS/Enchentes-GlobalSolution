@@ -83,13 +83,24 @@ header {
 }
  
 .logo {
-  max-width: 100px;
+  max-width: 170px;
   height: auto;
 }
 
 .titulo{
   color: white 
 }
+
+.titulo {
+  text-align: center;
+  padding: 20px;
+}
+
+.titulo img {
+  width: 250px; /* Define a largura da imagem */
+  height: auto; /* Mantém a proporção */
+}
+
 
 nav ul {
   list-style: none;
@@ -160,12 +171,40 @@ header nav ul li a:hover::after {
 
 /* ========== RESPONSIVIDADE DO HEADER ========== */
 
-@media (max-width: 768px) {
-  header nav ul {
-    flex-direction: column;
-  }
+/* Estilo padrão: esconde o botão de menu no desktop */
+#menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  /* Esconde os itens de menu */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Mostra o botão menu hamburguer */
+  #menu-toggle {
+    display: block;
+  }
+
+  /* Ajusta o layout do header */
+  header {
+    flex-wrap: nowrap;
+  }
+}
+@media (max-width: 768px) {
+  .titulo {
+    display: none;
+  }
+}
 
 
 /* =========================================== MENU HAMBURGUER =============================================================== */
@@ -1015,6 +1054,7 @@ header nav ul li a:hover::after {
    transform: translateY(-8px);
    background-color: white;
 }
+
 
 /* Responsividade */
 
